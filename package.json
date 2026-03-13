@@ -12,6 +12,8 @@
     "check-all": "pnpm run build && pnpm run test && pnpm run format:check && pnpm run typecheck"
   },
   "devDependencies": {
+    "@changesets/changelog-github": "0.6.0",
+    "@changesets/cli": "2.30.0",
     "oxfmt": "catalog:",
     "typescript": "5.9.3",
     "vitest": "4.1.0"

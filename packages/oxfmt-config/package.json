@@ -1,0 +1,36 @@
+{
+  "name": "@marcalexiei/oxfmt-config",
+  "description": "Custom oxfmt config",
+  "keywords": [
+    "config",
+    "format",
+    "oxc",
+    "oxfmt"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marcalexiei/void-0-configs.git",
+    "directory": "packages/oxfmt-config"
+  },
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "exports": "./dist/config.js",
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc",
+    "test": "vitest --run"
+  },
+  "devDependencies": {
+    "@types/node": "24.12.0",
+    "oxfmt": "catalog:"
+  },
+  "peerDependencies": {
+    "oxfmt": "^0.40.0"
+  }
+}

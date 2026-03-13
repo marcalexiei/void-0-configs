@@ -1,0 +1,6 @@
+packages:
+  - ./packages/**
+  - ./tests/**
+
+catalog:
+  'oxfmt': '0.40.0'

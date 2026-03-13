@@ -1,6 +1,7 @@
 {
   "name": "@marcalexiei/oxfmt-config",
   "description": "Custom oxfmt config",
+  "version": "0.0.1",
   "keywords": [
     "config",
     "format",

@@ -1,14 +1,16 @@
 {
   "name": "@marcalexiei/oxfmt-config",
-  "description": "Custom oxfmt config",
   "version": "1.0.0",
+  "description": "Custom oxfmt config",
   "keywords": [
     "config",
     "format",
     "oxc",
     "oxfmt"
   ],
+  "homepage": "https://github.com/marcalexiei/void-0-configs/tree/main/packages/oxfmt-config#readme",
   "license": "MIT",
+  "author": "Marco Pasqualetti @marcalexiei",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/marcalexiei/void-0-configs.git",

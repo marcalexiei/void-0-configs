@@ -1,6 +1,8 @@
-import { execSync } from 'node:child_process';
 import fs from 'node:fs';
 import path from 'node:path';
+
+// @ts-expect-error
+import { CONFIG_DATA, log, OXLINT_RULES } from './_utils.ts';
 
 function log(type: 'info' | 'error' | 'success' | (string & {}), ...others: Array<unknown>) {
   let icon: string | undefined;
@@ -32,24 +34,7 @@ const baseConfig = {
   rules: {},
 };
 
-const configurationData: Array<{
-  name: string;
-  plugins: Array<{ name: string; scope: string; rulePrefix: string | null }>;
-}> = [
-  {
-    name: 'base',
-    plugins: [
-      { name: 'eslint', scope: 'eslint', rulePrefix: null },
-      { name: 'import', scope: 'import', rulePrefix: 'import' },
-    ],
-  },
-  {
-    name: 'typescript',
-    plugins: [{ name: 'typescript', scope: 'typescript', rulePrefix: 'typescript' }],
-  },
-];
-
-for (const { name, plugins } of configurationData) {
+for (const { name, plugins } of CONFIG_DATA) {
   const filePath = path.join(import.meta.dirname, '..', 'src', `${name}.json`);
 
   const configFileContent = fs.existsSync(filePath)
@@ -57,17 +42,6 @@ for (const { name, plugins } of configurationData) {
     : JSON.stringify(baseConfig);
 
   const config = JSON.parse(configFileContent);
-
-  const command = 'pnpm exec oxlint --rules --format=json';
-  const output = execSync(command, { encoding: 'utf8', cwd: path.join(import.meta.dirname, '..') });
-
-  const rules = JSON.parse(output.trim()) as Array<{
-    scope: string;
-    value: string;
-    category: string;
-    type_aware: boolean;
-    docs_url: string;
-  }>;
 
   const originalRules = config.rules;
 
@@ -77,7 +51,7 @@ for (const { name, plugins } of configurationData) {
 
   for (const plugin of plugins) {
     // Assuming we want to set the rules to the collected output
-    const configRules = rules.filter((it) => plugin.scope === it.scope);
+    const configRules = OXLINT_RULES.filter((it) => plugin.scope === it.scope);
 
     for (const rule of configRules) {
       const ruleName = plugin.rulePrefix ? `${plugin.rulePrefix}/${rule.value}` : rule.value;

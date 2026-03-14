@@ -105,44 +105,283 @@ exports[`config > type-aware 1`] = `
 [
   {
     "causes": [],
-    "code": "eslint-plugin-import(consistent-type-specifier-style)",
-    "filename": "fixtures/import-type/index.ts",
-    "help": "Replace inline type specifiers with a top‐level import type statement.",
+    "code": "eslint(no-empty-function)",
+    "filename": "fixtures/type-aware/await-thenable.ts",
+    "help": "Consider removing this function or adding logic to it.",
     "labels": [
       {
         "span": {
-          "column": 29,
-          "length": 12,
+          "column": 14,
+          "length": 2,
           "line": 2,
-          "offset": 98,
+          "offset": 23,
         },
       },
     ],
-    "message": "Prefer using a top-level type-only import instead of inline type specifiers.",
+    "message": "Unexpected empty function",
     "related": [],
     "severity": "error",
-    "url": "https://oxc.rs/docs/guide/usage/linter/rules/import/consistent-type-specifier-style.html",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-empty-function.html",
   },
   {
     "causes": [],
-    "code": "typescript-eslint(consistent-type-imports)",
-    "filename": "fixtures/import-type/index.ts",
-    "help": "Replace the \`import\` declaration with \`import type\`. For example, change \`import { Type } from 'module'\` would become \`import type { Type } from 'module'\`.",
+    "code": "eslint(no-empty-function)",
+    "filename": "fixtures/type-aware/await-thenable.ts",
+    "help": "Consider removing this function or adding logic to it.",
+    "labels": [
+      {
+        "span": {
+          "column": 16,
+          "length": 2,
+          "line": 6,
+          "offset": 85,
+        },
+      },
+    ],
+    "message": "Unexpected empty function",
+    "related": [],
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-empty-function.html",
+  },
+  {
+    "causes": [],
+    "code": "typescript-eslint(explicit-function-return-type)",
+    "filename": "fixtures/type-aware/await-thenable.ts",
+    "help": "Require explicit return types on functions and class methods.",
+    "labels": [
+      {
+        "span": {
+          "column": 11,
+          "length": 2,
+          "line": 2,
+          "offset": 20,
+        },
+      },
+    ],
+    "message": "Missing return type on function.",
+    "related": [],
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/explicit-function-return-type.html",
+  },
+  {
+    "causes": [],
+    "code": "typescript-eslint(explicit-function-return-type)",
+    "filename": "fixtures/type-aware/await-thenable.ts",
+    "help": "Require explicit return types on functions and class methods.",
+    "labels": [
+      {
+        "span": {
+          "column": 9,
+          "length": 4,
+          "line": 6,
+          "offset": 78,
+        },
+      },
+    ],
+    "message": "Missing return type on function.",
+    "related": [],
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/explicit-function-return-type.html",
+  },
+  {
+    "causes": [],
+    "code": "typescript-eslint(await-thenable)",
+    "filename": "fixtures/type-aware/await-thenable.ts",
     "labels": [
       {
         "span": {
           "column": 1,
-          "length": 32,
-          "line": 4,
-          "offset": 194,
+          "length": 5,
+          "line": 1,
+          "offset": 0,
         },
       },
     ],
-    "message": "All imports in the declaration are only used as types. Use \`import type\`.",
-    "note": "Using \`import type\` for type-only imports helps with tree-shaking, makes it clear that these imports don't affect runtime code, and can improve build performance by allowing bundlers to eliminate unused type imports.",
+    "message": "Unexpected \`await\` of a non-Promise (non-"Thenable") value.",
     "related": [],
     "severity": "error",
-    "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/consistent-type-imports.html",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/await-thenable.html",
+  },
+  {
+    "causes": [],
+    "code": "typescript-eslint(await-thenable)",
+    "filename": "fixtures/type-aware/await-thenable.ts",
+    "labels": [
+      {
+        "span": {
+          "column": 1,
+          "length": 5,
+          "line": 2,
+          "offset": 10,
+        },
+      },
+    ],
+    "message": "Unexpected \`await\` of a non-Promise (non-"Thenable") value.",
+    "related": [],
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/await-thenable.html",
+  },
+  {
+    "causes": [],
+    "code": "typescript-eslint(await-thenable)",
+    "filename": "fixtures/type-aware/await-thenable.ts",
+    "labels": [
+      {
+        "span": {
+          "column": 1,
+          "length": 5,
+          "line": 5,
+          "offset": 51,
+        },
+      },
+    ],
+    "message": "Unexpected \`await\` of a non-Promise (non-"Thenable") value.",
+    "related": [],
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/await-thenable.html",
+  },
+  {
+    "causes": [],
+    "code": "typescript-eslint(await-thenable)",
+    "filename": "fixtures/type-aware/await-thenable.ts",
+    "labels": [
+      {
+        "span": {
+          "column": 1,
+          "length": 5,
+          "line": 6,
+          "offset": 70,
+        },
+      },
+    ],
+    "message": "Unexpected \`await\` of a non-Promise (non-"Thenable") value.",
+    "related": [],
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/await-thenable.html",
+  },
+  {
+    "causes": [],
+    "code": "typescript-eslint(await-thenable)",
+    "filename": "fixtures/type-aware/await-thenable.ts",
+    "labels": [
+      {
+        "span": {
+          "column": 1,
+          "length": 5,
+          "line": 10,
+          "offset": 207,
+        },
+      },
+    ],
+    "message": "Unexpected \`await\` of a non-Promise (non-"Thenable") value.",
+    "related": [],
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/await-thenable.html",
+  },
+  {
+    "causes": [],
+    "code": "eslint(id-length)",
+    "filename": "fixtures/type-aware/no-unsafe-type-assertion.ts",
+    "labels": [
+      {
+        "span": {
+          "column": 27,
+          "length": 1,
+          "line": 1,
+          "offset": 26,
+        },
+      },
+    ],
+    "message": "Identifier name is too short (< 2).",
+    "related": [],
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/eslint/id-length.html",
+  },
+  {
+    "causes": [],
+    "code": "typescript-eslint(no-explicit-any)",
+    "filename": "fixtures/type-aware/no-unsafe-type-assertion.ts",
+    "help": "Use \`unknown\` instead, this will force you to explicitly, and safely, assert the type is correct.",
+    "labels": [
+      {
+        "span": {
+          "column": 19,
+          "length": 3,
+          "line": 2,
+          "offset": 67,
+        },
+      },
+    ],
+    "message": "Unexpected \`any\`. Specify a different type.",
+    "related": [],
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/no-explicit-any.html",
+  },
+  {
+    "causes": [],
+    "code": "typescript-eslint(no-unnecessary-type-parameters)",
+    "filename": "fixtures/type-aware/no-unsafe-type-assertion.ts",
+    "labels": [
+      {
+        "label": "This is the only usage of type parameter T in the signature.",
+        "span": {
+          "column": 46,
+          "length": 1,
+          "line": 1,
+          "offset": 45,
+        },
+      },
+      {
+        "span": {
+          "column": 27,
+          "length": 1,
+          "line": 1,
+          "offset": 26,
+        },
+      },
+    ],
+    "message": "Type parameter T is used only once in the function signature.",
+    "related": [],
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/no-unnecessary-type-parameters.html",
+  },
+  {
+    "causes": [],
+    "code": "typescript-eslint(no-unsafe-type-assertion)",
+    "filename": "fixtures/type-aware/no-unsafe-type-assertion.ts",
+    "labels": [
+      {
+        "span": {
+          "column": 10,
+          "length": 17,
+          "line": 2,
+          "offset": 58,
+        },
+      },
+    ],
+    "message": "Unsafe assertion from \`any\` detected: consider using type guards or a safer assertion.",
+    "related": [],
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/no-unsafe-type-assertion.html",
+  },
+  {
+    "causes": [],
+    "code": "typescript-eslint(no-unsafe-type-assertion)",
+    "filename": "fixtures/type-aware/no-unsafe-type-assertion.ts",
+    "labels": [
+      {
+        "span": {
+          "column": 10,
+          "length": 12,
+          "line": 2,
+          "offset": 58,
+        },
+      },
+    ],
+    "message": "Unsafe assertion to \`any\` detected: consider using a more specific type to ensure safety.",
+    "related": [],
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/no-unsafe-type-assertion.html",
   },
 ]
 `;
@@ -478,6 +717,26 @@ exports[`config > typescript 1`] = `
     "related": [],
     "severity": "error",
     "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/no-unnecessary-condition.html",
+  },
+  {
+    "causes": [],
+    "code": "eslint(prefer-destructuring)",
+    "filename": "fixtures/typescript/prefer-destructing.ts",
+    "help": "Use array destructuring rather than direct member access.",
+    "labels": [
+      {
+        "span": {
+          "column": 28,
+          "length": 8,
+          "line": 6,
+          "offset": 148,
+        },
+      },
+    ],
+    "message": "Use Array destructuring.",
+    "related": [],
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/eslint/prefer-destructuring.html",
   },
   {
     "causes": [],

@@ -6,16 +6,31 @@ const baseConfig = defineConfig({
 
   rules: {
     // https://oxc.rs/docs/guide/usage/linter/rules.html?sort=name&dir=asc&scope=eslint
+
     'accessor-pairs': 'error',
     'array-callback-return': 'error',
-    'arrow-body-style': 'error',
+
+    // https://oxc.rs/docs/guide/usage/linter/rules/eslint/arrow-body-style.html
+    'arrow-body-style': [
+      'error',
+      'as-needed',
+      {
+        requireReturnForObjectLiteral: false,
+      },
+    ],
+
     'block-scoped-var': 'error',
-    'capitalized-comments': 'error',
+    'capitalized-comments': 'off',
     'class-methods-use-this': 'error',
     complexity: 'error',
     'constructor-super': 'error',
+
+    // https://oxc.rs/docs/guide/usage/linter/rules/eslint/curly.html
     curly: ['error', 'all'],
-    'default-case': 'error',
+
+    // https://oxc.rs/docs/guide/usage/linter/rules/eslint/default-case.html
+    'default-case': ['error', { commentPattern: '^no default$' }],
+
     'default-case-last': 'error',
     'default-param-last': 'error',
     eqeqeq: 'error',
@@ -28,13 +43,31 @@ const baseConfig = defineConfig({
     'id-length': 'error',
     'init-declarations': 'error',
     'max-classes-per-file': 'error',
-    'max-depth': 'error',
+
+    // https://oxc.rs/docs/guide/usage/linter/rules/eslint/max-depth.html
+    'max-depth': ['error', { max: 4 }],
+
     'max-lines': 'error',
     'max-lines-per-function': 'error',
-    'max-nested-callbacks': 'error',
+
+    // https://oxc.rs/docs/guide/usage/linter/rules/eslint/max-nested-callbacks.html
+    'max-nested-callbacks': ['error', { max: 5 }],
+
     'max-params': 'error',
     'max-statements': 'error',
-    'new-cap': 'error',
+
+    // https://oxc.rs/docs/guide/usage/linter/rules/eslint/new-cap.html
+    'new-cap': [
+      'error',
+      {
+        newIsCap: true,
+        newIsCapExceptions: [],
+        capIsNew: false,
+        capIsNewExceptions: ['Immutable.Map', 'Immutable.Set', 'Immutable.List'],
+        properties: true,
+      },
+    ],
+
     'no-alert': 'error',
     'no-array-constructor': 'error',
     'no-async-promise-executor': 'error',
@@ -60,13 +93,21 @@ const baseConfig = defineConfig({
     'no-dupe-keys': 'error',
     'no-duplicate-case': 'error',
     'no-duplicate-imports': 'error',
-    'no-else-return': 'error',
+
+    // https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-else-return.html
+    'no-else-return': ['error', { allowElseIf: false }],
+
     'no-empty': 'error',
     'no-empty-character-class': 'error',
-    'no-empty-function': 'error',
+
+    // https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-empty-function.html
+    'no-empty-function': ['error', { allow: ['constructors', 'arrowFunctions', 'methods'] }],
     'no-empty-pattern': 'error',
     'no-empty-static-block': 'error',
-    'no-eq-null': 'error',
+
+    /** handled by eqeqeq rule */
+    'no-eq-null': 'off',
+
     'no-eval': 'error',
     'no-ex-assign': 'error',
     'no-extend-native': 'error',
@@ -76,7 +117,10 @@ const baseConfig = defineConfig({
     'no-fallthrough': 'error',
     'no-func-assign': 'error',
     'no-global-assign': 'error',
-    'no-implicit-coercion': 'error',
+
+    // https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-implicit-coercion.html
+    'no-implicit-coercion': ['error', { allow: ['!!'] }],
+
     'no-import-assign': 'error',
     'no-inline-comments': 'error',
     'no-inner-declarations': 'error',
@@ -84,7 +128,10 @@ const baseConfig = defineConfig({
     'no-irregular-whitespace': 'error',
     'no-iterator': 'error',
     'no-label-var': 'error',
-    'no-labels': 'error',
+
+    // https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-labels.html
+    'no-labels': ['error', { allowLoop: false, allowSwitch: false }],
+
     'no-lone-blocks': 'error',
     'no-lonely-if': 'error',
     'no-loop-func': 'error',
@@ -129,7 +176,10 @@ const baseConfig = defineConfig({
     'no-undefined': 'error',
     'no-unexpected-multiline': 'error',
     'no-unmodified-loop-condition': 'error',
-    'no-unneeded-ternary': 'error',
+
+    // https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-unneeded-ternary.html
+    'no-unneeded-ternary': ['error', { defaultAssignment: false }],
+
     'no-unreachable': 'error',
     'no-unsafe-finally': 'error',
     'no-unsafe-negation': 'error',
@@ -146,20 +196,68 @@ const baseConfig = defineConfig({
     'no-useless-concat': 'error',
     'no-useless-constructor': 'error',
     'no-useless-escape': 'error',
-    'no-useless-rename': 'error',
+
+    // https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-useless-rename.html
+    'no-useless-rename': [
+      'error',
+      {
+        ignoreDestructuring: false,
+        ignoreImport: false,
+        ignoreExport: false,
+      },
+    ],
+
     'no-useless-return': 'error',
     'no-var': 'error',
-    'no-void': 'error',
+
+    // https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-void.html
+    'no-void': ['error', { allowAsStatement: true }],
+
     'no-warning-comments': 'error',
     'no-with': 'error',
+
+    // 'object-shorthand': ['error', 'always', { ignoreConstructors: false, avoidQuotes: true }],
+
+    // 'one-var': ['error', 'never'],
+
+    // 'prefer-arrow-callback': [
+    //   'error',
+    //   { allowNamedFunctions: false, allowUnboundThis: true },
+    // ],
+
     'operator-assignment': 'error',
-    'prefer-const': 'error',
-    'prefer-destructuring': 'error',
+
+    // https://oxc.rs/docs/guide/usage/linter/rules/eslint/prefer-const.html
+    'prefer-const': [
+      'error',
+      {
+        destructuring: 'any',
+        ignoreReadBeforeAssign: true,
+      },
+    ],
+
+    'prefer-destructuring': [
+      'error',
+      {
+        VariableDeclarator: {
+          array: true,
+          object: true,
+        },
+        AssignmentExpression: {
+          array: false,
+          object: false,
+        },
+        enforceForRenamedProperties: false,
+      },
+    ],
     'prefer-exponentiation-operator': 'error',
     'prefer-numeric-literals': 'error',
     'prefer-object-has-own': 'error',
     'prefer-object-spread': 'error',
     'prefer-promise-reject-errors': 'error',
+
+    // 'prefer-regex-literals': ['error', { disallowRedundantWrapping: true }],
+
     'prefer-rest-params': 'error',
     'prefer-spread': 'error',
     'prefer-template': 'error',
@@ -171,14 +269,18 @@ const baseConfig = defineConfig({
     'sort-keys': 'error',
     'sort-vars': 'error',
     'symbol-description': 'error',
-    'unicode-bom': 'error',
+
+    // https://oxc.rs/docs/guide/usage/linter/rules/eslint/unicode-bom.html#eslint-unicode-bom
+    'unicode-bom': ['error', 'never'],
+
     'use-isnan': 'error',
     'valid-typeof': 'error',
-    'vars-on-top': 'error',
+    'vars-on-top': 'off',
     yoda: 'error',
 
     // https://oxc.rs/docs/guide/usage/linter/rules.html?sort=name&dir=asc&scope=import
-    'import-x/consistent-type-specifier-style': ['error', 'prefer-top-level'],
+    'import/consistent-type-specifier-style': ['error', 'prefer-top-level'],
+
     'import/default': 'error',
     'import/export': 'error',
     'import/exports-last': 'error',

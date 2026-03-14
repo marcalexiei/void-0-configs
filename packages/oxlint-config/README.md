@@ -31,5 +31,18 @@ export default defineConfig({
 ```
 
 > ⚠️ NOTE
-> Typescript config has rules that need type aware option enable
+> Typescript config has rules that require type aware option to be enabled
 > See <https://oxc.rs/docs/guide/usage/linter/type-aware>
+
+```ts
+import { baseConfig } from '@marcalexiei/oxlint-config/base';
+import { typescriptConfig } from '@marcalexiei/oxlint-config/typescript';
+import { defineConfig } from 'oxlint';
+
+export default defineConfig({
+  extends: [baseConfig, typescriptConfig],
+  options: {
+    typeAware: true,
+  },
+});
+```

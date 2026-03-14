@@ -72,7 +72,7 @@ describe('config', () => {
   });
 
   it('type-aware', async () => {
-    const { code, diagnostics } = await run('./fixtures/import-type');
+    const { code, diagnostics } = await run('./fixtures/type-aware');
 
     expect(code).toBe(1);
     expect(diagnostics).toMatchSnapshot();

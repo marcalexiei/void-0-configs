@@ -1,6 +1,6 @@
 {
   "$schema": "https://raw.githubusercontent.com/streetsidesoftware/cspell/main/cspell.schema.json",
-  "words": ["oxfmt"],
+  "words": ["oxfmt", "oxlint", "tsgolint"],
   "useGitignore": true,
   "ignorePaths": ["**/*-lock.yaml", "profile/*.svg"]
 }

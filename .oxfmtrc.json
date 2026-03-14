@@ -16,5 +16,5 @@
     ],
     "newlinesBetween": true
   },
-  "ignorePatterns": ["**/dist", "**/tests/fixtures", "**/CHANGELOG.md"]
+  "ignorePatterns": ["**/dist", "**/oxfmt-config/tests/fixtures", "**/CHANGELOG.md"]
 }

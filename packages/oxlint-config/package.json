@@ -1,0 +1,48 @@
+{
+  "name": "@marcalexiei/oxlint-config",
+  "version": "0.0.1",
+  "description": "Custom oxlint config",
+  "keywords": [
+    "config",
+    "format",
+    "oxc",
+    "oxlint"
+  ],
+  "homepage": "https://github.com/marcalexiei/void-0-configs/tree/main/packages/oxlint-config#readme",
+  "license": "MIT",
+  "author": "Marco Pasqualetti @marcalexiei",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marcalexiei/void-0-configs.git",
+    "directory": "packages/oxlint-config"
+  },
+  "files": [
+    "src"
+  ],
+  "type": "module",
+  "exports": {
+    "./base": "./dist/base.js",
+    "./typescript": "./dist/typescript.js"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc"
+  },
+  "devDependencies": {
+    "@types/node": "catalog:",
+    "oxlint": "catalog:",
+    "oxlint-tsgolint": "catalog:"
+  },
+  "peerDependencies": {
+    "oxlint": "^0.40.0",
+    "oxlint-tsgolint": "^0.16.0"
+  },
+  "peerDependenciesMeta": {
+    "oxlint-tsgolint": {
+      "optional": true
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "name": "playground",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "lint": "oxlint . --ignore-pattern=fixtures",
+    "test": "vitest"
+  },
+  "devDependencies": {
+    "@marcalexiei/oxlint-config": "workspace:*",
+    "@types/node": "catalog:",
+    "oxlint": "catalog:",
+    "oxlint-tsgolint": "catalog:"
+  }
+}

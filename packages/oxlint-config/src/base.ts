@@ -40,21 +40,34 @@ const baseConfig = defineConfig({
     'getter-return': 'error',
     'grouped-accessor-pairs': 'error',
     'guard-for-in': 'error',
-    'id-length': 'error',
+    'id-length': [
+      'error',
+      {
+        exceptions: [
+          // for test context
+          't',
+        ],
+      },
+    ],
     'init-declarations': 'error',
     'max-classes-per-file': 'error',
 
     // https://oxc.rs/docs/guide/usage/linter/rules/eslint/max-depth.html
     'max-depth': ['error', { max: 4 }],
 
-    'max-lines': 'error',
-    'max-lines-per-function': 'error',
+    // https://oxc.rs/docs/guide/usage/linter/rules/eslint/max-lines.html
+    'max-lines': ['error', { max: 500 }],
+
+    // https://oxc.rs/docs/guide/usage/linter/rules/eslint/max-lines-per-function.html
+    'max-lines-per-function': ['error', { max: 100 }],
 
     // https://oxc.rs/docs/guide/usage/linter/rules/eslint/max-nested-callbacks.html
     'max-nested-callbacks': ['error', { max: 5 }],
 
     'max-params': 'error',
-    'max-statements': 'error',
+
+    // https://oxc.rs/docs/guide/usage/linter/rules/eslint/max-statements.html
+    'max-statements': ['error', { max: 15 }],
 
     // https://oxc.rs/docs/guide/usage/linter/rules/eslint/new-cap.html
     'new-cap': [
@@ -92,7 +105,14 @@ const baseConfig = defineConfig({
     'no-dupe-else-if': 'error',
     'no-dupe-keys': 'error',
     'no-duplicate-case': 'error',
-    'no-duplicate-imports': 'error',
+
+    // https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-duplicate-imports.html
+    'no-duplicate-imports': [
+      'error',
+      {
+        allowSeparateTypeImports: true,
+      },
+    ],
 
     // https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-else-return.html
     'no-else-return': ['error', { allowElseIf: false }],
@@ -286,7 +306,10 @@ const baseConfig = defineConfig({
     'import/exports-last': 'error',
     'import/extensions': 'error',
     'import/first': 'error',
-    'import/group-exports': 'error',
+
+    // https://oxc.rs/docs/guide/usage/linter/rules/import/group-exports.html
+    'import/group-exports': 'off',
+
     'import/max-dependencies': 'error',
     'import/named': 'error',
     'import/namespace': 'error',
@@ -306,7 +329,10 @@ const baseConfig = defineConfig({
     'import/no-named-export': 'off',
     'import/no-namespace': 'error',
     'import/no-nodejs-modules': 'off',
-    'import/no-relative-parent-imports': 'error',
+
+    // https://oxc.rs/docs/guide/usage/linter/rules/import/no-relative-parent-imports.html
+    'import/no-relative-parent-imports': 'off',
+
     'import/no-self-import': 'error',
     'import/no-unassigned-import': 'error',
     'import/no-webpack-loader-syntax': 'error',

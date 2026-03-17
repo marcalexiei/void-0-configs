@@ -77,10 +77,7 @@ const typescriptConfig = defineConfig({
     'typescript/no-useless-empty-export': 'error',
     'typescript/no-var-requires': 'error',
     'typescript/no-wrapper-object-types': 'error',
-
-    // Disabled to avoid conflicts with @typescript-eslint/non-nullable-type-assertion-style
     'typescript/non-nullable-type-assertion-style': 'off',
-
     'typescript/only-throw-error': 'error',
     'typescript/parameter-properties': 'error',
     'typescript/prefer-as-const': 'error',
@@ -95,7 +92,7 @@ const typescriptConfig = defineConfig({
     'typescript/prefer-optional-chain': 'error',
     'typescript/prefer-promise-reject-errors': 'error',
     'typescript/prefer-readonly': 'error',
-    'typescript/prefer-readonly-parameter-types': 'error',
+    'typescript/prefer-readonly-parameter-types': 'off',
     'typescript/prefer-reduce-type-parameter': 'error',
     'typescript/prefer-regexp-exec': 'error',
     'typescript/prefer-return-this-type': 'error',
@@ -108,7 +105,15 @@ const typescriptConfig = defineConfig({
     'typescript/restrict-plus-operands': 'error',
     'typescript/restrict-template-expressions': 'error',
     'typescript/return-await': 'error',
-    'typescript/strict-boolean-expressions': 'error',
+
+    // https://oxc.rs/docs/guide/usage/linter/rules/typescript/strict-boolean-expressions.html
+    'typescript/strict-boolean-expressions': [
+      'error',
+      {
+        allowNullableBoolean: true,
+      },
+    ],
+
     'typescript/strict-void-return': 'error',
     'typescript/switch-exhaustiveness-check': 'error',
     'typescript/triple-slash-reference': 'error',

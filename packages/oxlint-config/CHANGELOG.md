@@ -1,5 +1,11 @@
 # @marcalexiei/oxlint-config
 
+## 1.0.1
+
+### Patch Changes
+
+- [`8cc0c2c`](https://github.com/marcalexiei/void-0-configs/commit/8cc0c2c330b764e506fb8265058e24bdd9efa7ad) Thanks [@marcalexiei](https://github.com/marcalexiei)! - fix: version bump due to wrong OIDC config on oxlint-config
+
 ## 1.0.0
 
 ### Major Changes

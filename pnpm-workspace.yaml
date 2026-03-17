@@ -3,4 +3,7 @@ packages:
   - ./tests/**
 
 catalog:
-  'oxfmt': '0.40.0'
+  '@types/node': '24.12.0'
+  'oxfmt': '0.41.0'
+  'oxlint': '^1.55.0'
+  'oxlint-tsgolint': '^0.16.0'

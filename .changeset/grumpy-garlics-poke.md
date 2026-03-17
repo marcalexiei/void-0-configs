@@ -1,5 +1,5 @@
 ---
-"@marcalexiei/oxfmt-config": patch
+'@marcalexiei/oxfmt-config': patch
 ---
 
 feat(oxfmt): add package meta

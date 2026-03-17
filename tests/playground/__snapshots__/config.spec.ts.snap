@@ -1,0 +1,893 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`config > import-no-cycle 1`] = `
+[
+  {
+    "causes": [],
+    "code": "eslint-plugin-import(no-cycle)",
+    "filename": "fixtures/import-no-cycle/a.ts",
+    "help": "Refactor to remove the cycle. Consider extracting shared code into a separate module that both files can import.",
+    "labels": [
+      {
+        "span": {
+          "column": 22,
+          "length": 5,
+          "line": 1,
+          "offset": 21,
+        },
+      },
+    ],
+    "message": "Dependency cycle detected",
+    "note": "These paths form a cycle:
+╭──▶ ./b (fixtures/import-no-cycle/b.ts)
+│         ⬇ imports
+│    ./a (fixtures/import-no-cycle/a.ts)
+╰─────────╯ imports the current file",
+    "related": [],
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/import/no-cycle.html",
+  },
+  {
+    "causes": [],
+    "code": "eslint-plugin-import(no-cycle)",
+    "filename": "fixtures/import-no-cycle/b.ts",
+    "help": "Refactor to remove the cycle. Consider extracting shared code into a separate module that both files can import.",
+    "labels": [
+      {
+        "span": {
+          "column": 22,
+          "length": 5,
+          "line": 1,
+          "offset": 21,
+        },
+      },
+    ],
+    "message": "Dependency cycle detected",
+    "note": "These paths form a cycle:
+╭──▶ ./a (fixtures/import-no-cycle/a.ts)
+│         ⬇ imports
+│    ./b (fixtures/import-no-cycle/b.ts)
+╰─────────╯ imports the current file",
+    "related": [],
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/import/no-cycle.html",
+  },
+]
+`;
+
+exports[`config > import-type 1`] = `
+[
+  {
+    "causes": [],
+    "code": "eslint-plugin-import(consistent-type-specifier-style)",
+    "filename": "fixtures/import-type/index.ts",
+    "help": "Replace inline type specifiers with a top‐level import type statement.",
+    "labels": [
+      {
+        "span": {
+          "column": 29,
+          "length": 12,
+          "line": 2,
+          "offset": 98,
+        },
+      },
+    ],
+    "message": "Prefer using a top-level type-only import instead of inline type specifiers.",
+    "related": [],
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/import/consistent-type-specifier-style.html",
+  },
+  {
+    "causes": [],
+    "code": "typescript-eslint(consistent-type-imports)",
+    "filename": "fixtures/import-type/index.ts",
+    "help": "Replace the \`import\` declaration with \`import type\`. For example, change \`import { Type } from 'module'\` would become \`import type { Type } from 'module'\`.",
+    "labels": [
+      {
+        "span": {
+          "column": 1,
+          "length": 32,
+          "line": 4,
+          "offset": 194,
+        },
+      },
+    ],
+    "message": "All imports in the declaration are only used as types. Use \`import type\`.",
+    "note": "Using \`import type\` for type-only imports helps with tree-shaking, makes it clear that these imports don't affect runtime code, and can improve build performance by allowing bundlers to eliminate unused type imports.",
+    "related": [],
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/consistent-type-imports.html",
+  },
+]
+`;
+
+exports[`config > type-aware 1`] = `
+[
+  {
+    "causes": [],
+    "code": "typescript-eslint(explicit-function-return-type)",
+    "filename": "fixtures/type-aware/await-thenable.ts",
+    "help": "Require explicit return types on functions and class methods.",
+    "labels": [
+      {
+        "span": {
+          "column": 11,
+          "length": 2,
+          "line": 2,
+          "offset": 20,
+        },
+      },
+    ],
+    "message": "Missing return type on function.",
+    "related": [],
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/explicit-function-return-type.html",
+  },
+  {
+    "causes": [],
+    "code": "typescript-eslint(explicit-function-return-type)",
+    "filename": "fixtures/type-aware/await-thenable.ts",
+    "help": "Require explicit return types on functions and class methods.",
+    "labels": [
+      {
+        "span": {
+          "column": 9,
+          "length": 4,
+          "line": 6,
+          "offset": 78,
+        },
+      },
+    ],
+    "message": "Missing return type on function.",
+    "related": [],
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/explicit-function-return-type.html",
+  },
+  {
+    "causes": [],
+    "code": "typescript-eslint(await-thenable)",
+    "filename": "fixtures/type-aware/await-thenable.ts",
+    "labels": [
+      {
+        "span": {
+          "column": 1,
+          "length": 5,
+          "line": 1,
+          "offset": 0,
+        },
+      },
+    ],
+    "message": "Unexpected \`await\` of a non-Promise (non-"Thenable") value.",
+    "related": [],
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/await-thenable.html",
+  },
+  {
+    "causes": [],
+    "code": "typescript-eslint(await-thenable)",
+    "filename": "fixtures/type-aware/await-thenable.ts",
+    "labels": [
+      {
+        "span": {
+          "column": 1,
+          "length": 5,
+          "line": 2,
+          "offset": 10,
+        },
+      },
+    ],
+    "message": "Unexpected \`await\` of a non-Promise (non-"Thenable") value.",
+    "related": [],
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/await-thenable.html",
+  },
+  {
+    "causes": [],
+    "code": "typescript-eslint(await-thenable)",
+    "filename": "fixtures/type-aware/await-thenable.ts",
+    "labels": [
+      {
+        "span": {
+          "column": 1,
+          "length": 5,
+          "line": 5,
+          "offset": 51,
+        },
+      },
+    ],
+    "message": "Unexpected \`await\` of a non-Promise (non-"Thenable") value.",
+    "related": [],
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/await-thenable.html",
+  },
+  {
+    "causes": [],
+    "code": "typescript-eslint(await-thenable)",
+    "filename": "fixtures/type-aware/await-thenable.ts",
+    "labels": [
+      {
+        "span": {
+          "column": 1,
+          "length": 5,
+          "line": 6,
+          "offset": 70,
+        },
+      },
+    ],
+    "message": "Unexpected \`await\` of a non-Promise (non-"Thenable") value.",
+    "related": [],
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/await-thenable.html",
+  },
+  {
+    "causes": [],
+    "code": "typescript-eslint(await-thenable)",
+    "filename": "fixtures/type-aware/await-thenable.ts",
+    "labels": [
+      {
+        "span": {
+          "column": 1,
+          "length": 5,
+          "line": 10,
+          "offset": 207,
+        },
+      },
+    ],
+    "message": "Unexpected \`await\` of a non-Promise (non-"Thenable") value.",
+    "related": [],
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/await-thenable.html",
+  },
+  {
+    "causes": [],
+    "code": "eslint(id-length)",
+    "filename": "fixtures/type-aware/no-unsafe-type-assertion.ts",
+    "labels": [
+      {
+        "span": {
+          "column": 27,
+          "length": 1,
+          "line": 1,
+          "offset": 26,
+        },
+      },
+    ],
+    "message": "Identifier name is too short (< 2).",
+    "related": [],
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/eslint/id-length.html",
+  },
+  {
+    "causes": [],
+    "code": "typescript-eslint(no-explicit-any)",
+    "filename": "fixtures/type-aware/no-unsafe-type-assertion.ts",
+    "help": "Use \`unknown\` instead, this will force you to explicitly, and safely, assert the type is correct.",
+    "labels": [
+      {
+        "span": {
+          "column": 19,
+          "length": 3,
+          "line": 2,
+          "offset": 67,
+        },
+      },
+    ],
+    "message": "Unexpected \`any\`. Specify a different type.",
+    "related": [],
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/no-explicit-any.html",
+  },
+  {
+    "causes": [],
+    "code": "typescript-eslint(no-unnecessary-type-parameters)",
+    "filename": "fixtures/type-aware/no-unsafe-type-assertion.ts",
+    "labels": [
+      {
+        "label": "This is the only usage of type parameter T in the signature.",
+        "span": {
+          "column": 46,
+          "length": 1,
+          "line": 1,
+          "offset": 45,
+        },
+      },
+      {
+        "span": {
+          "column": 27,
+          "length": 1,
+          "line": 1,
+          "offset": 26,
+        },
+      },
+    ],
+    "message": "Type parameter T is used only once in the function signature.",
+    "related": [],
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/no-unnecessary-type-parameters.html",
+  },
+  {
+    "causes": [],
+    "code": "typescript-eslint(no-unsafe-type-assertion)",
+    "filename": "fixtures/type-aware/no-unsafe-type-assertion.ts",
+    "labels": [
+      {
+        "span": {
+          "column": 10,
+          "length": 17,
+          "line": 2,
+          "offset": 58,
+        },
+      },
+    ],
+    "message": "Unsafe assertion from \`any\` detected: consider using type guards or a safer assertion.",
+    "related": [],
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/no-unsafe-type-assertion.html",
+  },
+  {
+    "causes": [],
+    "code": "typescript-eslint(no-unsafe-type-assertion)",
+    "filename": "fixtures/type-aware/no-unsafe-type-assertion.ts",
+    "labels": [
+      {
+        "span": {
+          "column": 10,
+          "length": 12,
+          "line": 2,
+          "offset": 58,
+        },
+      },
+    ],
+    "message": "Unsafe assertion to \`any\` detected: consider using a more specific type to ensure safety.",
+    "related": [],
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/no-unsafe-type-assertion.html",
+  },
+]
+`;
+
+exports[`config > typescript 1`] = `
+[
+  {
+    "causes": [],
+    "code": "eslint-plugin-import(unambiguous)",
+    "filename": "fixtures/typescript/example.ts",
+    "help": "Add at least one import or export statement to unambiguously mark this file as a module",
+    "labels": [
+      {
+        "span": {
+          "column": 1,
+          "length": 0,
+          "line": 1,
+          "offset": 0,
+        },
+      },
+    ],
+    "message": "This module could be mistakenly parsed as script instead of module",
+    "related": [],
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/import/unambiguous.html",
+  },
+  {
+    "causes": [],
+    "code": "eslint(guard-for-in)",
+    "filename": "fixtures/typescript/example.ts",
+    "help": "The body of a for-in should be wrapped in an if statement to filter unwanted properties from the prototype.",
+    "labels": [
+      {
+        "span": {
+          "column": 1,
+          "length": 19,
+          "line": 4,
+          "offset": 46,
+        },
+      },
+    ],
+    "message": "Require \`for-in\` loops to include an \`if\` statement",
+    "related": [],
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/eslint/guard-for-in.html",
+  },
+  {
+    "causes": [],
+    "code": "eslint(id-length)",
+    "filename": "fixtures/typescript/example.ts",
+    "labels": [
+      {
+        "span": {
+          "column": 7,
+          "length": 1,
+          "line": 1,
+          "offset": 6,
+        },
+      },
+    ],
+    "message": "Identifier name is too short (< 2).",
+    "related": [],
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/eslint/id-length.html",
+  },
+  {
+    "causes": [],
+    "code": "eslint(id-length)",
+    "filename": "fixtures/typescript/example.ts",
+    "labels": [
+      {
+        "span": {
+          "column": 12,
+          "length": 1,
+          "line": 4,
+          "offset": 57,
+        },
+      },
+    ],
+    "message": "Identifier name is too short (< 2).",
+    "related": [],
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/eslint/id-length.html",
+  },
+  {
+    "causes": [],
+    "code": "eslint(no-console)",
+    "filename": "fixtures/typescript/example.ts",
+    "help": "Delete this console statement.",
+    "labels": [
+      {
+        "span": {
+          "column": 1,
+          "length": 12,
+          "line": 3,
+          "offset": 25,
+        },
+      },
+    ],
+    "message": "Unexpected console statement.",
+    "related": [],
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-console.html",
+  },
+  {
+    "causes": [],
+    "code": "eslint(no-console)",
+    "filename": "fixtures/typescript/example.ts",
+    "help": "Delete this console statement.",
+    "labels": [
+      {
+        "span": {
+          "column": 3,
+          "length": 12,
+          "line": 5,
+          "offset": 70,
+        },
+      },
+    ],
+    "message": "Unexpected console statement.",
+    "related": [],
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-console.html",
+  },
+  {
+    "causes": [],
+    "code": "eslint(no-console)",
+    "filename": "fixtures/typescript/example.ts",
+    "help": "Delete this console statement.",
+    "labels": [
+      {
+        "span": {
+          "column": 3,
+          "length": 11,
+          "line": 10,
+          "offset": 149,
+        },
+      },
+    ],
+    "message": "Unexpected console statement.",
+    "related": [],
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-console.html",
+  },
+  {
+    "causes": [],
+    "code": "eslint(no-constant-condition)",
+    "filename": "fixtures/typescript/example.ts",
+    "help": "Update the condition to not be constant, or remove the condition entirely",
+    "labels": [
+      {
+        "label": "this expression will always evaluate to the same value",
+        "span": {
+          "column": 5,
+          "length": 4,
+          "line": 8,
+          "offset": 99,
+        },
+      },
+    ],
+    "message": "Unexpected constant condition",
+    "related": [],
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-constant-condition.html",
+  },
+  {
+    "causes": [],
+    "code": "eslint(no-shadow)",
+    "filename": "fixtures/typescript/example.ts",
+    "help": "Consider renaming 'a' to avoid shadowing the variable from the outer scope.",
+    "labels": [
+      {
+        "label": "'a' is declared here",
+        "span": {
+          "column": 12,
+          "length": 1,
+          "line": 4,
+          "offset": 57,
+        },
+      },
+      {
+        "label": "shadowed declaration is here",
+        "span": {
+          "column": 7,
+          "length": 1,
+          "line": 1,
+          "offset": 6,
+        },
+      },
+    ],
+    "message": "'a' is already declared in the upper scope.",
+    "related": [],
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-shadow.html",
+  },
+  {
+    "causes": [],
+    "code": "eslint(no-unused-vars)",
+    "filename": "fixtures/typescript/example.ts",
+    "help": "Consider removing this declaration.",
+    "labels": [
+      {
+        "label": "'a' is declared here",
+        "span": {
+          "column": 7,
+          "length": 1,
+          "line": 1,
+          "offset": 6,
+        },
+      },
+    ],
+    "message": "Variable 'a' is declared but never used. Unused variables should start with a '_'.",
+    "related": [],
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-unused-vars.html",
+  },
+  {
+    "causes": [],
+    "code": "eslint(no-unused-vars)",
+    "filename": "fixtures/typescript/example.ts",
+    "help": "Consider removing this declaration.",
+    "labels": [
+      {
+        "label": "'a' is declared here",
+        "span": {
+          "column": 12,
+          "length": 1,
+          "line": 4,
+          "offset": 57,
+        },
+      },
+    ],
+    "message": "Variable 'a' is declared but never used. Unused variables should start with a '_'.",
+    "related": [],
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-unused-vars.html",
+  },
+  {
+    "causes": [],
+    "code": "typescript-eslint(array-type)",
+    "filename": "fixtures/typescript/example.ts",
+    "help": "Replace \`string[]\` with \`Array<string>\`.",
+    "labels": [
+      {
+        "span": {
+          "column": 10,
+          "length": 8,
+          "line": 1,
+          "offset": 9,
+        },
+      },
+    ],
+    "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead.",
+    "related": [],
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/array-type.html",
+  },
+  {
+    "causes": [],
+    "code": "typescript-eslint(ban-ts-comment)",
+    "filename": "fixtures/typescript/example.ts",
+    "help": "Replace "@ts-ignore" with "@ts-expect-error".",
+    "labels": [
+      {
+        "span": {
+          "column": 5,
+          "length": 35,
+          "line": 9,
+          "offset": 111,
+        },
+      },
+    ],
+    "message": "Use "@ts-expect-error" instead of @ts-ignore, as "@ts-ignore" will do nothing if the following line is error-free.",
+    "related": [],
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/ban-ts-comment.html",
+  },
+  {
+    "causes": [],
+    "code": "typescript-eslint(prefer-ts-expect-error)",
+    "filename": "fixtures/typescript/example.ts",
+    "help": "Use "@ts-expect-error" to ensure an error is actually being suppressed.",
+    "labels": [
+      {
+        "span": {
+          "column": 3,
+          "length": 37,
+          "line": 9,
+          "offset": 109,
+        },
+      },
+    ],
+    "message": "Enforce using \`@ts-expect-error\` over \`@ts-ignore\`",
+    "related": [],
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/prefer-ts-expect-error.html",
+  },
+  {
+    "causes": [],
+    "code": "typescript-eslint(no-for-in-array)",
+    "filename": "fixtures/typescript/example.ts",
+    "help": "Use a more robust iteration method such as for-of or array.forEach instead.",
+    "labels": [
+      {
+        "span": {
+          "column": 1,
+          "length": 19,
+          "line": 4,
+          "offset": 46,
+        },
+      },
+    ],
+    "message": "For-in loops over arrays skips holes, returns indices as strings, and may visit the prototype chain or other enumerable properties.",
+    "related": [],
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/no-for-in-array.html",
+  },
+  {
+    "causes": [],
+    "code": "typescript-eslint(no-unnecessary-condition)",
+    "filename": "fixtures/typescript/example.ts",
+    "labels": [
+      {
+        "span": {
+          "column": 5,
+          "length": 4,
+          "line": 8,
+          "offset": 99,
+        },
+      },
+    ],
+    "message": "Unnecessary conditional, value is always truthy.",
+    "related": [],
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/no-unnecessary-condition.html",
+  },
+  {
+    "causes": [],
+    "code": "eslint(prefer-destructuring)",
+    "filename": "fixtures/typescript/prefer-destructing.ts",
+    "help": "Use array destructuring rather than direct member access.",
+    "labels": [
+      {
+        "span": {
+          "column": 28,
+          "length": 8,
+          "line": 6,
+          "offset": 148,
+        },
+      },
+    ],
+    "message": "Use Array destructuring.",
+    "related": [],
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/eslint/prefer-destructuring.html",
+  },
+  {
+    "causes": [],
+    "code": "typescript-eslint(no-explicit-any)",
+    "filename": "fixtures/typescript/unsafe-call.ts",
+    "help": "Use \`unknown\` instead, this will force you to explicitly, and safely, assert the type is correct.",
+    "labels": [
+      {
+        "span": {
+          "column": 17,
+          "length": 3,
+          "line": 1,
+          "offset": 16,
+        },
+      },
+    ],
+    "message": "Unexpected \`any\`. Specify a different type.",
+    "related": [],
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/no-explicit-any.html",
+  },
+  {
+    "causes": [],
+    "code": "typescript-eslint(no-unsafe-call)",
+    "filename": "fixtures/typescript/unsafe-call.ts",
+    "labels": [
+      {
+        "span": {
+          "column": 1,
+          "length": 8,
+          "line": 3,
+          "offset": 26,
+        },
+      },
+    ],
+    "message": "Unsafe call of a(n) \`any\` typed value.",
+    "related": [],
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/no-unsafe-call.html",
+  },
+  {
+    "causes": [],
+    "code": "typescript-eslint(no-unsafe-call)",
+    "filename": "fixtures/typescript/unsafe-call.ts",
+    "labels": [
+      {
+        "span": {
+          "column": 1,
+          "length": 8,
+          "line": 5,
+          "offset": 39,
+        },
+      },
+    ],
+    "message": "Unsafe call of a(n) \`any\` typed value.",
+    "related": [],
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/no-unsafe-call.html",
+  },
+  {
+    "causes": [],
+    "code": "typescript-eslint(no-unsafe-assignment)",
+    "filename": "fixtures/typescript/unsafe-call.ts",
+    "labels": [
+      {
+        "span": {
+          "column": 7,
+          "length": 26,
+          "line": 7,
+          "offset": 65,
+        },
+      },
+    ],
+    "message": "Unsafe assignment of an any value.",
+    "related": [],
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/no-unsafe-assignment.html",
+  },
+  {
+    "causes": [],
+    "code": "typescript-eslint(no-unsafe-call)",
+    "filename": "fixtures/typescript/unsafe-call.ts",
+    "labels": [
+      {
+        "span": {
+          "column": 16,
+          "length": 8,
+          "line": 7,
+          "offset": 74,
+        },
+      },
+    ],
+    "message": "Unsafe call of a(n) \`any\` typed value.",
+    "related": [],
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/no-unsafe-call.html",
+  },
+  {
+    "causes": [],
+    "code": "typescript-eslint(no-unsafe-call)",
+    "filename": "fixtures/typescript/unsafe-call.ts",
+    "labels": [
+      {
+        "span": {
+          "column": 1,
+          "length": 29,
+          "line": 10,
+          "offset": 118,
+        },
+      },
+    ],
+    "message": "Unsafe call of a(n) \`any\` typed value.",
+    "related": [],
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/no-unsafe-call.html",
+  },
+  {
+    "causes": [],
+    "code": "typescript-eslint(no-unsafe-member-access)",
+    "filename": "fixtures/typescript/unsafe-call.ts",
+    "labels": [
+      {
+        "span": {
+          "column": 25,
+          "length": 5,
+          "line": 10,
+          "offset": 142,
+        },
+      },
+    ],
+    "message": "Unsafe member access .catch on an \`any\` value.",
+    "related": [],
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/no-unsafe-member-access.html",
+  },
+  {
+    "causes": [],
+    "code": "typescript-eslint(no-unsafe-call)",
+    "filename": "fixtures/typescript/unsafe-call.ts",
+    "labels": [
+      {
+        "span": {
+          "column": 1,
+          "length": 21,
+          "line": 10,
+          "offset": 118,
+        },
+      },
+    ],
+    "message": "Unsafe call of a(n) \`any\` typed value.",
+    "related": [],
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/no-unsafe-call.html",
+  },
+  {
+    "causes": [],
+    "code": "typescript-eslint(no-unsafe-member-access)",
+    "filename": "fixtures/typescript/unsafe-call.ts",
+    "labels": [
+      {
+        "span": {
+          "column": 18,
+          "length": 4,
+          "line": 10,
+          "offset": 135,
+        },
+      },
+    ],
+    "message": "Unsafe member access .then on an \`any\` value.",
+    "related": [],
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/no-unsafe-member-access.html",
+  },
+  {
+    "causes": [],
+    "code": "typescript-eslint(no-unsafe-call)",
+    "filename": "fixtures/typescript/unsafe-call.ts",
+    "labels": [
+      {
+        "span": {
+          "column": 1,
+          "length": 8,
+          "line": 10,
+          "offset": 118,
+        },
+      },
+    ],
+    "message": "Unsafe call of a(n) \`any\` typed value.",
+    "related": [],
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/no-unsafe-call.html",
+  },
+]
+`;

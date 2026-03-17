@@ -27,10 +27,10 @@
   "scripts": {
     "build": "tsc -p tsconfig.build.json",
     "typecheck": "tsc",
-    "test": "vitest --run"
+    "test": "vitest"
   },
   "devDependencies": {
-    "@types/node": "24.12.0",
+    "@types/node": "catalog:",
     "oxfmt": "catalog:"
   },
   "peerDependencies": {

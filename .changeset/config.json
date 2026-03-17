@@ -1,9 +1,6 @@
 {
   "$schema": "https://unpkg.com/@changesets/config@3.0.3/schema.json",
-  "changelog": [
-    "@changesets/changelog-github",
-    { "repo": "marcalexiei/void-0-configs" }
-  ],
+  "changelog": ["@changesets/changelog-github", { "repo": "marcalexiei/void-0-configs" }],
   "commit": false,
   "fixed": [],
   "linked": [],

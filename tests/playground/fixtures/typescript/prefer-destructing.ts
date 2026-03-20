@@ -26,4 +26,4 @@
 const alfa = 1;
 const beta = { alfa: alfa };
 
-export {};
+export { beta };

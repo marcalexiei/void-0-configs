@@ -145,6 +145,66 @@ exports[`config > type-aware 1`] = `
   },
   {
     "causes": [],
+    "code": "eslint-plugin-unicorn(no-thenable)",
+    "filename": "fixtures/type-aware/await-thenable.ts",
+    "help": "If an object is defined as 'thenable', once it's accidentally used in an await expression, it may cause problems",
+    "labels": [
+      {
+        "span": {
+          "column": 9,
+          "length": 4,
+          "line": 6,
+          "offset": 78,
+        },
+      },
+    ],
+    "message": "Do not add \`then\` to an object.",
+    "related": [],
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/unicorn/no-thenable.html",
+  },
+  {
+    "causes": [],
+    "code": "eslint-plugin-unicorn(no-unnecessary-await)",
+    "filename": "fixtures/type-aware/await-thenable.ts",
+    "help": "Consider removing the \`await\`",
+    "labels": [
+      {
+        "span": {
+          "column": 1,
+          "length": 5,
+          "line": 1,
+          "offset": 0,
+        },
+      },
+    ],
+    "message": "Unexpected \`await\` on a non-Promise value",
+    "related": [],
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/unicorn/no-unnecessary-await.html",
+  },
+  {
+    "causes": [],
+    "code": "eslint-plugin-unicorn(no-unnecessary-await)",
+    "filename": "fixtures/type-aware/await-thenable.ts",
+    "help": "Consider removing the \`await\`",
+    "labels": [
+      {
+        "span": {
+          "column": 1,
+          "length": 5,
+          "line": 2,
+          "offset": 10,
+        },
+      },
+    ],
+    "message": "Unexpected \`await\` on a non-Promise value",
+    "related": [],
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/unicorn/no-unnecessary-await.html",
+  },
+  {
+    "causes": [],
     "code": "typescript-eslint(await-thenable)",
     "filename": "fixtures/type-aware/await-thenable.ts",
     "labels": [
@@ -717,6 +777,25 @@ exports[`config > typescript 1`] = `
     "related": [],
     "severity": "error",
     "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/no-explicit-any.html",
+  },
+  {
+    "causes": [],
+    "code": "eslint-plugin-unicorn(prefer-top-level-await)",
+    "filename": "fixtures/typescript/unsafe-call.ts",
+    "labels": [
+      {
+        "span": {
+          "column": 1,
+          "length": 31,
+          "line": 10,
+          "offset": 118,
+        },
+      },
+    ],
+    "message": "Prefer top-level await over using a promise chain.",
+    "related": [],
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/unicorn/prefer-top-level-await.html",
   },
   {
     "causes": [],

@@ -46,6 +46,9 @@ jobs:
       - name: Run test
         run: pnpm run test
 
+      - name: Ensure proper oxlint config rules
+        run: pnpm --filter="@marcalexiei/oxlint-config" run rules:check
+
   code-checks:
     name: Code checks
 

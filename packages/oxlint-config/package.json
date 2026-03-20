@@ -29,7 +29,9 @@
   },
   "scripts": {
     "build": "tsc -p tsconfig.build.json",
-    "typecheck": "tsc"
+    "typecheck": "tsc",
+    "rules:check": "node ./scripts/check-config.ts",
+    "rules:write": "node ./scripts/write-config-rules.ts"
   },
   "devDependencies": {
     "@types/node": "catalog:",

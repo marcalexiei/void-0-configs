@@ -22,6 +22,7 @@
   "type": "module",
   "exports": {
     "./base": "./dist/base.js",
+    "./dom": "./dist/dom.js",
     "./typescript": "./dist/typescript.js"
   },
   "publishConfig": {

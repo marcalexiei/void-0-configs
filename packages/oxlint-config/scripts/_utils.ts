@@ -3,18 +3,41 @@ import path from 'node:path';
 
 export const CONFIG_DATA: Array<{
   name: string;
-  plugins: Array<{ name: string; scope: string; rulePrefix: string | null }>;
+  plugins: Array<{
+    name: string;
+    scope: string;
+    rulePrefix: string | null;
+    allowMissing: Array<string>;
+  }>;
 }> = [
   {
     name: 'base',
     plugins: [
-      { name: 'eslint', scope: 'eslint', rulePrefix: null },
-      { name: 'import', scope: 'import', rulePrefix: 'import' },
+      {
+        name: 'eslint',
+        scope: 'eslint',
+        rulePrefix: null,
+        allowMissing: [],
+      },
+      {
+        name: 'import',
+        scope: 'import',
+        rulePrefix: 'import',
+        allowMissing: [],
+      },
+      {
+        name: 'unicorn',
+        scope: 'unicorn',
+        rulePrefix: 'unicorn',
+        allowMissing: ['prefer-modern-dom-apis'],
+      },
     ],
   },
   {
     name: 'typescript',
-    plugins: [{ name: 'typescript', scope: 'typescript', rulePrefix: 'typescript' }],
+    plugins: [
+      { name: 'typescript', scope: 'typescript', rulePrefix: 'typescript', allowMissing: [] },
+    ],
   },
 ];
 

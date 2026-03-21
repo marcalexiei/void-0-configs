@@ -16,7 +16,7 @@ for (const config of CONFIG_DATA) {
     const missingRules: Array<string> = [];
     for (const rule of configRules) {
       const ruleName = plugin.rulePrefix ? `${plugin.rulePrefix}/${rule.value}` : rule.value;
-      if (!configData.rules[ruleName]) {
+      if (!configData.rules[ruleName] && !plugin.allowMissing.includes(rule.value)) {
         hasMissingRules = true;
         missingRules.push(ruleName);
       }

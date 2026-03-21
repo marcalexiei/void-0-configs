@@ -46,3 +46,22 @@ export default defineConfig({
   },
 });
 ```
+
+## CI
+
+Consider creating a `lint:ci` script so you can rely on `format` option with `github` value to generate better annotations for warning and errors.
+
+```json
+{
+  "scripts": {
+    "lint": "oxlint",
+    "lint:ci": "oxlint --format=github"
+  }
+}
+```
+
+```shell
+pnpm run lint:ci
+```
+
+[Documentation reference](https://oxc.rs/docs/guide/usage/linter/ci.html#github-actions)

@@ -1,5 +1,11 @@
 # @marcalexiei/oxlint-config
 
+## 1.1.0
+
+### Minor Changes
+
+- [#12](https://github.com/marcalexiei/void-0-configs/pull/12) [`0e01f4b`](https://github.com/marcalexiei/void-0-configs/commit/0e01f4be060c44825bb19ec40d5a86b4303ca890) Thanks [@marcalexiei](https://github.com/marcalexiei)! - feat: add `unicorn` rules
+
 ## 1.0.1
 
 ### Patch Changes

@@ -406,6 +406,42 @@ exports[`config > type-aware 1`] = `
 ]
 `;
 
+exports[`config > type-aware 2`] = `
+[
+  {
+    "causes": [],
+    "code": "eslint-plugin-vitest(consistent-test-filename)",
+    "filename": "",
+    "help": "Rename the file that match the pattern (?u).*\\.spec\\.[tj]sx?$",
+    "labels": [],
+    "message": "The index.test.ts is a test file but his name is not allowed",
+    "related": [],
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/vitest/consistent-test-filename.html",
+  },
+  {
+    "causes": [],
+    "code": "eslint-plugin-vitest(prefer-called-times)",
+    "filename": "fixtures/vitest/index.spec.ts",
+    "help": "Replace with \`toBeCalledTimes(1)\` or \`toHaveBeenCalledTimes(1)\` for clarity and consistency",
+    "labels": [
+      {
+        "span": {
+          "column": 5,
+          "length": 33,
+          "line": 14,
+          "offset": 249,
+        },
+      },
+    ],
+    "message": "Use \`toBeCalledTimes(1)\` or \`toHaveBeenCalledTimes(1)\` instead of \`toBeCalledOnce()\` or \`toHaveBeenCalledOnce()\`",
+    "related": [],
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/vitest/prefer-called-times.html",
+  },
+]
+`;
+
 exports[`config > typescript 1`] = `
 [
   {

@@ -1,7 +1,6 @@
 import { defineConfig } from 'oxlint';
 
 const typescriptConfig = defineConfig({
-  $schema: '../node_modules/oxlint/configuration_schema.json',
   plugins: ['typescript'],
   rules: {
     'typescript/adjacent-overload-signatures': 'error',

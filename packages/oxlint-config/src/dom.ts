@@ -1,7 +1,6 @@
 import { defineConfig } from 'oxlint';
 
 const domConfig = defineConfig({
-  $schema: '../node_modules/oxlint/configuration_schema.json',
   plugins: ['unicorn'],
 
   rules: {

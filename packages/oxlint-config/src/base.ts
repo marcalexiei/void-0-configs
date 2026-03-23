@@ -1,7 +1,6 @@
 import { defineConfig } from 'oxlint';
 
 const baseConfig = defineConfig({
-  $schema: '../node_modules/oxlint/configuration_schema.json',
   plugins: ['eslint', 'import', 'unicorn'],
 
   rules: {

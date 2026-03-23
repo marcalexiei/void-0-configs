@@ -23,7 +23,8 @@
   "exports": {
     "./base": "./dist/base.js",
     "./dom": "./dist/dom.js",
-    "./typescript": "./dist/typescript.js"
+    "./typescript": "./dist/typescript.js",
+    "./vitest": "./dist/vitest.js"
   },
   "publishConfig": {
     "access": "public"

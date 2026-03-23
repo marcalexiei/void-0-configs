@@ -36,7 +36,23 @@ export const CONFIG_DATA: Array<{
   {
     name: 'typescript',
     plugins: [
-      { name: 'typescript', scope: 'typescript', rulePrefix: 'typescript', allowMissing: [] },
+      {
+        name: 'typescript',
+        scope: 'typescript',
+        rulePrefix: 'typescript',
+        allowMissing: [],
+      },
+    ],
+  },
+  {
+    name: 'vitest',
+    plugins: [
+      {
+        name: 'vitest',
+        scope: 'vitest',
+        rulePrefix: 'vitest',
+        allowMissing: [],
+      },
     ],
   },
 ];

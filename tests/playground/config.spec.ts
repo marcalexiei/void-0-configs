@@ -77,4 +77,11 @@ describe('config', () => {
     expect(code).toBe(1);
     expect(diagnostics).toMatchSnapshot();
   });
+
+  it('type-aware', async () => {
+    const { code, diagnostics } = await run('./fixtures/vitest');
+
+    expect(code).toBe(1);
+    expect(diagnostics).toMatchSnapshot();
+  });
 });

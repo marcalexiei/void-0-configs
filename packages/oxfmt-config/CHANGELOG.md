@@ -1,5 +1,11 @@
 # @marcalexiei/oxfmt-config
 
+## 1.0.3
+
+### Patch Changes
+
+- [#18](https://github.com/marcalexiei/void-0-configs/pull/18) [`ca378e3`](https://github.com/marcalexiei/void-0-configs/commit/ca378e3991b69ca6667a33a35d30d97cdfaa8fbf) Thanks [@marcalexiei](https://github.com/marcalexiei)! - fix: correct peerDependencies version range
+
 ## 1.0.2
 
 ### Patch Changes

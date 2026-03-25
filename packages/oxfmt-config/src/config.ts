@@ -24,6 +24,8 @@ const oxfmtConfig: OxfmtConfig = {
       'sibling',
       'index',
       'style',
+      'side_effect',
+      'side_effect_style',
       'unknown',
     ],
     newlinesBetween: true,

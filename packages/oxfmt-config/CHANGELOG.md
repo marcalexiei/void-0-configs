@@ -1,5 +1,11 @@
 # @marcalexiei/oxfmt-config
 
+## 1.1.0
+
+### Minor Changes
+
+- [#19](https://github.com/marcalexiei/void-0-configs/pull/19) [`bbc1437`](https://github.com/marcalexiei/void-0-configs/commit/bbc14373db1173622c74d6bf670533f8b7e46fad) Thanks [@marcalexiei](https://github.com/marcalexiei)! - feat: handle side effect imports
+
 ## 1.0.3
 
 ### Patch Changes

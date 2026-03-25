@@ -1,5 +1,6 @@
 {
   "extends": "../../tsconfig.json",
+  "exclude": ["./tests/fixtures/**"],
   "compilerOptions": {
     "types": ["node"]
   }

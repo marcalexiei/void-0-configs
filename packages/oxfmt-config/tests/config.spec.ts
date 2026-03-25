@@ -35,4 +35,9 @@ describe('config', () => {
     const { code, outputFilePath } = await getFmtResultFor('imports');
     await expect(code).toMatchFileSnapshot(outputFilePath);
   });
+
+  it('import-side-effect', async () => {
+    const { code, outputFilePath } = await getFmtResultFor('import-side-effect');
+    await expect(code).toMatchFileSnapshot(outputFilePath);
+  });
 });

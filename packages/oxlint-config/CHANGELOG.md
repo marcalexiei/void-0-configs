@@ -1,5 +1,15 @@
 # @marcalexiei/oxlint-config
 
+## 1.2.0
+
+### Minor Changes
+
+- [#16](https://github.com/marcalexiei/void-0-configs/pull/16) [`728c6c1`](https://github.com/marcalexiei/void-0-configs/commit/728c6c147fab6bad9ff7a952b6462f1404721490) Thanks [@marcalexiei](https://github.com/marcalexiei)! - feat: add `vitest`
+
+### Patch Changes
+
+- [#18](https://github.com/marcalexiei/void-0-configs/pull/18) [`ca378e3`](https://github.com/marcalexiei/void-0-configs/commit/ca378e3991b69ca6667a33a35d30d97cdfaa8fbf) Thanks [@marcalexiei](https://github.com/marcalexiei)! - fix: correct peerDependencies version range
+
 ## 1.1.0
 
 ### Minor Changes

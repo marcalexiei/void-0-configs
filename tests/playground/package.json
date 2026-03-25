@@ -8,8 +8,8 @@
   },
   "devDependencies": {
     "@marcalexiei/oxlint-config": "workspace:*",
-    "@types/node": "catalog:",
-    "oxlint": "catalog:",
-    "oxlint-tsgolint": "catalog:"
+    "@types/node": "catalog:dev",
+    "oxlint": "catalog:dev",
+    "oxlint-tsgolint": "catalog:dev"
   }
 }

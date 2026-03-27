@@ -50,6 +50,13 @@ function run(fixturePath: string): Promise<{
 }
 
 describe('config', () => {
+  it('async-await', async () => {
+    const { code, diagnostics } = await run('./fixtures/async-await');
+
+    expect(code).toBe(1);
+    expect(diagnostics).toMatchSnapshot();
+  });
+
   it('typescript', async () => {
     const { code, diagnostics } = await run('./fixtures/typescript');
 
@@ -78,7 +85,7 @@ describe('config', () => {
     expect(diagnostics).toMatchSnapshot();
   });
 
-  it('type-aware', async () => {
+  it('vitest', async () => {
     const { code, diagnostics } = await run('./fixtures/vitest');
 
     expect(code).toBe(1);

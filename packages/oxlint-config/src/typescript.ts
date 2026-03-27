@@ -97,7 +97,13 @@ const typescriptConfig = defineConfig({
     'typescript/prefer-return-this-type': 'error',
     'typescript/prefer-string-starts-ends-with': 'error',
     'typescript/prefer-ts-expect-error': 'error',
-    'typescript/promise-function-async': 'error',
+
+    // `require-wait` rule conflicts with this `promise-function-async`.
+    // I'm disabling this one since we might end up marking an async function without `await` as `async`.
+    // Also Typescript return type annotations should clearly declare if the Promise is async or not.
+    // https://oxc.rs/docs/guide/usage/linter/rules/typescript/promise-function-async.html
+    'typescript/promise-function-async': 'off',
+
     'typescript/related-getter-setter-pairs': 'error',
     'typescript/require-array-sort-compare': 'error',
     'typescript/require-await': 'error',

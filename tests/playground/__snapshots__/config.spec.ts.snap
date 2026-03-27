@@ -1,5 +1,225 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
+exports[`config > async-await 1`] = `
+[
+  {
+    "causes": [],
+    "code": "typescript-eslint(explicit-function-return-type)",
+    "filename": "fixtures/async-await/await-thenable.ts",
+    "help": "Require explicit return types on functions and class methods.",
+    "labels": [
+      {
+        "span": {
+          "column": 11,
+          "length": 2,
+          "line": 2,
+          "offset": 20,
+        },
+      },
+    ],
+    "message": "Missing return type on function.",
+    "related": [],
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/explicit-function-return-type.html",
+  },
+  {
+    "causes": [],
+    "code": "typescript-eslint(explicit-function-return-type)",
+    "filename": "fixtures/async-await/await-thenable.ts",
+    "help": "Require explicit return types on functions and class methods.",
+    "labels": [
+      {
+        "span": {
+          "column": 9,
+          "length": 4,
+          "line": 6,
+          "offset": 78,
+        },
+      },
+    ],
+    "message": "Missing return type on function.",
+    "related": [],
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/explicit-function-return-type.html",
+  },
+  {
+    "causes": [],
+    "code": "eslint-plugin-unicorn(no-thenable)",
+    "filename": "fixtures/async-await/await-thenable.ts",
+    "help": "If an object is defined as 'thenable', once it's accidentally used in an await expression, it may cause problems",
+    "labels": [
+      {
+        "span": {
+          "column": 9,
+          "length": 4,
+          "line": 6,
+          "offset": 78,
+        },
+      },
+    ],
+    "message": "Do not add \`then\` to an object.",
+    "related": [],
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/unicorn/no-thenable.html",
+  },
+  {
+    "causes": [],
+    "code": "eslint-plugin-unicorn(no-unnecessary-await)",
+    "filename": "fixtures/async-await/await-thenable.ts",
+    "help": "Consider removing the \`await\`",
+    "labels": [
+      {
+        "span": {
+          "column": 1,
+          "length": 5,
+          "line": 1,
+          "offset": 0,
+        },
+      },
+    ],
+    "message": "Unexpected \`await\` on a non-Promise value",
+    "related": [],
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/unicorn/no-unnecessary-await.html",
+  },
+  {
+    "causes": [],
+    "code": "eslint-plugin-unicorn(no-unnecessary-await)",
+    "filename": "fixtures/async-await/await-thenable.ts",
+    "help": "Consider removing the \`await\`",
+    "labels": [
+      {
+        "span": {
+          "column": 1,
+          "length": 5,
+          "line": 2,
+          "offset": 10,
+        },
+      },
+    ],
+    "message": "Unexpected \`await\` on a non-Promise value",
+    "related": [],
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/unicorn/no-unnecessary-await.html",
+  },
+  {
+    "causes": [],
+    "code": "typescript-eslint(await-thenable)",
+    "filename": "fixtures/async-await/await-thenable.ts",
+    "labels": [
+      {
+        "span": {
+          "column": 1,
+          "length": 5,
+          "line": 1,
+          "offset": 0,
+        },
+      },
+    ],
+    "message": "Unexpected \`await\` of a non-Promise (non-"Thenable") value.",
+    "related": [],
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/await-thenable.html",
+  },
+  {
+    "causes": [],
+    "code": "typescript-eslint(await-thenable)",
+    "filename": "fixtures/async-await/await-thenable.ts",
+    "labels": [
+      {
+        "span": {
+          "column": 1,
+          "length": 5,
+          "line": 2,
+          "offset": 10,
+        },
+      },
+    ],
+    "message": "Unexpected \`await\` of a non-Promise (non-"Thenable") value.",
+    "related": [],
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/await-thenable.html",
+  },
+  {
+    "causes": [],
+    "code": "typescript-eslint(await-thenable)",
+    "filename": "fixtures/async-await/await-thenable.ts",
+    "labels": [
+      {
+        "span": {
+          "column": 1,
+          "length": 5,
+          "line": 5,
+          "offset": 51,
+        },
+      },
+    ],
+    "message": "Unexpected \`await\` of a non-Promise (non-"Thenable") value.",
+    "related": [],
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/await-thenable.html",
+  },
+  {
+    "causes": [],
+    "code": "typescript-eslint(await-thenable)",
+    "filename": "fixtures/async-await/await-thenable.ts",
+    "labels": [
+      {
+        "span": {
+          "column": 1,
+          "length": 5,
+          "line": 6,
+          "offset": 70,
+        },
+      },
+    ],
+    "message": "Unexpected \`await\` of a non-Promise (non-"Thenable") value.",
+    "related": [],
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/await-thenable.html",
+  },
+  {
+    "causes": [],
+    "code": "typescript-eslint(await-thenable)",
+    "filename": "fixtures/async-await/await-thenable.ts",
+    "labels": [
+      {
+        "span": {
+          "column": 1,
+          "length": 5,
+          "line": 10,
+          "offset": 207,
+        },
+      },
+    ],
+    "message": "Unexpected \`await\` of a non-Promise (non-"Thenable") value.",
+    "related": [],
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/await-thenable.html",
+  },
+  {
+    "causes": [],
+    "code": "eslint(require-await)",
+    "filename": "fixtures/async-await/promises.ts",
+    "help": "Consider removing the \`async\` keyword.",
+    "labels": [
+      {
+        "span": {
+          "column": 23,
+          "length": 31,
+          "line": 7,
+          "offset": 141,
+        },
+      },
+    ],
+    "message": "Async function has no \`await\` expression.",
+    "related": [],
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/eslint/require-await.html",
+  },
+]
+`;
+
 exports[`config > import-no-cycle 1`] = `
 [
   {
@@ -105,201 +325,6 @@ exports[`config > type-aware 1`] = `
 [
   {
     "causes": [],
-    "code": "typescript-eslint(explicit-function-return-type)",
-    "filename": "fixtures/type-aware/await-thenable.ts",
-    "help": "Require explicit return types on functions and class methods.",
-    "labels": [
-      {
-        "span": {
-          "column": 11,
-          "length": 2,
-          "line": 2,
-          "offset": 20,
-        },
-      },
-    ],
-    "message": "Missing return type on function.",
-    "related": [],
-    "severity": "error",
-    "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/explicit-function-return-type.html",
-  },
-  {
-    "causes": [],
-    "code": "typescript-eslint(explicit-function-return-type)",
-    "filename": "fixtures/type-aware/await-thenable.ts",
-    "help": "Require explicit return types on functions and class methods.",
-    "labels": [
-      {
-        "span": {
-          "column": 9,
-          "length": 4,
-          "line": 6,
-          "offset": 78,
-        },
-      },
-    ],
-    "message": "Missing return type on function.",
-    "related": [],
-    "severity": "error",
-    "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/explicit-function-return-type.html",
-  },
-  {
-    "causes": [],
-    "code": "eslint-plugin-unicorn(no-thenable)",
-    "filename": "fixtures/type-aware/await-thenable.ts",
-    "help": "If an object is defined as 'thenable', once it's accidentally used in an await expression, it may cause problems",
-    "labels": [
-      {
-        "span": {
-          "column": 9,
-          "length": 4,
-          "line": 6,
-          "offset": 78,
-        },
-      },
-    ],
-    "message": "Do not add \`then\` to an object.",
-    "related": [],
-    "severity": "error",
-    "url": "https://oxc.rs/docs/guide/usage/linter/rules/unicorn/no-thenable.html",
-  },
-  {
-    "causes": [],
-    "code": "eslint-plugin-unicorn(no-unnecessary-await)",
-    "filename": "fixtures/type-aware/await-thenable.ts",
-    "help": "Consider removing the \`await\`",
-    "labels": [
-      {
-        "span": {
-          "column": 1,
-          "length": 5,
-          "line": 1,
-          "offset": 0,
-        },
-      },
-    ],
-    "message": "Unexpected \`await\` on a non-Promise value",
-    "related": [],
-    "severity": "error",
-    "url": "https://oxc.rs/docs/guide/usage/linter/rules/unicorn/no-unnecessary-await.html",
-  },
-  {
-    "causes": [],
-    "code": "eslint-plugin-unicorn(no-unnecessary-await)",
-    "filename": "fixtures/type-aware/await-thenable.ts",
-    "help": "Consider removing the \`await\`",
-    "labels": [
-      {
-        "span": {
-          "column": 1,
-          "length": 5,
-          "line": 2,
-          "offset": 10,
-        },
-      },
-    ],
-    "message": "Unexpected \`await\` on a non-Promise value",
-    "related": [],
-    "severity": "error",
-    "url": "https://oxc.rs/docs/guide/usage/linter/rules/unicorn/no-unnecessary-await.html",
-  },
-  {
-    "causes": [],
-    "code": "typescript-eslint(await-thenable)",
-    "filename": "fixtures/type-aware/await-thenable.ts",
-    "labels": [
-      {
-        "span": {
-          "column": 1,
-          "length": 5,
-          "line": 1,
-          "offset": 0,
-        },
-      },
-    ],
-    "message": "Unexpected \`await\` of a non-Promise (non-"Thenable") value.",
-    "related": [],
-    "severity": "error",
-    "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/await-thenable.html",
-  },
-  {
-    "causes": [],
-    "code": "typescript-eslint(await-thenable)",
-    "filename": "fixtures/type-aware/await-thenable.ts",
-    "labels": [
-      {
-        "span": {
-          "column": 1,
-          "length": 5,
-          "line": 2,
-          "offset": 10,
-        },
-      },
-    ],
-    "message": "Unexpected \`await\` of a non-Promise (non-"Thenable") value.",
-    "related": [],
-    "severity": "error",
-    "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/await-thenable.html",
-  },
-  {
-    "causes": [],
-    "code": "typescript-eslint(await-thenable)",
-    "filename": "fixtures/type-aware/await-thenable.ts",
-    "labels": [
-      {
-        "span": {
-          "column": 1,
-          "length": 5,
-          "line": 5,
-          "offset": 51,
-        },
-      },
-    ],
-    "message": "Unexpected \`await\` of a non-Promise (non-"Thenable") value.",
-    "related": [],
-    "severity": "error",
-    "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/await-thenable.html",
-  },
-  {
-    "causes": [],
-    "code": "typescript-eslint(await-thenable)",
-    "filename": "fixtures/type-aware/await-thenable.ts",
-    "labels": [
-      {
-        "span": {
-          "column": 1,
-          "length": 5,
-          "line": 6,
-          "offset": 70,
-        },
-      },
-    ],
-    "message": "Unexpected \`await\` of a non-Promise (non-"Thenable") value.",
-    "related": [],
-    "severity": "error",
-    "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/await-thenable.html",
-  },
-  {
-    "causes": [],
-    "code": "typescript-eslint(await-thenable)",
-    "filename": "fixtures/type-aware/await-thenable.ts",
-    "labels": [
-      {
-        "span": {
-          "column": 1,
-          "length": 5,
-          "line": 10,
-          "offset": 207,
-        },
-      },
-    ],
-    "message": "Unexpected \`await\` of a non-Promise (non-"Thenable") value.",
-    "related": [],
-    "severity": "error",
-    "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/await-thenable.html",
-  },
-  {
-    "causes": [],
     "code": "eslint(id-length)",
     "filename": "fixtures/type-aware/no-unsafe-type-assertion.ts",
     "labels": [
@@ -402,42 +427,6 @@ exports[`config > type-aware 1`] = `
     "related": [],
     "severity": "error",
     "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/no-unsafe-type-assertion.html",
-  },
-]
-`;
-
-exports[`config > type-aware 2`] = `
-[
-  {
-    "causes": [],
-    "code": "eslint-plugin-vitest(consistent-test-filename)",
-    "filename": "",
-    "help": "Rename the file that match the pattern (?u).*\\.spec\\.[tj]sx?$",
-    "labels": [],
-    "message": "The index.test.ts is a test file but his name is not allowed",
-    "related": [],
-    "severity": "error",
-    "url": "https://oxc.rs/docs/guide/usage/linter/rules/vitest/consistent-test-filename.html",
-  },
-  {
-    "causes": [],
-    "code": "eslint-plugin-vitest(prefer-called-times)",
-    "filename": "fixtures/vitest/index.spec.ts",
-    "help": "Replace with \`toBeCalledTimes(1)\` or \`toHaveBeenCalledTimes(1)\` for clarity and consistency",
-    "labels": [
-      {
-        "span": {
-          "column": 5,
-          "length": 33,
-          "line": 14,
-          "offset": 249,
-        },
-      },
-    ],
-    "message": "Use \`toBeCalledTimes(1)\` or \`toHaveBeenCalledTimes(1)\` instead of \`toBeCalledOnce()\` or \`toHaveBeenCalledOnce()\`",
-    "related": [],
-    "severity": "error",
-    "url": "https://oxc.rs/docs/guide/usage/linter/rules/vitest/prefer-called-times.html",
   },
 ]
 `;
@@ -1003,6 +992,42 @@ exports[`config > typescript 1`] = `
     "related": [],
     "severity": "error",
     "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/no-unsafe-call.html",
+  },
+]
+`;
+
+exports[`config > vitest 1`] = `
+[
+  {
+    "causes": [],
+    "code": "eslint-plugin-vitest(consistent-test-filename)",
+    "filename": "",
+    "help": "Rename the file that match the pattern (?u).*\\.spec\\.[tj]sx?$",
+    "labels": [],
+    "message": "The index.test.ts is a test file but his name is not allowed",
+    "related": [],
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/vitest/consistent-test-filename.html",
+  },
+  {
+    "causes": [],
+    "code": "eslint-plugin-vitest(prefer-called-times)",
+    "filename": "fixtures/vitest/index.spec.ts",
+    "help": "Replace with \`toBeCalledTimes(1)\` or \`toHaveBeenCalledTimes(1)\` for clarity and consistency",
+    "labels": [
+      {
+        "span": {
+          "column": 5,
+          "length": 33,
+          "line": 14,
+          "offset": 249,
+        },
+      },
+    ],
+    "message": "Use \`toBeCalledTimes(1)\` or \`toHaveBeenCalledTimes(1)\` instead of \`toBeCalledOnce()\` or \`toHaveBeenCalledOnce()\`",
+    "related": [],
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/vitest/prefer-called-times.html",
   },
 ]
 `;

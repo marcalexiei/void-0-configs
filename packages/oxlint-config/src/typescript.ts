@@ -112,15 +112,13 @@ const typescriptConfig = defineConfig({
     'typescript/return-await': 'error',
 
     // https://oxc.rs/docs/guide/usage/linter/rules/typescript/strict-boolean-expressions.html
-    'typescript/strict-boolean-expressions': [
-      'error',
-      {
-        allowNullableBoolean: true,
-      },
-    ],
+    'typescript/strict-boolean-expressions': 'off',
 
     'typescript/strict-void-return': 'error',
-    'typescript/switch-exhaustiveness-check': 'error',
+
+    // https://oxc.rs/docs/guide/usage/linter/rules/typescript/switch-exhaustiveness-check.html
+    'typescript/switch-exhaustiveness-check': ['error'],
+
     'typescript/triple-slash-reference': 'error',
     'typescript/unbound-method': 'error',
     'typescript/unified-signatures': 'error',

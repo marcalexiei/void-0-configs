@@ -24,7 +24,9 @@ const baseConfig = defineConfig({
     'block-scoped-var': 'error',
     'capitalized-comments': 'off',
     'class-methods-use-this': 'error',
-    complexity: 'error',
+    // https://oxc.rs/docs/guide/usage/linter/rules/eslint/complexity.html
+    complexity: ['error', 30],
+
     'constructor-super': 'error',
 
     // https://oxc.rs/docs/guide/usage/linter/rules/eslint/curly.html
@@ -42,16 +44,25 @@ const baseConfig = defineConfig({
     'getter-return': 'error',
     'grouped-accessor-pairs': 'error',
     'guard-for-in': 'error',
+
+    // https://oxc.rs/docs/guide/usage/linter/rules/eslint/id-length.html
     'id-length': [
       'error',
       {
         exceptions: [
           // for test context
           't',
+
+          // alias for version
+          'v',
         ],
       },
     ],
-    'init-declarations': 'error',
+
+    // https://oxc.rs/docs/guide/usage/linter/rules/eslint/init-declarations.html
+    'init-declarations': 'off',
+
+    // https://oxc.rs/docs/guide/usage/linter/rules/eslint/max-classes-per-file.html
     'max-classes-per-file': 'error',
 
     // https://oxc.rs/docs/guide/usage/linter/rules/eslint/max-depth.html
@@ -61,7 +72,7 @@ const baseConfig = defineConfig({
     'max-lines': ['error', { max: 500 }],
 
     // https://oxc.rs/docs/guide/usage/linter/rules/eslint/max-lines-per-function.html
-    'max-lines-per-function': ['error', { max: 100 }],
+    'max-lines-per-function': ['error', { max: 200 }],
 
     // https://oxc.rs/docs/guide/usage/linter/rules/eslint/max-nested-callbacks.html
     'max-nested-callbacks': ['error', { max: 5 }],
@@ -69,7 +80,7 @@ const baseConfig = defineConfig({
     'max-params': 'error',
 
     // https://oxc.rs/docs/guide/usage/linter/rules/eslint/max-statements.html
-    'max-statements': ['error', { max: 15 }],
+    'max-statements': ['error', { max: 30 }],
 
     // https://oxc.rs/docs/guide/usage/linter/rules/eslint/new-cap.html
     'new-cap': [
@@ -162,7 +173,11 @@ const baseConfig = defineConfig({
     'no-misleading-character-class': 'error',
     'no-multi-assign': 'error',
     'no-multi-str': 'error',
-    'no-negated-condition': 'error',
+
+    // makes earlier return easier
+    // https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-negated-condition.html
+    'no-negated-condition': 'off',
+
     'no-nested-ternary': 'error',
     'no-new': 'error',
     'no-new-func': 'error',
@@ -190,7 +205,10 @@ const baseConfig = defineConfig({
     'no-shadow-restricted-names': 'error',
     'no-sparse-arrays': 'error',
     'no-template-curly-in-string': 'error',
-    'no-ternary': 'error',
+
+    // https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-ternary.html
+    'no-ternary': 'off',
+
     'no-this-before-super': 'error',
     'no-throw-literal': 'error',
     'no-unassigned-vars': 'error',
@@ -324,8 +342,9 @@ const baseConfig = defineConfig({
           kebabCase: true,
           camelCase: true,
           snakeCase: false,
-          pascalCase: false,
+          pascalCase: true,
         },
+        multipleFileExtensions: true,
       },
     ],
 
@@ -432,7 +451,10 @@ const baseConfig = defineConfig({
     'unicorn/prefer-string-starts-ends-with': 'error',
     'unicorn/prefer-string-trim-start-end': 'error',
     'unicorn/prefer-structured-clone': 'error',
-    'unicorn/prefer-ternary': 'error',
+
+    // https://oxc.rs/docs/guide/usage/linter/rules/unicorn/prefer-ternary.html
+    'unicorn/prefer-ternary': 'off',
+
     'unicorn/prefer-top-level-await': 'error',
     'unicorn/prefer-type-error': 'error',
     'unicorn/relative-url-style': 'error',
@@ -462,7 +484,9 @@ const baseConfig = defineConfig({
     // https://oxc.rs/docs/guide/usage/linter/rules/import/group-exports.html
     'import/group-exports': 'off',
 
-    'import/max-dependencies': 'error',
+    // https://oxc.rs/docs/guide/usage/linter/rules/import/max-dependencies.html
+    'import/max-dependencies': ['error', { max: 30 }],
+
     'import/named': 'error',
     'import/namespace': 'error',
     'import/no-absolute-path': 'error',
@@ -493,4 +517,16 @@ const baseConfig = defineConfig({
   },
 });
 
-export { baseConfig, baseConfig as default };
+/**
+ * Config to disable eslint max rules
+ */
+const disableMaxStatementsConfig = defineConfig({
+  plugins: ['eslint'],
+  rules: {
+    'max-lines': 'off',
+    'max-lines-per-function': 'off',
+    'max-statements': 'off',
+  },
+});
+
+export { disableMaxStatementsConfig, baseConfig, baseConfig as default };

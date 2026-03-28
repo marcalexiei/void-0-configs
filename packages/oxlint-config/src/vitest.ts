@@ -4,6 +4,14 @@ const vitestConfig = defineConfig({
   plugins: ['vitest'],
 
   rules: {
+    // this rule is enabled by default when a test file is detected
+    // vitest allows to pass Function as parameters to infer the name
+    // https://oxc.rs/docs/guide/usage/linter/rules/jest/valid-title
+    'jest/valid-title': 'off',
+
+    // https://oxc.rs/docs/guide/usage/linter/rules/jest/require-to-throw-message
+    'jest/require-to-throw-message': 'error',
+
     // https://oxc.rs/docs/guide/usage/linter/rules/vitest/consistent-each-for
     'vitest/consistent-each-for': [
       'error',

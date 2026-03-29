@@ -4,11 +4,17 @@ import { vitestConfig } from '@marcalexiei/oxlint-config/vitest';
 import { defineConfig } from 'oxlint';
 
 export default defineConfig({
-  extends: [baseConfig, typescriptConfig, vitestConfig],
+  extends: [baseConfig, typescriptConfig],
   options: {
     typeAware: true,
   },
   globals: {
     console: 'readonly',
   },
+  overrides: [
+    {
+      files: ['**/*.{spec,test}.ts'],
+      ...vitestConfig,
+    },
+  ],
 });

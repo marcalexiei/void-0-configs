@@ -53,6 +53,12 @@ export const CONFIG_DATA: Array<{
         rulePrefix: 'vitest',
         allowMissing: [],
       },
+      {
+        name: 'jest',
+        scope: 'jest',
+        rulePrefix: 'jest',
+        allowMissing: [],
+      },
     ],
   },
 ];

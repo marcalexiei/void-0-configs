@@ -47,6 +47,30 @@ export default defineConfig({
 });
 ```
 
+### Vitest
+
+```ts
+import { baseConfig } from '@marcalexiei/oxlint-config/base';
+import { typescriptConfig } from '@marcalexiei/oxlint-config/typescript';
+import { vitestConfig } from '@marcalexiei/oxlint-config/vitest';
+import { defineConfig } from 'oxlint';
+
+export default defineConfig({
+  env: {
+    browser: true,
+    node: true,
+  },
+  extends: [baseConfig, typescriptConfig],
+  overrides: [
+    {
+      files: ['**/*.{spec,test}.ts'],
+      ...vitestConfig,
+    },
+  ],
+  plugins: [],
+});
+```
+
 ## CI
 
 Consider creating a `lint:ci` script so you can rely on `format` option with `github` value to generate better annotations for warning and errors.

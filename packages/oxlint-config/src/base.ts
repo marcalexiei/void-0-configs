@@ -213,7 +213,11 @@ const baseConfig = defineConfig({
     'no-throw-literal': 'error',
     'no-unassigned-vars': 'error',
     'no-undef': 'error',
-    'no-undefined': 'error',
+
+    // null and undefined the eternal fight
+    // https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-undefined.html
+    'no-undefined': 'off',
+
     'no-unexpected-multiline': 'error',
     'no-unmodified-loop-condition': 'error',
 
@@ -306,7 +310,10 @@ const baseConfig = defineConfig({
     'require-await': 'error',
     'require-yield': 'error',
     'sort-imports': 'off',
-    'sort-keys': 'error',
+
+    // https://oxc.rs/docs/guide/usage/linter/rules/eslint/sort-keys
+    'sort-keys': 'off',
+
     'sort-vars': 'error',
     'symbol-description': 'error',
 
@@ -399,7 +406,11 @@ const baseConfig = defineConfig({
     'unicorn/no-useless-length-check': 'error',
     'unicorn/no-useless-promise-resolve-reject': 'error',
     'unicorn/no-useless-spread': 'error',
-    'unicorn/no-useless-switch-case': 'error',
+
+    // handled by typescript/switch-exhaustiveness-check
+    // https://oxc.rs/docs/guide/usage/linter/rules/unicorn/no-useless-switch-case.html
+    'unicorn/no-useless-switch-case': 'off',
+
     'unicorn/no-useless-undefined': 'error',
     'unicorn/no-zero-fractions': 'error',
     'unicorn/number-literal-case': 'error',

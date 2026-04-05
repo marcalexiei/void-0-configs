@@ -2,4 +2,4 @@
 '@marcalexiei/oxlint-config': patch
 ---
 
-feat: refine base rules configuration
+fix: refine typescript rules

@@ -40,7 +40,11 @@ export const CONFIG_DATA: Array<{
         name: 'typescript',
         scope: 'typescript',
         rulePrefix: 'typescript',
-        allowMissing: [],
+        allowMissing: [
+          // deprecated
+          // https://oxc.rs/docs/guide/usage/linter/rules/typescript/ban-types
+          'ban-types',
+        ],
       },
     ],
   },

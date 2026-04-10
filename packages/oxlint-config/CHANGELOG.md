@@ -1,5 +1,21 @@
 # @marcalexiei/oxlint-config
 
+## 1.3.0
+
+### Minor Changes
+
+- [#24](https://github.com/marcalexiei/void-0-configs/pull/24) [`066c6a3`](https://github.com/marcalexiei/void-0-configs/commit/066c6a37bf9ae2446d6f1c0e420ba547c10d3fa0) Thanks [@marcalexiei](https://github.com/marcalexiei)! - feat: add `disableMaxStatementsConfig`
+
+- [#25](https://github.com/marcalexiei/void-0-configs/pull/25) [`ae1e1f7`](https://github.com/marcalexiei/void-0-configs/commit/ae1e1f7439025ec2d2764b3616b51cfc8541a883) Thanks [@marcalexiei](https://github.com/marcalexiei)! - feat: add jest compatible rules to `vitest` config
+
+### Patch Changes
+
+- [#31](https://github.com/marcalexiei/void-0-configs/pull/31) [`0cd87e4`](https://github.com/marcalexiei/void-0-configs/commit/0cd87e4868c55a5ebddc4a6305bf7b4a2e915703) Thanks [@marcalexiei](https://github.com/marcalexiei)! - fix: refine typescript rules
+
+- [#22](https://github.com/marcalexiei/void-0-configs/pull/22) [`68f0945`](https://github.com/marcalexiei/void-0-configs/commit/68f0945fb2d9d86fd463c36b0ea56278f250f380) Thanks [@marcalexiei](https://github.com/marcalexiei)! - fix: disable `promise-function-async` to avoid conflicts with `require-await`
+
+- [#24](https://github.com/marcalexiei/void-0-configs/pull/24) [`066c6a3`](https://github.com/marcalexiei/void-0-configs/commit/066c6a37bf9ae2446d6f1c0e420ba547c10d3fa0) Thanks [@marcalexiei](https://github.com/marcalexiei)! - feat: refine base rules configuration
+
 ## 1.2.0
 
 ### Minor Changes

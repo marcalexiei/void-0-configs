@@ -1,6 +1,6 @@
-import { defineConfig } from 'oxlint';
+import type { OxlintConfig } from 'oxlint';
 
-const baseConfig = defineConfig({
+const baseConfig = {
   plugins: ['eslint', 'import', 'unicorn'],
 
   rules: {
@@ -526,18 +526,18 @@ const baseConfig = defineConfig({
     'import/prefer-default-export': 'off',
     'import/unambiguous': 'error',
   },
-});
+} as const satisfies OxlintConfig;
 
 /**
  * Config to disable eslint max rules
  */
-const disableMaxStatementsConfig = defineConfig({
+const disableMaxStatementsConfig = {
   plugins: ['eslint'],
   rules: {
     'max-lines': 'off',
     'max-lines-per-function': 'off',
     'max-statements': 'off',
   },
-});
+} as const satisfies OxlintConfig;
 
 export { disableMaxStatementsConfig, baseConfig, baseConfig as default };

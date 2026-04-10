@@ -1,6 +1,6 @@
-import { defineConfig } from 'oxlint';
+import type { OxlintConfig } from 'oxlint';
 
-const typescriptConfig = defineConfig({
+const typescriptConfig = {
   plugins: ['typescript'],
   rules: {
     'typescript/adjacent-overload-signatures': 'error',
@@ -128,6 +128,6 @@ const typescriptConfig = defineConfig({
     'typescript/unified-signatures': 'error',
     'typescript/use-unknown-in-catch-callback-variable': 'error',
   },
-});
+} as const satisfies OxlintConfig;
 
 export { typescriptConfig, typescriptConfig as default };

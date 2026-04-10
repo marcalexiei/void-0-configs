@@ -8,7 +8,6 @@ const typescriptConfig = defineConfig({
     'typescript/await-thenable': 'error',
     'typescript/ban-ts-comment': 'error',
     'typescript/ban-tslint-comment': 'error',
-    'typescript/ban-types': 'error',
     'typescript/class-literal-property-style': 'error',
     'typescript/consistent-generic-constructors': 'error',
     'typescript/consistent-indexed-object-style': 'error',
@@ -117,7 +116,12 @@ const typescriptConfig = defineConfig({
     'typescript/strict-void-return': 'error',
 
     // https://oxc.rs/docs/guide/usage/linter/rules/typescript/switch-exhaustiveness-check.html
-    'typescript/switch-exhaustiveness-check': ['error'],
+    'typescript/switch-exhaustiveness-check': [
+      'error',
+      {
+        allowDefaultCaseForExhaustiveSwitch: true,
+      },
+    ],
 
     'typescript/triple-slash-reference': 'error',
     'typescript/unbound-method': 'error',

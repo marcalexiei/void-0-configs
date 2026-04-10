@@ -1,5 +1,5 @@
 ---
-"@marcalexiei/oxlint-config": minor
+'@marcalexiei/oxlint-config': minor
 ---
 
 feat: add `disableMaxStatementsConfig`

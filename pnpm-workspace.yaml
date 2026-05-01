@@ -6,7 +6,7 @@ catalogs:
   dev:
     '@types/node': '24.12.0'
     'oxfmt': '0.42.0'
-    'oxlint': '1.55.0'
+    'oxlint': '1.62.0'
     'oxlint-tsgolint': '0.17.3'
   peer:
     'oxfmt': '>=0.41.0 <1'

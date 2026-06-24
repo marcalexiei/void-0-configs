@@ -1,9 +1,6 @@
-import type { defineConfig } from 'oxfmt';
+import type { OxfmtConfig } from 'oxfmt';
 
-// defineConfig config infers parameters
-type OxfmtConfig = Parameters<typeof defineConfig>[0];
-
-const oxfmtConfig: OxfmtConfig = {
+const oxfmtConfig = {
   printWidth: 100,
   singleQuote: true,
   jsxSingleQuote: false,
@@ -30,7 +27,7 @@ const oxfmtConfig: OxfmtConfig = {
     ],
     newlinesBetween: true,
   },
-};
+} satisfies OxfmtConfig;
 
 export { oxfmtConfig };
 export default oxfmtConfig;

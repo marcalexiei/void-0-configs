@@ -1,5 +1,15 @@
 # @marcalexiei/oxfmt-config
 
+## 1.2.0
+
+### Minor Changes
+
+- [`0d76e1c`](https://github.com/marcalexiei/void-0-configs/commit/0d76e1c584a7940c43a7d04f0a7a4f76cfc9939e) Thanks [@marcalexiei](https://github.com/marcalexiei)! - feat: support oxfmt >= 0.56
+
+### Patch Changes
+
+- [`0d76e1c`](https://github.com/marcalexiei/void-0-configs/commit/0d76e1c584a7940c43a7d04f0a7a4f76cfc9939e) Thanks [@marcalexiei](https://github.com/marcalexiei)! - fix: refine config type exposing a const value
+
 ## 1.1.0
 
 ### Minor Changes

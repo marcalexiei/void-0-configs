@@ -2,9 +2,12 @@ name: Release
 
 on:
   workflow_run:
-    workflows: [CI]
-    types: [completed]
-    branches: [main]
+    workflows:
+      - CI
+    types:
+      - completed
+    branches:
+      - main
 
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
@@ -27,7 +30,7 @@ jobs:
     steps:
       - name: Setup release helper
         id: release-helper
-        uses: marcalexiei/github-actions/.github/actions/setup-github-app-user-bot@main
+        uses: marcalexiei/github-actions/setup-github-app-user-bot@35654007fc916287603cd114516a3d1295f62689 # v2.0.0
         with:
           app-id: ${{ vars.RELEASE_HELPER_APP_ID }}
           private-key: ${{ secrets.RELEASE_HELPER_PRIVATE_KEY }}
@@ -38,16 +41,16 @@ jobs:
           git config --global user.email '${{ steps.release-helper.outputs.bot-email }}'
 
       - name: Checkout
-        uses: actions/checkout@v6
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
         with:
           persist-credentials: false
 
       - name: Install Dependencies
-        uses: ./.github/actions/install-dependencies
+        uses: marcalexiei/github-actions/setup-node-and-pnpm@35654007fc916287603cd114516a3d1295f62689 # v2.0.0
 
       - name: Create Release Pull Request or Publish to npm
         id: changesets
-        uses: changesets/action@v1
+        uses: changesets/action@a45c4d594aa4e2c509dc14a9f2b3b67ba3780d0d # v1.9.0
         with:
           commit: 'chore: release'
           title: 'chore: release'

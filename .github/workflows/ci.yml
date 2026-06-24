@@ -29,14 +29,14 @@ jobs:
       matrix:
         node:
           - 24
-          - 25
+          - 26
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v6
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
 
       - name: Install Dependencies
-        uses: ./.github/actions/install-dependencies
+        uses: marcalexiei/github-actions/setup-node-and-pnpm@35654007fc916287603cd114516a3d1295f62689 # v2.0.0
         with:
           node-version: ${{ matrix.node }}
 
@@ -60,10 +60,10 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v6
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
 
       - name: Install Dependencies
-        uses: ./.github/actions/install-dependencies
+        uses: marcalexiei/github-actions/setup-node-and-pnpm@35654007fc916287603cd114516a3d1295f62689 # v2.0.0
 
       - name: Typecheck
         run: pnpm run typecheck

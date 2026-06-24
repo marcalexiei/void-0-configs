@@ -1,5 +1,5 @@
 ---
-"@marcalexiei/oxlint-config": patch
+'@marcalexiei/oxlint-config': patch
 ---
 
 fix: correct types

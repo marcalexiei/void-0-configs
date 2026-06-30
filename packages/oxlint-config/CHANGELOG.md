@@ -1,5 +1,19 @@
 # @marcalexiei/oxlint-config
 
+## 1.4.0
+
+### Minor Changes
+
+- [#55](https://github.com/marcalexiei/void-0-configs/pull/55) [`08ed247`](https://github.com/marcalexiei/void-0-configs/commit/08ed247955e2bdf97653adc96bc2aaa6aba66100) Thanks [@marcalexiei](https://github.com/marcalexiei)! - feat: configure new oxlint rules
+
+  Set all rules introduced by the latest oxlint release across the `base`,
+  `typescript` and `vitest` configs, mirroring the decisions made in
+  `@marcalexiei/eslint-config`.
+
+- [#55](https://github.com/marcalexiei/void-0-configs/pull/55) [`08ed247`](https://github.com/marcalexiei/void-0-configs/commit/08ed247955e2bdf97653adc96bc2aaa6aba66100) Thanks [@marcalexiei](https://github.com/marcalexiei)! - feat!: support oxlint >= 1.72 and oxlint-tsgolint >= 0.23
+
+- [#55](https://github.com/marcalexiei/void-0-configs/pull/55) [`08ed247`](https://github.com/marcalexiei/void-0-configs/commit/08ed247955e2bdf97653adc96bc2aaa6aba66100) Thanks [@marcalexiei](https://github.com/marcalexiei)! - fix: support new prefer-destructuring options format
+
 ## 1.3.2
 
 ### Patch Changes

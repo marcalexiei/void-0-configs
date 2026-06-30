@@ -1,5 +1,11 @@
 # @marcalexiei/oxlint-config
 
+## 1.3.2
+
+### Patch Changes
+
+- [#53](https://github.com/marcalexiei/void-0-configs/pull/53) [`3f0f723`](https://github.com/marcalexiei/void-0-configs/commit/3f0f7237335866300a1a1746671f68afdd9e28c8) Thanks [@marcalexiei](https://github.com/marcalexiei)! - fix: refine types
+
 ## 1.3.1
 
 ### Patch Changes

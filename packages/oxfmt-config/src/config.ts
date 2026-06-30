@@ -1,14 +1,22 @@
-import type { OxfmtConfig } from 'oxfmt';
+import type { OxfmtConfig, SortImportsConfig } from 'oxfmt';
 
-const oxfmtConfig = {
+const oxfmtConfig: OxfmtConfig & { sortImports: SortImportsConfig } = {
   printWidth: 100,
+  tabWidth: 2,
+  useTabs: false,
+  semi: true,
   singleQuote: true,
   jsxSingleQuote: false,
+  quoteProps: 'as-needed',
   trailingComma: 'all',
   bracketSameLine: true,
   bracketSpacing: true,
   arrowParens: 'always',
-  quoteProps: 'as-needed',
+  objectWrap: 'preserve',
+  proseWrap: 'preserve',
+  endOfLine: 'lf',
+  insertFinalNewline: true,
+  embeddedLanguageFormatting: 'auto',
 
   sortPackageJson: true,
 
@@ -27,7 +35,7 @@ const oxfmtConfig = {
     ],
     newlinesBetween: true,
   },
-} satisfies OxfmtConfig;
+};
 
 export { oxfmtConfig };
 export default oxfmtConfig;

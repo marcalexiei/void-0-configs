@@ -1,6 +1,6 @@
 import type { OxlintConfig } from 'oxlint';
 
-const vitestConfig = {
+const vitestConfig: OxlintConfig = {
   plugins: ['jest', 'vitest'],
   rules: {
     //=============================================================================
@@ -129,6 +129,6 @@ const vitestConfig = {
     'vitest/require-local-test-context-for-concurrent-snapshots': 'error',
     'vitest/warn-todo': 'error',
   },
-} as const satisfies OxlintConfig;
+};
 
 export { vitestConfig, vitestConfig as default };

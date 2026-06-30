@@ -205,8 +205,10 @@ const baseConfig: OxlintConfig = {
     'no-prototype-builtins': 'error',
     'no-redeclare': 'error',
     'no-regex-spaces': 'error',
+    // `default` is intentionally omitted: it conflicts with `unicorn/prefer-export-from`,
+    // which requires `export { default } from '...'` when re-exporting a default export.
     // https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-restricted-exports.html
-    'no-restricted-exports': ['error', { restrictedNamedExports: ['default', 'then'] }],
+    'no-restricted-exports': ['error', { restrictedNamedExports: ['then'] }],
 
     'no-restricted-globals': 'error',
     'no-restricted-imports': 'error',

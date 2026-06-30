@@ -4,7 +4,47 @@ exports[`config > async-await 1`] = `
 [
   {
     "causes": [],
-    "code": "typescript-eslint(explicit-function-return-type)",
+    "code": "unicorn(no-unnecessary-await)",
+    "filename": "fixtures/async-await/await-thenable.ts",
+    "help": "Consider removing the \`await\`",
+    "labels": [
+      {
+        "span": {
+          "column": 1,
+          "length": 5,
+          "line": 1,
+          "offset": 0,
+        },
+      },
+    ],
+    "message": "Unexpected \`await\` on a non-Promise value",
+    "related": [],
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/unicorn/no-unnecessary-await.html",
+  },
+  {
+    "causes": [],
+    "code": "unicorn(no-unnecessary-await)",
+    "filename": "fixtures/async-await/await-thenable.ts",
+    "help": "Consider removing the \`await\`",
+    "labels": [
+      {
+        "span": {
+          "column": 1,
+          "length": 5,
+          "line": 2,
+          "offset": 10,
+        },
+      },
+    ],
+    "message": "Unexpected \`await\` on a non-Promise value",
+    "related": [],
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/unicorn/no-unnecessary-await.html",
+  },
+  {
+    "causes": [],
+    "code": "typescript(explicit-function-return-type)",
     "filename": "fixtures/async-await/await-thenable.ts",
     "help": "Require explicit return types on functions and class methods.",
     "labels": [
@@ -24,27 +64,7 @@ exports[`config > async-await 1`] = `
   },
   {
     "causes": [],
-    "code": "typescript-eslint(explicit-function-return-type)",
-    "filename": "fixtures/async-await/await-thenable.ts",
-    "help": "Require explicit return types on functions and class methods.",
-    "labels": [
-      {
-        "span": {
-          "column": 9,
-          "length": 4,
-          "line": 6,
-          "offset": 78,
-        },
-      },
-    ],
-    "message": "Missing return type on function.",
-    "related": [],
-    "severity": "error",
-    "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/explicit-function-return-type.html",
-  },
-  {
-    "causes": [],
-    "code": "eslint-plugin-unicorn(no-thenable)",
+    "code": "unicorn(no-thenable)",
     "filename": "fixtures/async-await/await-thenable.ts",
     "help": "If an object is defined as 'thenable', once it's accidentally used in an await expression, it may cause problems",
     "labels": [
@@ -64,49 +84,39 @@ exports[`config > async-await 1`] = `
   },
   {
     "causes": [],
-    "code": "eslint-plugin-unicorn(no-unnecessary-await)",
+    "code": "typescript(explicit-function-return-type)",
     "filename": "fixtures/async-await/await-thenable.ts",
-    "help": "Consider removing the \`await\`",
+    "help": "Require explicit return types on functions and class methods.",
     "labels": [
       {
         "span": {
-          "column": 1,
-          "length": 5,
+          "column": 9,
+          "length": 4,
+          "line": 6,
+          "offset": 78,
+        },
+      },
+    ],
+    "message": "Missing return type on function.",
+    "related": [],
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/explicit-function-return-type.html",
+  },
+  {
+    "causes": [],
+    "code": "typescript(await-thenable)",
+    "filename": "fixtures/async-await/await-thenable.ts",
+    "help": "Remove \`await\` if the value is synchronous, or change the expression to return a Promise or Thenable before awaiting it.",
+    "labels": [
+      {
+        "label": "This expression is not Promise-like",
+        "span": {
+          "column": 7,
+          "length": 2,
           "line": 1,
-          "offset": 0,
+          "offset": 6,
         },
       },
-    ],
-    "message": "Unexpected \`await\` on a non-Promise value",
-    "related": [],
-    "severity": "error",
-    "url": "https://oxc.rs/docs/guide/usage/linter/rules/unicorn/no-unnecessary-await.html",
-  },
-  {
-    "causes": [],
-    "code": "eslint-plugin-unicorn(no-unnecessary-await)",
-    "filename": "fixtures/async-await/await-thenable.ts",
-    "help": "Consider removing the \`await\`",
-    "labels": [
-      {
-        "span": {
-          "column": 1,
-          "length": 5,
-          "line": 2,
-          "offset": 10,
-        },
-      },
-    ],
-    "message": "Unexpected \`await\` on a non-Promise value",
-    "related": [],
-    "severity": "error",
-    "url": "https://oxc.rs/docs/guide/usage/linter/rules/unicorn/no-unnecessary-await.html",
-  },
-  {
-    "causes": [],
-    "code": "typescript-eslint(await-thenable)",
-    "filename": "fixtures/async-await/await-thenable.ts",
-    "labels": [
       {
         "span": {
           "column": 1,
@@ -123,9 +133,19 @@ exports[`config > async-await 1`] = `
   },
   {
     "causes": [],
-    "code": "typescript-eslint(await-thenable)",
+    "code": "typescript(await-thenable)",
     "filename": "fixtures/async-await/await-thenable.ts",
+    "help": "Remove \`await\` if the value is synchronous, or change the expression to return a Promise or Thenable before awaiting it.",
     "labels": [
+      {
+        "label": "This expression is not Promise-like",
+        "span": {
+          "column": 7,
+          "length": 10,
+          "line": 2,
+          "offset": 16,
+        },
+      },
       {
         "span": {
           "column": 1,
@@ -142,9 +162,19 @@ exports[`config > async-await 1`] = `
   },
   {
     "causes": [],
-    "code": "typescript-eslint(await-thenable)",
+    "code": "typescript(await-thenable)",
     "filename": "fixtures/async-await/await-thenable.ts",
+    "help": "Remove \`await\` if the value is synchronous, or change the expression to return a Promise or Thenable before awaiting it.",
     "labels": [
+      {
+        "label": "This expression is not Promise-like",
+        "span": {
+          "column": 7,
+          "length": 11,
+          "line": 5,
+          "offset": 57,
+        },
+      },
       {
         "span": {
           "column": 1,
@@ -161,9 +191,19 @@ exports[`config > async-await 1`] = `
   },
   {
     "causes": [],
-    "code": "typescript-eslint(await-thenable)",
+    "code": "typescript(await-thenable)",
     "filename": "fixtures/async-await/await-thenable.ts",
+    "help": "Remove \`await\` if the value is synchronous, or change the expression to return a Promise or Thenable before awaiting it.",
     "labels": [
+      {
+        "label": "This expression is not Promise-like",
+        "span": {
+          "column": 7,
+          "length": 13,
+          "line": 6,
+          "offset": 76,
+        },
+      },
       {
         "span": {
           "column": 1,
@@ -180,9 +220,19 @@ exports[`config > async-await 1`] = `
   },
   {
     "causes": [],
-    "code": "typescript-eslint(await-thenable)",
+    "code": "typescript(await-thenable)",
     "filename": "fixtures/async-await/await-thenable.ts",
+    "help": "Remove \`await\` if the value is synchronous, or change the expression to return a Promise or Thenable before awaiting it.",
     "labels": [
+      {
+        "label": "This expression is not Promise-like",
+        "span": {
+          "column": 7,
+          "length": 10,
+          "line": 10,
+          "offset": 213,
+        },
+      },
       {
         "span": {
           "column": 1,
@@ -224,7 +274,7 @@ exports[`config > import-no-cycle 1`] = `
 [
   {
     "causes": [],
-    "code": "eslint-plugin-import(no-cycle)",
+    "code": "import(no-cycle)",
     "filename": "fixtures/import-no-cycle/a.ts",
     "help": "Refactor to remove the cycle. Consider extracting shared code into a separate module that both files can import.",
     "labels": [
@@ -249,7 +299,7 @@ exports[`config > import-no-cycle 1`] = `
   },
   {
     "causes": [],
-    "code": "eslint-plugin-import(no-cycle)",
+    "code": "import(no-cycle)",
     "filename": "fixtures/import-no-cycle/b.ts",
     "help": "Refactor to remove the cycle. Consider extracting shared code into a separate module that both files can import.",
     "labels": [
@@ -279,7 +329,7 @@ exports[`config > import-type 1`] = `
 [
   {
     "causes": [],
-    "code": "eslint-plugin-import(consistent-type-specifier-style)",
+    "code": "import(consistent-type-specifier-style)",
     "filename": "fixtures/import-type/index.ts",
     "help": "Replace inline type specifiers with a top‐level import type statement.",
     "labels": [
@@ -299,7 +349,7 @@ exports[`config > import-type 1`] = `
   },
   {
     "causes": [],
-    "code": "typescript-eslint(consistent-type-imports)",
+    "code": "typescript(consistent-type-imports)",
     "filename": "fixtures/import-type/index.ts",
     "help": "Replace the \`import\` declaration with \`import type\`. For example, change \`import { Type } from 'module'\` would become \`import type { Type } from 'module'\`.",
     "labels": [
@@ -344,7 +394,7 @@ exports[`config > type-aware 1`] = `
   },
   {
     "causes": [],
-    "code": "typescript-eslint(no-explicit-any)",
+    "code": "typescript(no-explicit-any)",
     "filename": "fixtures/type-aware/no-unsafe-type-assertion.ts",
     "help": "Use \`unknown\` instead, this will force you to explicitly, and safely, assert the type is correct.",
     "labels": [
@@ -364,7 +414,7 @@ exports[`config > type-aware 1`] = `
   },
   {
     "causes": [],
-    "code": "typescript-eslint(no-unnecessary-type-parameters)",
+    "code": "typescript(no-unnecessary-type-parameters)",
     "filename": "fixtures/type-aware/no-unsafe-type-assertion.ts",
     "labels": [
       {
@@ -392,7 +442,7 @@ exports[`config > type-aware 1`] = `
   },
   {
     "causes": [],
-    "code": "typescript-eslint(no-unsafe-type-assertion)",
+    "code": "typescript(no-unsafe-type-assertion)",
     "filename": "fixtures/type-aware/no-unsafe-type-assertion.ts",
     "labels": [
       {
@@ -411,7 +461,7 @@ exports[`config > type-aware 1`] = `
   },
   {
     "causes": [],
-    "code": "typescript-eslint(no-unsafe-type-assertion)",
+    "code": "typescript(no-unsafe-type-assertion)",
     "filename": "fixtures/type-aware/no-unsafe-type-assertion.ts",
     "labels": [
       {
@@ -435,7 +485,7 @@ exports[`config > typescript 1`] = `
 [
   {
     "causes": [],
-    "code": "eslint-plugin-import(unambiguous)",
+    "code": "import(unambiguous)",
     "filename": "fixtures/typescript/example.ts",
     "help": "Add at least one import or export statement to unambiguously mark this file as a module",
     "labels": [
@@ -452,145 +502,6 @@ exports[`config > typescript 1`] = `
     "related": [],
     "severity": "error",
     "url": "https://oxc.rs/docs/guide/usage/linter/rules/import/unambiguous.html",
-  },
-  {
-    "causes": [],
-    "code": "eslint(guard-for-in)",
-    "filename": "fixtures/typescript/example.ts",
-    "help": "The body of a for-in should be wrapped in an if statement to filter unwanted properties from the prototype.",
-    "labels": [
-      {
-        "span": {
-          "column": 1,
-          "length": 19,
-          "line": 4,
-          "offset": 46,
-        },
-      },
-    ],
-    "message": "Require \`for-in\` loops to include an \`if\` statement",
-    "related": [],
-    "severity": "error",
-    "url": "https://oxc.rs/docs/guide/usage/linter/rules/eslint/guard-for-in.html",
-  },
-  {
-    "causes": [],
-    "code": "eslint(id-length)",
-    "filename": "fixtures/typescript/example.ts",
-    "labels": [
-      {
-        "span": {
-          "column": 7,
-          "length": 1,
-          "line": 1,
-          "offset": 6,
-        },
-      },
-    ],
-    "message": "Identifier name is too short (< 2).",
-    "related": [],
-    "severity": "error",
-    "url": "https://oxc.rs/docs/guide/usage/linter/rules/eslint/id-length.html",
-  },
-  {
-    "causes": [],
-    "code": "eslint(id-length)",
-    "filename": "fixtures/typescript/example.ts",
-    "labels": [
-      {
-        "span": {
-          "column": 12,
-          "length": 1,
-          "line": 4,
-          "offset": 57,
-        },
-      },
-    ],
-    "message": "Identifier name is too short (< 2).",
-    "related": [],
-    "severity": "error",
-    "url": "https://oxc.rs/docs/guide/usage/linter/rules/eslint/id-length.html",
-  },
-  {
-    "causes": [],
-    "code": "eslint(no-console)",
-    "filename": "fixtures/typescript/example.ts",
-    "help": "Delete this console statement.",
-    "labels": [
-      {
-        "span": {
-          "column": 1,
-          "length": 12,
-          "line": 3,
-          "offset": 25,
-        },
-      },
-    ],
-    "message": "Unexpected console statement.",
-    "related": [],
-    "severity": "error",
-    "url": "https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-console.html",
-  },
-  {
-    "causes": [],
-    "code": "eslint(no-console)",
-    "filename": "fixtures/typescript/example.ts",
-    "help": "Delete this console statement.",
-    "labels": [
-      {
-        "span": {
-          "column": 3,
-          "length": 12,
-          "line": 5,
-          "offset": 70,
-        },
-      },
-    ],
-    "message": "Unexpected console statement.",
-    "related": [],
-    "severity": "error",
-    "url": "https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-console.html",
-  },
-  {
-    "causes": [],
-    "code": "eslint(no-console)",
-    "filename": "fixtures/typescript/example.ts",
-    "help": "Delete this console statement.",
-    "labels": [
-      {
-        "span": {
-          "column": 3,
-          "length": 11,
-          "line": 10,
-          "offset": 149,
-        },
-      },
-    ],
-    "message": "Unexpected console statement.",
-    "related": [],
-    "severity": "error",
-    "url": "https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-console.html",
-  },
-  {
-    "causes": [],
-    "code": "eslint(no-constant-condition)",
-    "filename": "fixtures/typescript/example.ts",
-    "help": "Update the condition to not be constant, or remove the condition entirely",
-    "labels": [
-      {
-        "label": "this expression will always evaluate to the same value",
-        "span": {
-          "column": 5,
-          "length": 4,
-          "line": 8,
-          "offset": 99,
-        },
-      },
-    ],
-    "message": "Unexpected constant condition",
-    "related": [],
-    "severity": "error",
-    "url": "https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-constant-condition.html",
   },
   {
     "causes": [],
@@ -666,27 +577,7 @@ exports[`config > typescript 1`] = `
   },
   {
     "causes": [],
-    "code": "typescript-eslint(array-type)",
-    "filename": "fixtures/typescript/example.ts",
-    "help": "Replace \`string[]\` with \`Array<string>\`.",
-    "labels": [
-      {
-        "span": {
-          "column": 10,
-          "length": 8,
-          "line": 1,
-          "offset": 9,
-        },
-      },
-    ],
-    "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead.",
-    "related": [],
-    "severity": "error",
-    "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/array-type.html",
-  },
-  {
-    "causes": [],
-    "code": "typescript-eslint(ban-ts-comment)",
+    "code": "typescript(ban-ts-comment)",
     "filename": "fixtures/typescript/example.ts",
     "help": "Replace "@ts-ignore" with "@ts-expect-error".",
     "labels": [
@@ -706,7 +597,7 @@ exports[`config > typescript 1`] = `
   },
   {
     "causes": [],
-    "code": "typescript-eslint(prefer-ts-expect-error)",
+    "code": "typescript(prefer-ts-expect-error)",
     "filename": "fixtures/typescript/example.ts",
     "help": "Use "@ts-expect-error" to ensure an error is actually being suppressed.",
     "labels": [
@@ -726,7 +617,166 @@ exports[`config > typescript 1`] = `
   },
   {
     "causes": [],
-    "code": "typescript-eslint(no-for-in-array)",
+    "code": "eslint(id-length)",
+    "filename": "fixtures/typescript/example.ts",
+    "labels": [
+      {
+        "span": {
+          "column": 7,
+          "length": 1,
+          "line": 1,
+          "offset": 6,
+        },
+      },
+    ],
+    "message": "Identifier name is too short (< 2).",
+    "related": [],
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/eslint/id-length.html",
+  },
+  {
+    "causes": [],
+    "code": "typescript(array-type)",
+    "filename": "fixtures/typescript/example.ts",
+    "help": "Replace \`string[]\` with \`Array<string>\`.",
+    "labels": [
+      {
+        "span": {
+          "column": 10,
+          "length": 8,
+          "line": 1,
+          "offset": 9,
+        },
+      },
+    ],
+    "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead.",
+    "related": [],
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/array-type.html",
+  },
+  {
+    "causes": [],
+    "code": "eslint(no-console)",
+    "filename": "fixtures/typescript/example.ts",
+    "help": "Delete this console statement.",
+    "labels": [
+      {
+        "span": {
+          "column": 1,
+          "length": 12,
+          "line": 3,
+          "offset": 25,
+        },
+      },
+    ],
+    "message": "Unexpected console statement.",
+    "related": [],
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-console.html",
+  },
+  {
+    "causes": [],
+    "code": "eslint(guard-for-in)",
+    "filename": "fixtures/typescript/example.ts",
+    "help": "The body of a for-in should be wrapped in an if statement to filter unwanted properties from the prototype.",
+    "labels": [
+      {
+        "span": {
+          "column": 1,
+          "length": 19,
+          "line": 4,
+          "offset": 46,
+        },
+      },
+    ],
+    "message": "Require \`for-in\` loops to include an \`if\` statement",
+    "related": [],
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/eslint/guard-for-in.html",
+  },
+  {
+    "causes": [],
+    "code": "eslint(id-length)",
+    "filename": "fixtures/typescript/example.ts",
+    "labels": [
+      {
+        "span": {
+          "column": 12,
+          "length": 1,
+          "line": 4,
+          "offset": 57,
+        },
+      },
+    ],
+    "message": "Identifier name is too short (< 2).",
+    "related": [],
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/eslint/id-length.html",
+  },
+  {
+    "causes": [],
+    "code": "eslint(no-console)",
+    "filename": "fixtures/typescript/example.ts",
+    "help": "Delete this console statement.",
+    "labels": [
+      {
+        "span": {
+          "column": 3,
+          "length": 12,
+          "line": 5,
+          "offset": 70,
+        },
+      },
+    ],
+    "message": "Unexpected console statement.",
+    "related": [],
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-console.html",
+  },
+  {
+    "causes": [],
+    "code": "eslint(no-constant-condition)",
+    "filename": "fixtures/typescript/example.ts",
+    "help": "Update the condition to not be constant, or remove the condition entirely",
+    "labels": [
+      {
+        "label": "this expression will always evaluate to the same value",
+        "span": {
+          "column": 5,
+          "length": 4,
+          "line": 8,
+          "offset": 99,
+        },
+      },
+    ],
+    "message": "Unexpected constant condition",
+    "related": [],
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-constant-condition.html",
+  },
+  {
+    "causes": [],
+    "code": "eslint(no-console)",
+    "filename": "fixtures/typescript/example.ts",
+    "help": "Delete this console statement.",
+    "labels": [
+      {
+        "span": {
+          "column": 3,
+          "length": 11,
+          "line": 10,
+          "offset": 149,
+        },
+      },
+    ],
+    "message": "Unexpected console statement.",
+    "related": [],
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-console.html",
+  },
+  {
+    "causes": [],
+    "code": "typescript(no-for-in-array)",
     "filename": "fixtures/typescript/example.ts",
     "help": "Use a more robust iteration method such as for-of or array.forEach instead.",
     "labels": [
@@ -746,7 +796,7 @@ exports[`config > typescript 1`] = `
   },
   {
     "causes": [],
-    "code": "typescript-eslint(no-unnecessary-condition)",
+    "code": "typescript(no-unnecessary-condition)",
     "filename": "fixtures/typescript/example.ts",
     "labels": [
       {
@@ -785,7 +835,47 @@ exports[`config > typescript 1`] = `
   },
   {
     "causes": [],
-    "code": "typescript-eslint(no-explicit-any)",
+    "code": "eslint(prefer-destructuring)",
+    "filename": "fixtures/typescript/prefer-destructing.ts",
+    "help": "Use array destructuring rather than direct member access.",
+    "labels": [
+      {
+        "span": {
+          "column": 3,
+          "length": 19,
+          "line": 10,
+          "offset": 223,
+        },
+      },
+    ],
+    "message": "Use Array destructuring.",
+    "related": [],
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/eslint/prefer-destructuring.html",
+  },
+  {
+    "causes": [],
+    "code": "eslint(prefer-destructuring)",
+    "filename": "fixtures/typescript/prefer-destructing.ts",
+    "help": "Use object destructuring rather than direct member access.",
+    "labels": [
+      {
+        "span": {
+          "column": 3,
+          "length": 15,
+          "line": 23,
+          "offset": 418,
+        },
+      },
+    ],
+    "message": "Use Object destructuring.",
+    "related": [],
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/eslint/prefer-destructuring.html",
+  },
+  {
+    "causes": [],
+    "code": "typescript(no-explicit-any)",
     "filename": "fixtures/typescript/unsafe-call.ts",
     "help": "Use \`unknown\` instead, this will force you to explicitly, and safely, assert the type is correct.",
     "labels": [
@@ -805,7 +895,7 @@ exports[`config > typescript 1`] = `
   },
   {
     "causes": [],
-    "code": "eslint-plugin-unicorn(prefer-top-level-await)",
+    "code": "unicorn(prefer-top-level-await)",
     "filename": "fixtures/typescript/unsafe-call.ts",
     "labels": [
       {
@@ -824,7 +914,7 @@ exports[`config > typescript 1`] = `
   },
   {
     "causes": [],
-    "code": "typescript-eslint(no-unsafe-call)",
+    "code": "typescript(no-unsafe-call)",
     "filename": "fixtures/typescript/unsafe-call.ts",
     "labels": [
       {
@@ -843,7 +933,7 @@ exports[`config > typescript 1`] = `
   },
   {
     "causes": [],
-    "code": "typescript-eslint(no-unsafe-call)",
+    "code": "typescript(no-unsafe-call)",
     "filename": "fixtures/typescript/unsafe-call.ts",
     "labels": [
       {
@@ -862,7 +952,7 @@ exports[`config > typescript 1`] = `
   },
   {
     "causes": [],
-    "code": "typescript-eslint(no-unsafe-assignment)",
+    "code": "typescript(no-unsafe-assignment)",
     "filename": "fixtures/typescript/unsafe-call.ts",
     "labels": [
       {
@@ -881,7 +971,7 @@ exports[`config > typescript 1`] = `
   },
   {
     "causes": [],
-    "code": "typescript-eslint(no-unsafe-call)",
+    "code": "typescript(no-unsafe-call)",
     "filename": "fixtures/typescript/unsafe-call.ts",
     "labels": [
       {
@@ -900,7 +990,7 @@ exports[`config > typescript 1`] = `
   },
   {
     "causes": [],
-    "code": "typescript-eslint(no-unsafe-call)",
+    "code": "typescript(no-unsafe-call)",
     "filename": "fixtures/typescript/unsafe-call.ts",
     "labels": [
       {
@@ -919,7 +1009,7 @@ exports[`config > typescript 1`] = `
   },
   {
     "causes": [],
-    "code": "typescript-eslint(no-unsafe-member-access)",
+    "code": "typescript(no-unsafe-member-access)",
     "filename": "fixtures/typescript/unsafe-call.ts",
     "labels": [
       {
@@ -938,7 +1028,7 @@ exports[`config > typescript 1`] = `
   },
   {
     "causes": [],
-    "code": "typescript-eslint(no-unsafe-call)",
+    "code": "typescript(no-unsafe-call)",
     "filename": "fixtures/typescript/unsafe-call.ts",
     "labels": [
       {
@@ -957,7 +1047,7 @@ exports[`config > typescript 1`] = `
   },
   {
     "causes": [],
-    "code": "typescript-eslint(no-unsafe-member-access)",
+    "code": "typescript(no-unsafe-member-access)",
     "filename": "fixtures/typescript/unsafe-call.ts",
     "labels": [
       {
@@ -976,7 +1066,7 @@ exports[`config > typescript 1`] = `
   },
   {
     "causes": [],
-    "code": "typescript-eslint(no-unsafe-call)",
+    "code": "typescript(no-unsafe-call)",
     "filename": "fixtures/typescript/unsafe-call.ts",
     "labels": [
       {
@@ -1000,7 +1090,7 @@ exports[`config > vitest 1`] = `
 [
   {
     "causes": [],
-    "code": "eslint-plugin-vitest(consistent-test-filename)",
+    "code": "vitest(consistent-test-filename)",
     "filename": "",
     "help": "Rename the file that match the pattern (?u).*\\.spec\\.[tj]sx?$",
     "labels": [],
@@ -1011,7 +1101,7 @@ exports[`config > vitest 1`] = `
   },
   {
     "causes": [],
-    "code": "eslint-plugin-vitest(prefer-called-times)",
+    "code": "vitest(prefer-called-times)",
     "filename": "fixtures/vitest/index.spec.ts",
     "help": "Replace with \`toBeCalledTimes(1)\` or \`toHaveBeenCalledTimes(1)\` for clarity and consistency",
     "labels": [
@@ -1028,6 +1118,26 @@ exports[`config > vitest 1`] = `
     "related": [],
     "severity": "error",
     "url": "https://oxc.rs/docs/guide/usage/linter/rules/vitest/prefer-called-times.html",
+  },
+  {
+    "causes": [],
+    "code": "vitest(require-mock-type-parameters)",
+    "filename": "fixtures/vitest/index.spec.ts",
+    "help": "Add a type parameter to the mock function, e.g. \`vi.fn<() => void>()\`.",
+    "labels": [
+      {
+        "span": {
+          "column": 19,
+          "length": 2,
+          "line": 11,
+          "offset": 218,
+        },
+      },
+    ],
+    "message": "Missing type parameters on mock function call",
+    "related": [],
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/vitest/require-mock-type-parameters.html",
   },
 ]
 `;

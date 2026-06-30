@@ -24,6 +24,6 @@
 }
 
 const alfa = 1;
-const beta = { alfa: alfa };
+const beta = { alfa };
 
 export { beta };

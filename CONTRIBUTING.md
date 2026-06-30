@@ -1,8 +1,8 @@
 # Contributing
 
-##  Setup
+## Setup
 
-TODO
+<https://marcalexiei.github.io/contribute/setup-pnpm-nvm.html>
 
 ## Tests
 

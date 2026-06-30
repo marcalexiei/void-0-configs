@@ -1,5 +1,15 @@
 # @marcalexiei/oxlint-config
 
+## 1.4.1
+
+### Patch Changes
+
+- [#57](https://github.com/marcalexiei/void-0-configs/pull/57) [`92727d5`](https://github.com/marcalexiei/void-0-configs/commit/92727d5339806ba0736f823f57d25467822481fd) Thanks [@marcalexiei](https://github.com/marcalexiei)! - fix: stop restricting `default` in `no-restricted-exports`
+
+  `restrictedNamedExports: ['default']` conflicted with `unicorn/prefer-export-from`,
+  which requires `export { default } from '...'` when re-exporting a default export.
+  Only `then` is restricted now.
+
 ## 1.4.0
 
 ### Minor Changes

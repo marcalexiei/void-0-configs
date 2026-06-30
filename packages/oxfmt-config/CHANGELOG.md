@@ -1,5 +1,15 @@
 # @marcalexiei/oxfmt-config
 
+## 1.2.1
+
+### Patch Changes
+
+- [#58](https://github.com/marcalexiei/void-0-configs/pull/58) [`e19fcef`](https://github.com/marcalexiei/void-0-configs/commit/e19fcef490acabedb1747f8d5e5bbc80dd3f2c89) Thanks [@marcalexiei](https://github.com/marcalexiei)! - chore: explicitly set all supported oxfmt formatting options
+
+  Pin every JS/TS/JSON/Markdown/YAML option the current oxfmt version supports so
+  the config is self-documenting and stays stable if upstream defaults change.
+  Formatting output is unchanged.
+
 ## 1.2.0
 
 ### Minor Changes

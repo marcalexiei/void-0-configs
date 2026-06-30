@@ -39,6 +39,7 @@ const baseConfig: OxlintConfig = {
     'default-param-last': 'error',
     eqeqeq: 'error',
     'for-direction': 'error',
+    'func-name-matching': 'off',
     'func-names': 'error',
     'func-style': 'off',
     'getter-return': 'error',
@@ -59,8 +60,14 @@ const baseConfig: OxlintConfig = {
       },
     ],
 
+    // requires an explicit pattern to be useful
+    // https://oxc.rs/docs/guide/usage/linter/rules/eslint/id-match.html
+    'id-match': 'off',
+
     // https://oxc.rs/docs/guide/usage/linter/rules/eslint/init-declarations.html
     'init-declarations': 'off',
+
+    'logical-assignment-operators': 'off',
 
     // https://oxc.rs/docs/guide/usage/linter/rules/eslint/max-classes-per-file.html
     'max-classes-per-file': 'error',
@@ -154,6 +161,11 @@ const baseConfig: OxlintConfig = {
     // https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-implicit-coercion.html
     'no-implicit-coercion': ['error', { allow: ['!!'] }],
 
+    'no-implicit-globals': 'off',
+
+    // handled by the type-aware typescript/no-implied-eval rule
+    'no-implied-eval': 'off',
+
     'no-import-assign': 'error',
     'no-inline-comments': 'error',
     'no-inner-declarations': 'error',
@@ -193,8 +205,27 @@ const baseConfig: OxlintConfig = {
     'no-prototype-builtins': 'error',
     'no-redeclare': 'error',
     'no-regex-spaces': 'error',
+    // https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-restricted-exports.html
+    'no-restricted-exports': ['error', { restrictedNamedExports: ['default', 'then'] }],
+
     'no-restricted-globals': 'error',
     'no-restricted-imports': 'error',
+
+    // https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-restricted-properties.html
+    'no-restricted-properties': [
+      'error',
+      { object: 'arguments', property: 'callee', message: 'arguments.callee is deprecated' },
+      { object: 'global', property: 'isFinite', message: 'Please use Number.isFinite instead' },
+      { object: 'self', property: 'isFinite', message: 'Please use Number.isFinite instead' },
+      { object: 'window', property: 'isFinite', message: 'Please use Number.isFinite instead' },
+      { object: 'global', property: 'isNaN', message: 'Please use Number.isNaN instead' },
+      { object: 'self', property: 'isNaN', message: 'Please use Number.isNaN instead' },
+      { object: 'window', property: 'isNaN', message: 'Please use Number.isNaN instead' },
+      { property: '__defineGetter__', message: 'Please use Object.defineProperty instead.' },
+      { property: '__defineSetter__', message: 'Please use Object.defineProperty instead.' },
+      { object: 'Math', property: 'pow', message: 'Use the exponentiation operator (**) instead.' },
+    ],
+
     'no-return-assign': 'error',
     'no-script-url': 'error',
     'no-self-assign': 'error',
@@ -218,6 +249,7 @@ const baseConfig: OxlintConfig = {
     // https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-undefined.html
     'no-undefined': 'off',
 
+    'no-underscore-dangle': 'off',
     'no-unexpected-multiline': 'error',
     'no-unmodified-loop-condition': 'error',
 
@@ -233,6 +265,7 @@ const baseConfig: OxlintConfig = {
     'no-unused-private-class-members': 'error',
     'no-unused-vars': 'error',
     'no-use-before-define': 'error',
+    'no-useless-assignment': 'error',
     'no-useless-backreference': 'error',
     'no-useless-call': 'error',
     'no-useless-catch': 'error',
@@ -260,16 +293,13 @@ const baseConfig: OxlintConfig = {
     'no-warning-comments': 'error',
     'no-with': 'error',
 
-    // 'object-shorthand': ['error', 'always', { ignoreConstructors: false, avoidQuotes: true }],
-
     // 'one-var': ['error', 'never'],
 
-    // 'prefer-arrow-callback': [
-    //   'error',
-    //   { allowNamedFunctions: false, allowUnboundThis: true },
-    // ],
+    'object-shorthand': ['error', 'always', { ignoreConstructors: false, avoidQuotes: true }],
 
     'operator-assignment': 'error',
+
+    'prefer-arrow-callback': ['error', { allowNamedFunctions: false, allowUnboundThis: true }],
 
     // https://oxc.rs/docs/guide/usage/linter/rules/eslint/prefer-const.html
     'prefer-const': [
@@ -291,19 +321,19 @@ const baseConfig: OxlintConfig = {
       },
     ],
     'prefer-exponentiation-operator': 'error',
+    'prefer-named-capture-group': 'error',
     'prefer-numeric-literals': 'error',
     'prefer-object-has-own': 'error',
     'prefer-object-spread': 'error',
     'prefer-promise-reject-errors': 'error',
-
-    // 'prefer-regex-literals': ['error', { disallowRedundantWrapping: true }],
-
+    'prefer-regex-literals': ['error', { disallowRedundantWrapping: true }],
     'prefer-rest-params': 'error',
     'prefer-spread': 'error',
     'prefer-template': 'error',
     'preserve-caught-error': 'error',
     radix: 'error',
     'require-await': 'error',
+    'require-unicode-regexp': 'off',
     'require-yield': 'error',
     'sort-imports': 'off',
 
@@ -332,6 +362,8 @@ const baseConfig: OxlintConfig = {
     'unicorn/consistent-empty-array-spread': 'error',
     'unicorn/consistent-existence-index-check': 'error',
     'unicorn/consistent-function-scoping': 'error',
+    'unicorn/consistent-template-literal-escape': 'error',
+    'unicorn/custom-error-definition': 'error',
     'unicorn/empty-brace-spaces': 'error',
     'unicorn/error-message': 'error',
     'unicorn/escape-case': 'error',
@@ -351,11 +383,14 @@ const baseConfig: OxlintConfig = {
       },
     ],
 
+    'unicorn/import-style': 'error',
+    'unicorn/max-nested-calls': 'error',
     'unicorn/new-for-builtins': 'error',
     'unicorn/no-abusive-eslint-disable': 'error',
     'unicorn/no-accessor-recursion': 'error',
     'unicorn/no-anonymous-default-export': 'error',
     'unicorn/no-array-callback-reference': 'error',
+    'unicorn/no-array-fill-with-reference-type': 'error',
     'unicorn/no-array-for-each': 'error',
     'unicorn/no-array-method-this-argument': 'error',
     'unicorn/no-array-reduce': 'error',
@@ -375,6 +410,11 @@ const baseConfig: OxlintConfig = {
     'unicorn/no-length-as-slice-end': 'error',
     'unicorn/no-lonely-if': 'error',
     'unicorn/no-magic-array-flat-depth': 'error',
+
+    // makes earlier return easier
+    // https://oxc.rs/docs/guide/usage/linter/rules/unicorn/no-negated-condition.html
+    'unicorn/no-negated-condition': 'off',
+
     'unicorn/no-negation-in-equality-check': 'error',
     'unicorn/no-nested-ternary': 'error',
     'unicorn/no-new-array': 'error',
@@ -399,6 +439,7 @@ const baseConfig: OxlintConfig = {
     'unicorn/no-useless-collection-argument': 'error',
     'unicorn/no-useless-error-capture-stack-trace': 'error',
     'unicorn/no-useless-fallback-in-spread': 'error',
+    'unicorn/no-useless-iterator-to-array': 'error',
     'unicorn/no-useless-length-check': 'error',
     'unicorn/no-useless-promise-resolve-reject': 'error',
     'unicorn/no-useless-spread': 'error',
@@ -430,7 +471,9 @@ const baseConfig: OxlintConfig = {
     'unicorn/prefer-dom-node-remove': 'error',
     'unicorn/prefer-dom-node-text-content': 'error',
     'unicorn/prefer-event-target': 'error',
+    'unicorn/prefer-export-from': 'error',
     'unicorn/prefer-global-this': 'error',
+    'unicorn/prefer-import-meta-properties': 'error',
     'unicorn/prefer-includes': 'error',
     'unicorn/prefer-keyboard-event-key': 'error',
     'unicorn/prefer-logical-operator-over-ternary': 'error',
@@ -441,6 +484,7 @@ const baseConfig: OxlintConfig = {
     'unicorn/prefer-native-coercion-functions': 'error',
     'unicorn/prefer-negative-index': 'error',
     'unicorn/prefer-node-protocol': 'error',
+    'unicorn/prefer-number-coercion': 'error',
     'unicorn/prefer-number-properties': 'error',
     'unicorn/prefer-object-from-entries': 'error',
     'unicorn/prefer-optional-catch-binding': 'error',
@@ -451,6 +495,7 @@ const baseConfig: OxlintConfig = {
     'unicorn/prefer-response-static-json': 'error',
     'unicorn/prefer-set-has': 'error',
     'unicorn/prefer-set-size': 'error',
+    'unicorn/prefer-single-call': 'error',
     'unicorn/prefer-spread': 'error',
     'unicorn/prefer-string-raw': 'error',
     'unicorn/prefer-string-replace-all': 'error',
@@ -471,6 +516,7 @@ const baseConfig: OxlintConfig = {
     'unicorn/require-number-to-fixed-digits-argument': 'error',
     'unicorn/require-post-message-target-origin': 'error',
     'unicorn/switch-case-braces': 'error',
+    'unicorn/switch-case-break-position': 'error',
     'unicorn/text-encoding-identifier-case': 'error',
     'unicorn/throw-new-error': 'error',
 
@@ -496,6 +542,7 @@ const baseConfig: OxlintConfig = {
 
     'import/named': 'error',
     'import/namespace': 'error',
+    'import/newline-after-import': 'error',
     'import/no-absolute-path': 'error',
     'import/no-amd': 'error',
     'import/no-anonymous-default-export': 'error',

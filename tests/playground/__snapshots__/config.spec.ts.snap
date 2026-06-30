@@ -1136,7 +1136,7 @@ exports[`config > vitest 1`] = `
     ],
     "message": "Missing type parameters on mock function call",
     "related": [],
-    "severity": "warning",
+    "severity": "error",
     "url": "https://oxc.rs/docs/guide/usage/linter/rules/vitest/require-mock-type-parameters.html",
   },
 ]

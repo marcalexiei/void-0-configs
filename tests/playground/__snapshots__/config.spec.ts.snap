@@ -3,7 +3,6 @@
 exports[`config > async-await 1`] = `
 [
   {
-    "causes": [],
     "code": "unicorn(no-unnecessary-await)",
     "filename": "fixtures/async-await/await-thenable.ts",
     "help": "Consider removing the \`await\`",
@@ -18,12 +17,10 @@ exports[`config > async-await 1`] = `
       },
     ],
     "message": "Unexpected \`await\` on a non-Promise value",
-    "related": [],
     "severity": "error",
     "url": "https://oxc.rs/docs/guide/usage/linter/rules/unicorn/no-unnecessary-await.html",
   },
   {
-    "causes": [],
     "code": "unicorn(no-unnecessary-await)",
     "filename": "fixtures/async-await/await-thenable.ts",
     "help": "Consider removing the \`await\`",
@@ -38,12 +35,10 @@ exports[`config > async-await 1`] = `
       },
     ],
     "message": "Unexpected \`await\` on a non-Promise value",
-    "related": [],
     "severity": "error",
     "url": "https://oxc.rs/docs/guide/usage/linter/rules/unicorn/no-unnecessary-await.html",
   },
   {
-    "causes": [],
     "code": "typescript(explicit-function-return-type)",
     "filename": "fixtures/async-await/await-thenable.ts",
     "help": "Require explicit return types on functions and class methods.",
@@ -58,12 +53,10 @@ exports[`config > async-await 1`] = `
       },
     ],
     "message": "Missing return type on function.",
-    "related": [],
     "severity": "error",
     "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/explicit-function-return-type.html",
   },
   {
-    "causes": [],
     "code": "unicorn(no-thenable)",
     "filename": "fixtures/async-await/await-thenable.ts",
     "help": "If an object is defined as 'thenable', once it's accidentally used in an await expression, it may cause problems",
@@ -78,12 +71,10 @@ exports[`config > async-await 1`] = `
       },
     ],
     "message": "Do not add \`then\` to an object.",
-    "related": [],
     "severity": "error",
     "url": "https://oxc.rs/docs/guide/usage/linter/rules/unicorn/no-thenable.html",
   },
   {
-    "causes": [],
     "code": "typescript(explicit-function-return-type)",
     "filename": "fixtures/async-await/await-thenable.ts",
     "help": "Require explicit return types on functions and class methods.",
@@ -98,12 +89,10 @@ exports[`config > async-await 1`] = `
       },
     ],
     "message": "Missing return type on function.",
-    "related": [],
     "severity": "error",
     "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/explicit-function-return-type.html",
   },
   {
-    "causes": [],
     "code": "typescript(await-thenable)",
     "filename": "fixtures/async-await/await-thenable.ts",
     "help": "Remove \`await\` if the value is synchronous, or change the expression to return a Promise or Thenable before awaiting it.",
@@ -127,12 +116,10 @@ exports[`config > async-await 1`] = `
       },
     ],
     "message": "Unexpected \`await\` of a non-Promise (non-"Thenable") value.",
-    "related": [],
     "severity": "error",
     "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/await-thenable.html",
   },
   {
-    "causes": [],
     "code": "typescript(await-thenable)",
     "filename": "fixtures/async-await/await-thenable.ts",
     "help": "Remove \`await\` if the value is synchronous, or change the expression to return a Promise or Thenable before awaiting it.",
@@ -156,12 +143,10 @@ exports[`config > async-await 1`] = `
       },
     ],
     "message": "Unexpected \`await\` of a non-Promise (non-"Thenable") value.",
-    "related": [],
     "severity": "error",
     "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/await-thenable.html",
   },
   {
-    "causes": [],
     "code": "typescript(await-thenable)",
     "filename": "fixtures/async-await/await-thenable.ts",
     "help": "Remove \`await\` if the value is synchronous, or change the expression to return a Promise or Thenable before awaiting it.",
@@ -185,12 +170,10 @@ exports[`config > async-await 1`] = `
       },
     ],
     "message": "Unexpected \`await\` of a non-Promise (non-"Thenable") value.",
-    "related": [],
     "severity": "error",
     "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/await-thenable.html",
   },
   {
-    "causes": [],
     "code": "typescript(await-thenable)",
     "filename": "fixtures/async-await/await-thenable.ts",
     "help": "Remove \`await\` if the value is synchronous, or change the expression to return a Promise or Thenable before awaiting it.",
@@ -214,12 +197,10 @@ exports[`config > async-await 1`] = `
       },
     ],
     "message": "Unexpected \`await\` of a non-Promise (non-"Thenable") value.",
-    "related": [],
     "severity": "error",
     "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/await-thenable.html",
   },
   {
-    "causes": [],
     "code": "typescript(await-thenable)",
     "filename": "fixtures/async-await/await-thenable.ts",
     "help": "Remove \`await\` if the value is synchronous, or change the expression to return a Promise or Thenable before awaiting it.",
@@ -243,12 +224,10 @@ exports[`config > async-await 1`] = `
       },
     ],
     "message": "Unexpected \`await\` of a non-Promise (non-"Thenable") value.",
-    "related": [],
     "severity": "error",
     "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/await-thenable.html",
   },
   {
-    "causes": [],
     "code": "eslint(require-await)",
     "filename": "fixtures/async-await/promises.ts",
     "help": "Consider removing the \`async\` keyword.",
@@ -263,7 +242,6 @@ exports[`config > async-await 1`] = `
       },
     ],
     "message": "Async function has no \`await\` expression.",
-    "related": [],
     "severity": "error",
     "url": "https://oxc.rs/docs/guide/usage/linter/rules/eslint/require-await.html",
   },
@@ -273,7 +251,6 @@ exports[`config > async-await 1`] = `
 exports[`config > import-no-cycle 1`] = `
 [
   {
-    "causes": [],
     "code": "import(no-cycle)",
     "filename": "fixtures/import-no-cycle/a.ts",
     "help": "Refactor to remove the cycle. Consider extracting shared code into a separate module that both files can import.",
@@ -293,12 +270,10 @@ exports[`config > import-no-cycle 1`] = `
 │         ⬇ imports
 │    ./a (fixtures/import-no-cycle/a.ts)
 ╰─────────╯ imports the current file",
-    "related": [],
     "severity": "error",
     "url": "https://oxc.rs/docs/guide/usage/linter/rules/import/no-cycle.html",
   },
   {
-    "causes": [],
     "code": "import(no-cycle)",
     "filename": "fixtures/import-no-cycle/b.ts",
     "help": "Refactor to remove the cycle. Consider extracting shared code into a separate module that both files can import.",
@@ -318,7 +293,6 @@ exports[`config > import-no-cycle 1`] = `
 │         ⬇ imports
 │    ./b (fixtures/import-no-cycle/b.ts)
 ╰─────────╯ imports the current file",
-    "related": [],
     "severity": "error",
     "url": "https://oxc.rs/docs/guide/usage/linter/rules/import/no-cycle.html",
   },
@@ -328,7 +302,6 @@ exports[`config > import-no-cycle 1`] = `
 exports[`config > import-type 1`] = `
 [
   {
-    "causes": [],
     "code": "import(consistent-type-specifier-style)",
     "filename": "fixtures/import-type/index.ts",
     "help": "Replace inline type specifiers with a top‐level import type statement.",
@@ -343,12 +316,10 @@ exports[`config > import-type 1`] = `
       },
     ],
     "message": "Prefer using a top-level type-only import instead of inline type specifiers.",
-    "related": [],
     "severity": "error",
     "url": "https://oxc.rs/docs/guide/usage/linter/rules/import/consistent-type-specifier-style.html",
   },
   {
-    "causes": [],
     "code": "typescript(consistent-type-imports)",
     "filename": "fixtures/import-type/index.ts",
     "help": "Replace the \`import\` declaration with \`import type\`. For example, change \`import { Type } from 'module'\` would become \`import type { Type } from 'module'\`.",
@@ -364,7 +335,6 @@ exports[`config > import-type 1`] = `
     ],
     "message": "All imports in the declaration are only used as types. Use \`import type\`.",
     "note": "Using \`import type\` for type-only imports helps with tree-shaking, makes it clear that these imports don't affect runtime code, and can improve build performance by allowing bundlers to eliminate unused type imports.",
-    "related": [],
     "severity": "error",
     "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/consistent-type-imports.html",
   },
@@ -374,7 +344,6 @@ exports[`config > import-type 1`] = `
 exports[`config > type-aware 1`] = `
 [
   {
-    "causes": [],
     "code": "eslint(id-length)",
     "filename": "fixtures/type-aware/no-unsafe-type-assertion.ts",
     "labels": [
@@ -388,12 +357,10 @@ exports[`config > type-aware 1`] = `
       },
     ],
     "message": "Identifier name is too short (< 2).",
-    "related": [],
     "severity": "error",
     "url": "https://oxc.rs/docs/guide/usage/linter/rules/eslint/id-length.html",
   },
   {
-    "causes": [],
     "code": "typescript(no-explicit-any)",
     "filename": "fixtures/type-aware/no-unsafe-type-assertion.ts",
     "help": "Use \`unknown\` instead, this will force you to explicitly, and safely, assert the type is correct.",
@@ -408,12 +375,10 @@ exports[`config > type-aware 1`] = `
       },
     ],
     "message": "Unexpected \`any\`. Specify a different type.",
-    "related": [],
     "severity": "error",
     "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/no-explicit-any.html",
   },
   {
-    "causes": [],
     "code": "typescript(no-unnecessary-type-parameters)",
     "filename": "fixtures/type-aware/no-unsafe-type-assertion.ts",
     "labels": [
@@ -436,12 +401,10 @@ exports[`config > type-aware 1`] = `
       },
     ],
     "message": "Type parameter T is used only once in the function signature.",
-    "related": [],
     "severity": "error",
     "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/no-unnecessary-type-parameters.html",
   },
   {
-    "causes": [],
     "code": "typescript(no-unsafe-type-assertion)",
     "filename": "fixtures/type-aware/no-unsafe-type-assertion.ts",
     "labels": [
@@ -455,12 +418,10 @@ exports[`config > type-aware 1`] = `
       },
     ],
     "message": "Unsafe assertion from \`any\` detected: consider using type guards or a safer assertion.",
-    "related": [],
     "severity": "error",
     "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/no-unsafe-type-assertion.html",
   },
   {
-    "causes": [],
     "code": "typescript(no-unsafe-type-assertion)",
     "filename": "fixtures/type-aware/no-unsafe-type-assertion.ts",
     "labels": [
@@ -474,7 +435,6 @@ exports[`config > type-aware 1`] = `
       },
     ],
     "message": "Unsafe assertion to \`any\` detected: consider using a more specific type to ensure safety.",
-    "related": [],
     "severity": "error",
     "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/no-unsafe-type-assertion.html",
   },
@@ -484,7 +444,6 @@ exports[`config > type-aware 1`] = `
 exports[`config > typescript 1`] = `
 [
   {
-    "causes": [],
     "code": "import(unambiguous)",
     "filename": "fixtures/typescript/example.ts",
     "help": "Add at least one import or export statement to unambiguously mark this file as a module",
@@ -499,12 +458,10 @@ exports[`config > typescript 1`] = `
       },
     ],
     "message": "This module could be mistakenly parsed as script instead of module",
-    "related": [],
     "severity": "error",
     "url": "https://oxc.rs/docs/guide/usage/linter/rules/import/unambiguous.html",
   },
   {
-    "causes": [],
     "code": "eslint(no-shadow)",
     "filename": "fixtures/typescript/example.ts",
     "help": "Consider renaming 'a' to avoid shadowing the variable from the outer scope.",
@@ -529,12 +486,10 @@ exports[`config > typescript 1`] = `
       },
     ],
     "message": "'a' is already declared in the upper scope.",
-    "related": [],
     "severity": "error",
     "url": "https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-shadow.html",
   },
   {
-    "causes": [],
     "code": "eslint(no-unused-vars)",
     "filename": "fixtures/typescript/example.ts",
     "help": "Consider removing this declaration.",
@@ -550,12 +505,10 @@ exports[`config > typescript 1`] = `
       },
     ],
     "message": "Variable 'a' is declared but never used. Unused variables should start with a '_'.",
-    "related": [],
     "severity": "error",
     "url": "https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-unused-vars.html",
   },
   {
-    "causes": [],
     "code": "eslint(no-unused-vars)",
     "filename": "fixtures/typescript/example.ts",
     "help": "Consider removing this declaration.",
@@ -571,12 +524,10 @@ exports[`config > typescript 1`] = `
       },
     ],
     "message": "Variable 'a' is declared but never used. Unused variables should start with a '_'.",
-    "related": [],
     "severity": "error",
     "url": "https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-unused-vars.html",
   },
   {
-    "causes": [],
     "code": "typescript(ban-ts-comment)",
     "filename": "fixtures/typescript/example.ts",
     "help": "Replace "@ts-ignore" with "@ts-expect-error".",
@@ -591,12 +542,10 @@ exports[`config > typescript 1`] = `
       },
     ],
     "message": "Use "@ts-expect-error" instead of @ts-ignore, as "@ts-ignore" will do nothing if the following line is error-free.",
-    "related": [],
     "severity": "error",
     "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/ban-ts-comment.html",
   },
   {
-    "causes": [],
     "code": "typescript(prefer-ts-expect-error)",
     "filename": "fixtures/typescript/example.ts",
     "help": "Use "@ts-expect-error" to ensure an error is actually being suppressed.",
@@ -611,12 +560,10 @@ exports[`config > typescript 1`] = `
       },
     ],
     "message": "Enforce using \`@ts-expect-error\` over \`@ts-ignore\`",
-    "related": [],
     "severity": "error",
     "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/prefer-ts-expect-error.html",
   },
   {
-    "causes": [],
     "code": "eslint(id-length)",
     "filename": "fixtures/typescript/example.ts",
     "labels": [
@@ -630,12 +577,10 @@ exports[`config > typescript 1`] = `
       },
     ],
     "message": "Identifier name is too short (< 2).",
-    "related": [],
     "severity": "error",
     "url": "https://oxc.rs/docs/guide/usage/linter/rules/eslint/id-length.html",
   },
   {
-    "causes": [],
     "code": "typescript(array-type)",
     "filename": "fixtures/typescript/example.ts",
     "help": "Replace \`string[]\` with \`Array<string>\`.",
@@ -650,12 +595,10 @@ exports[`config > typescript 1`] = `
       },
     ],
     "message": "Array type using 'string[]' is forbidden. Use 'Array<string>' instead.",
-    "related": [],
     "severity": "error",
     "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/array-type.html",
   },
   {
-    "causes": [],
     "code": "eslint(no-console)",
     "filename": "fixtures/typescript/example.ts",
     "help": "Delete this console statement.",
@@ -670,12 +613,10 @@ exports[`config > typescript 1`] = `
       },
     ],
     "message": "Unexpected console statement.",
-    "related": [],
     "severity": "error",
     "url": "https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-console.html",
   },
   {
-    "causes": [],
     "code": "eslint(guard-for-in)",
     "filename": "fixtures/typescript/example.ts",
     "help": "The body of a for-in should be wrapped in an if statement to filter unwanted properties from the prototype.",
@@ -690,12 +631,10 @@ exports[`config > typescript 1`] = `
       },
     ],
     "message": "Require \`for-in\` loops to include an \`if\` statement",
-    "related": [],
     "severity": "error",
     "url": "https://oxc.rs/docs/guide/usage/linter/rules/eslint/guard-for-in.html",
   },
   {
-    "causes": [],
     "code": "eslint(id-length)",
     "filename": "fixtures/typescript/example.ts",
     "labels": [
@@ -709,12 +648,10 @@ exports[`config > typescript 1`] = `
       },
     ],
     "message": "Identifier name is too short (< 2).",
-    "related": [],
     "severity": "error",
     "url": "https://oxc.rs/docs/guide/usage/linter/rules/eslint/id-length.html",
   },
   {
-    "causes": [],
     "code": "eslint(no-console)",
     "filename": "fixtures/typescript/example.ts",
     "help": "Delete this console statement.",
@@ -729,12 +666,10 @@ exports[`config > typescript 1`] = `
       },
     ],
     "message": "Unexpected console statement.",
-    "related": [],
     "severity": "error",
     "url": "https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-console.html",
   },
   {
-    "causes": [],
     "code": "eslint(no-constant-condition)",
     "filename": "fixtures/typescript/example.ts",
     "help": "Update the condition to not be constant, or remove the condition entirely",
@@ -750,12 +685,10 @@ exports[`config > typescript 1`] = `
       },
     ],
     "message": "Unexpected constant condition",
-    "related": [],
     "severity": "error",
     "url": "https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-constant-condition.html",
   },
   {
-    "causes": [],
     "code": "eslint(no-console)",
     "filename": "fixtures/typescript/example.ts",
     "help": "Delete this console statement.",
@@ -770,12 +703,10 @@ exports[`config > typescript 1`] = `
       },
     ],
     "message": "Unexpected console statement.",
-    "related": [],
     "severity": "error",
     "url": "https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-console.html",
   },
   {
-    "causes": [],
     "code": "typescript(no-for-in-array)",
     "filename": "fixtures/typescript/example.ts",
     "help": "Use a more robust iteration method such as for-of or array.forEach instead.",
@@ -790,12 +721,10 @@ exports[`config > typescript 1`] = `
       },
     ],
     "message": "For-in loops over arrays skips holes, returns indices as strings, and may visit the prototype chain or other enumerable properties.",
-    "related": [],
     "severity": "error",
     "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/no-for-in-array.html",
   },
   {
-    "causes": [],
     "code": "typescript(no-unnecessary-condition)",
     "filename": "fixtures/typescript/example.ts",
     "labels": [
@@ -809,12 +738,10 @@ exports[`config > typescript 1`] = `
       },
     ],
     "message": "Unnecessary conditional, value is always truthy.",
-    "related": [],
     "severity": "error",
     "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/no-unnecessary-condition.html",
   },
   {
-    "causes": [],
     "code": "eslint(prefer-destructuring)",
     "filename": "fixtures/typescript/prefer-destructing.ts",
     "help": "Use array destructuring rather than direct member access.",
@@ -829,12 +756,10 @@ exports[`config > typescript 1`] = `
       },
     ],
     "message": "Use Array destructuring.",
-    "related": [],
     "severity": "error",
     "url": "https://oxc.rs/docs/guide/usage/linter/rules/eslint/prefer-destructuring.html",
   },
   {
-    "causes": [],
     "code": "eslint(prefer-destructuring)",
     "filename": "fixtures/typescript/prefer-destructing.ts",
     "help": "Use array destructuring rather than direct member access.",
@@ -849,12 +774,10 @@ exports[`config > typescript 1`] = `
       },
     ],
     "message": "Use Array destructuring.",
-    "related": [],
     "severity": "error",
     "url": "https://oxc.rs/docs/guide/usage/linter/rules/eslint/prefer-destructuring.html",
   },
   {
-    "causes": [],
     "code": "eslint(prefer-destructuring)",
     "filename": "fixtures/typescript/prefer-destructing.ts",
     "help": "Use object destructuring rather than direct member access.",
@@ -869,12 +792,10 @@ exports[`config > typescript 1`] = `
       },
     ],
     "message": "Use Object destructuring.",
-    "related": [],
     "severity": "error",
     "url": "https://oxc.rs/docs/guide/usage/linter/rules/eslint/prefer-destructuring.html",
   },
   {
-    "causes": [],
     "code": "typescript(no-explicit-any)",
     "filename": "fixtures/typescript/unsafe-call.ts",
     "help": "Use \`unknown\` instead, this will force you to explicitly, and safely, assert the type is correct.",
@@ -889,12 +810,10 @@ exports[`config > typescript 1`] = `
       },
     ],
     "message": "Unexpected \`any\`. Specify a different type.",
-    "related": [],
     "severity": "error",
     "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/no-explicit-any.html",
   },
   {
-    "causes": [],
     "code": "unicorn(prefer-top-level-await)",
     "filename": "fixtures/typescript/unsafe-call.ts",
     "labels": [
@@ -908,12 +827,10 @@ exports[`config > typescript 1`] = `
       },
     ],
     "message": "Prefer top-level await over using a promise chain.",
-    "related": [],
     "severity": "error",
     "url": "https://oxc.rs/docs/guide/usage/linter/rules/unicorn/prefer-top-level-await.html",
   },
   {
-    "causes": [],
     "code": "typescript(no-unsafe-call)",
     "filename": "fixtures/typescript/unsafe-call.ts",
     "labels": [
@@ -927,12 +844,10 @@ exports[`config > typescript 1`] = `
       },
     ],
     "message": "Unsafe call of a(n) \`any\` typed value.",
-    "related": [],
     "severity": "error",
     "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/no-unsafe-call.html",
   },
   {
-    "causes": [],
     "code": "typescript(no-unsafe-call)",
     "filename": "fixtures/typescript/unsafe-call.ts",
     "labels": [
@@ -946,12 +861,10 @@ exports[`config > typescript 1`] = `
       },
     ],
     "message": "Unsafe call of a(n) \`any\` typed value.",
-    "related": [],
     "severity": "error",
     "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/no-unsafe-call.html",
   },
   {
-    "causes": [],
     "code": "typescript(no-unsafe-assignment)",
     "filename": "fixtures/typescript/unsafe-call.ts",
     "labels": [
@@ -965,12 +878,10 @@ exports[`config > typescript 1`] = `
       },
     ],
     "message": "Unsafe assignment of an any value.",
-    "related": [],
     "severity": "error",
     "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/no-unsafe-assignment.html",
   },
   {
-    "causes": [],
     "code": "typescript(no-unsafe-call)",
     "filename": "fixtures/typescript/unsafe-call.ts",
     "labels": [
@@ -984,12 +895,10 @@ exports[`config > typescript 1`] = `
       },
     ],
     "message": "Unsafe call of a(n) \`any\` typed value.",
-    "related": [],
     "severity": "error",
     "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/no-unsafe-call.html",
   },
   {
-    "causes": [],
     "code": "typescript(no-unsafe-call)",
     "filename": "fixtures/typescript/unsafe-call.ts",
     "labels": [
@@ -1003,12 +912,10 @@ exports[`config > typescript 1`] = `
       },
     ],
     "message": "Unsafe call of a(n) \`any\` typed value.",
-    "related": [],
     "severity": "error",
     "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/no-unsafe-call.html",
   },
   {
-    "causes": [],
     "code": "typescript(no-unsafe-member-access)",
     "filename": "fixtures/typescript/unsafe-call.ts",
     "labels": [
@@ -1022,12 +929,10 @@ exports[`config > typescript 1`] = `
       },
     ],
     "message": "Unsafe member access .catch on an \`any\` value.",
-    "related": [],
     "severity": "error",
     "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/no-unsafe-member-access.html",
   },
   {
-    "causes": [],
     "code": "typescript(no-unsafe-call)",
     "filename": "fixtures/typescript/unsafe-call.ts",
     "labels": [
@@ -1041,12 +946,10 @@ exports[`config > typescript 1`] = `
       },
     ],
     "message": "Unsafe call of a(n) \`any\` typed value.",
-    "related": [],
     "severity": "error",
     "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/no-unsafe-call.html",
   },
   {
-    "causes": [],
     "code": "typescript(no-unsafe-member-access)",
     "filename": "fixtures/typescript/unsafe-call.ts",
     "labels": [
@@ -1060,12 +963,10 @@ exports[`config > typescript 1`] = `
       },
     ],
     "message": "Unsafe member access .then on an \`any\` value.",
-    "related": [],
     "severity": "error",
     "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/no-unsafe-member-access.html",
   },
   {
-    "causes": [],
     "code": "typescript(no-unsafe-call)",
     "filename": "fixtures/typescript/unsafe-call.ts",
     "labels": [
@@ -1079,7 +980,6 @@ exports[`config > typescript 1`] = `
       },
     ],
     "message": "Unsafe call of a(n) \`any\` typed value.",
-    "related": [],
     "severity": "error",
     "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/no-unsafe-call.html",
   },
@@ -1089,18 +989,6 @@ exports[`config > typescript 1`] = `
 exports[`config > vitest 1`] = `
 [
   {
-    "causes": [],
-    "code": "vitest(consistent-test-filename)",
-    "filename": "",
-    "help": "Rename the file that match the pattern (?u).*\\.spec\\.[tj]sx?$",
-    "labels": [],
-    "message": "The index.test.ts is a test file but his name is not allowed",
-    "related": [],
-    "severity": "error",
-    "url": "https://oxc.rs/docs/guide/usage/linter/rules/vitest/consistent-test-filename.html",
-  },
-  {
-    "causes": [],
     "code": "vitest(prefer-called-times)",
     "filename": "fixtures/vitest/index.spec.ts",
     "help": "Replace with \`toBeCalledTimes(1)\` or \`toHaveBeenCalledTimes(1)\` for clarity and consistency",
@@ -1115,12 +1003,10 @@ exports[`config > vitest 1`] = `
       },
     ],
     "message": "Use \`toBeCalledTimes(1)\` or \`toHaveBeenCalledTimes(1)\` instead of \`toBeCalledOnce()\` or \`toHaveBeenCalledOnce()\`",
-    "related": [],
     "severity": "error",
     "url": "https://oxc.rs/docs/guide/usage/linter/rules/vitest/prefer-called-times.html",
   },
   {
-    "causes": [],
     "code": "vitest(require-mock-type-parameters)",
     "filename": "fixtures/vitest/index.spec.ts",
     "help": "Add a type parameter to the mock function, e.g. \`vi.fn<() => void>()\`.",
@@ -1135,9 +1021,17 @@ exports[`config > vitest 1`] = `
       },
     ],
     "message": "Missing type parameters on mock function call",
-    "related": [],
     "severity": "error",
     "url": "https://oxc.rs/docs/guide/usage/linter/rules/vitest/require-mock-type-parameters.html",
+  },
+  {
+    "code": "vitest(consistent-test-filename)",
+    "filename": "fixtures/vitest/index.test.ts",
+    "help": "Rename the file that match the pattern .*\\.spec\\.[tj]sx?$",
+    "labels": [],
+    "message": "The file index.test.ts is a test file, but its name does not match the expected pattern.",
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/vitest/consistent-test-filename.html",
   },
 ]
 `;

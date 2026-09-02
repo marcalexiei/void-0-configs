@@ -46,6 +46,10 @@ const baseConfig: OxlintConfig = {
     'grouped-accessor-pairs': 'error',
     'guard-for-in': 'error',
 
+    // requires an explicit list of names to be useful
+    // https://oxc.rs/docs/guide/usage/linter/rules/eslint/id-denylist.html
+    'id-denylist': 'off',
+
     // https://oxc.rs/docs/guide/usage/linter/rules/eslint/id-length.html
     'id-length': [
       'error',
@@ -259,6 +263,7 @@ const baseConfig: OxlintConfig = {
     'no-unneeded-ternary': ['error', { defaultAssignment: false }],
 
     'no-unreachable': 'error',
+    'no-unreachable-loop': 'error',
     'no-unsafe-finally': 'error',
     'no-unsafe-negation': 'error',
     'no-unsafe-optional-chaining': 'error',
@@ -295,7 +300,9 @@ const baseConfig: OxlintConfig = {
     'no-warning-comments': 'error',
     'no-with': 'error',
 
-    // 'one-var': ['error', 'never'],
+    // default 'always' would require combining declarations
+    // https://oxc.rs/docs/guide/usage/linter/rules/eslint/one-var.html
+    'one-var': ['error', 'never'],
 
     'object-shorthand': ['error', 'always', { ignoreConstructors: false, avoidQuotes: true }],
 
@@ -370,6 +377,7 @@ const baseConfig: OxlintConfig = {
     'unicorn/error-message': 'error',
     'unicorn/escape-case': 'error',
     'unicorn/explicit-length-check': 'error',
+    'unicorn/explicit-timer-delay': 'error',
 
     // https://oxc.rs/docs/guide/usage/linter/rules/unicorn/filename-case.html
     'unicorn/filename-case': [
@@ -400,6 +408,7 @@ const baseConfig: OxlintConfig = {
     'unicorn/no-array-sort': 'error',
     'unicorn/no-await-expression-member': 'error',
     'unicorn/no-await-in-promise-methods': 'error',
+    'unicorn/no-confusing-array-with': 'error',
     'unicorn/no-console-spaces': 'error',
     'unicorn/no-document-cookie': 'error',
     'unicorn/no-empty-file': 'error',

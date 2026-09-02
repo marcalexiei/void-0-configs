@@ -161,6 +161,7 @@ const vitestConfig: OxlintConfig = {
     'vitest/no-test-return-statement': 'error',
     'vitest/no-unneeded-async-expect-function': 'error',
     'vitest/padding-around-after-all-blocks': 'off',
+    'vitest/padding-around-test-blocks': 'off',
     'vitest/prefer-called-exactly-once-with': 'error',
 
     // prefer-called-times is enabled

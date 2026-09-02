@@ -1,6 +1,9 @@
 {
-  "$schema": "https://unpkg.com/@changesets/config@4.0.0/schema.json",
-  "changelog": ["@changesets/changelog-github", { "repo": "marcalexiei/void-0-configs" }],
+  "$schema": "https://unpkg.com/@changesets/config@4/schema.json",
+  "changelog": [
+    "@changesets/changelog-github",
+    { "repo": "marcalexiei/void-0-configs", "disableThanks": true }
+  ],
   "commit": false,
   "fixed": [],
   "linked": [],

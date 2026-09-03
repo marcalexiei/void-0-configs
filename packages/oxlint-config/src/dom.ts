@@ -8,4 +8,4 @@ const domConfig: OxlintConfig = {
   },
 };
 
-export { domConfig as baseConfig, domConfig as default };
+export { domConfig, domConfig as default };

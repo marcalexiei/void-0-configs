@@ -1,5 +1,14 @@
 # @marcalexiei/oxfmt-config
 
+## 1.3.0
+
+### Minor Changes
+
+- [#77](https://github.com/marcalexiei/void-0-configs/pull/77) [`6ee5023`](https://github.com/marcalexiei/void-0-configs/commit/6ee5023894bd11a05914a6183caf01261d405ca6) - feat: support oxfmt >= 0.65
+  
+  Every option this config sets is available in 0.65, and it formats identically
+  to 0.66, so consumers on 0.65 no longer need to upgrade to take this config.
+
 ## 1.2.1
 
 ### Patch Changes

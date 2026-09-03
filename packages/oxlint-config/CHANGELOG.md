@@ -1,5 +1,44 @@
 # @marcalexiei/oxlint-config
 
+## 1.5.0
+
+### Minor Changes
+
+- [#77](https://github.com/marcalexiei/void-0-configs/pull/77) [`6ee5023`](https://github.com/marcalexiei/void-0-configs/commit/6ee5023894bd11a05914a6183caf01261d405ca6) - feat!: support oxlint >= 1.80 and oxlint-tsgolint >= 7.0.2001
+  
+  `oxlint-tsgolint` switched to a versioning scheme tracking TypeScript, so the peer
+  range moves from `>=0.23.0 <1` to `>=7.0.2001 <8`. The `oxlint` range moves to
+  `>=1.80.0 <2`: 1.80 is the first release that knows every rule this config sets,
+  and pinning the range to the newest release would force a bump on consumers that
+  have no reason to take one.
+
+- [#81](https://github.com/marcalexiei/void-0-configs/pull/81) [`871c5dd`](https://github.com/marcalexiei/void-0-configs/commit/871c5dddd8550c74983efd908199c86e3b832ddc) - feat!: drop the `jest` plugin from the `vitest` config
+  
+  `plugins` is now `['vitest']` and every `jest/*` rule is gone. The `vitest`
+  plugin already covers all of them except `jest/no-export`, which had no
+  equivalent and is no longer reported.
+
+- [#77](https://github.com/marcalexiei/void-0-configs/pull/77) [`6ee5023`](https://github.com/marcalexiei/void-0-configs/commit/6ee5023894bd11a05914a6183caf01261d405ca6) - feat: configure new oxlint rules
+  
+  Set all rules introduced by the latest oxlint release across the `base` and
+  `vitest` configs:
+  
+  - `no-unreachable-loop`: `error`
+  - `one-var`: `['error', 'never']`, since the default `always` would require
+    combining declarations
+  - `unicorn/explicit-timer-delay`: `error`
+  - `unicorn/no-confusing-array-with`: `error`
+  - `id-denylist`: `off`, it needs an explicit list of names to be useful
+  - `vitest/padding-around-test-blocks`: `off`, matching its `jest` counterpart
+
+### Patch Changes
+
+- [#81](https://github.com/marcalexiei/void-0-configs/pull/81) [`871c5dd`](https://github.com/marcalexiei/void-0-configs/commit/871c5dddd8550c74983efd908199c86e3b832ddc) - fix: disable `vitest/prefer-to-be-falsy` and `vitest/prefer-to-be-truthy`
+  
+  They conflicted with `vitest/prefer-strict-boolean-matchers`: one rewrote
+  `toBe(true)` to `toBeTruthy()` and the other rewrote it straight back. The
+  strict matcher is the stronger assertion, so it is the one left enabled.
+
 ## 1.4.1
 
 ### Patch Changes

@@ -113,10 +113,24 @@ describe('config', () => {
     expect(diagnostics).toStrictEqual([]);
   });
 
+  it('tuned-valid', async () => {
+    const { code, diagnostics } = await run('./fixtures/tuned-valid');
+
+    expect(code).toBe(0);
+    expect(diagnostics).toStrictEqual([]);
+  });
+
   it('vitest', async () => {
     const { code, diagnostics } = await run('./fixtures/vitest');
 
     expect(code).toBe(1);
     expect(diagnostics).toMatchSnapshot();
+  });
+
+  it('vitest-valid', async () => {
+    const { code, diagnostics } = await run('./fixtures/vitest-valid');
+
+    expect(code).toBe(0);
+    expect(diagnostics).toStrictEqual([]);
   });
 });

@@ -4,14 +4,17 @@
 
 feat: tune rules after linting real projects
 
-Rules that reported the same code twice are now reported once. The `typescript`
-config turns off `require-await`, `no-throw-literal` and
-`prefer-promise-reject-errors`, since their type-aware counterparts are on, plus:
+These rules reported the same code as another rule and are now off. The
+`typescript` config turns off `require-await`, `no-throw-literal`,
+`prefer-promise-reject-errors` and `promise/catch-or-return`, since their
+type-aware counterparts are on, so it must be listed after the `base` config and
+used with `typeAware: true`. The others:
 
 - `typescript/explicit-module-boundary-types`: `off`, handled by
   `typescript/explicit-function-return-type`
 - `typescript/no-empty-interface`: `off`, handled by
   `typescript/no-empty-object-type`
+- `oxc/missing-throw`: `off`, handled by `no-new`
 
 Rules that conflicted with common code:
 

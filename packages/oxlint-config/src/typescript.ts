@@ -8,6 +8,9 @@ const typescriptConfig: OxlintConfig = {
     'prefer-promise-reject-errors': 'off',
     'require-await': 'off',
 
+    // handled by typescript/no-floating-promises
+    'promise/catch-or-return': 'off',
+
     'typescript/adjacent-overload-signatures': 'error',
     'typescript/array-type': ['error', { default: 'generic' }],
     'typescript/await-thenable': 'error',

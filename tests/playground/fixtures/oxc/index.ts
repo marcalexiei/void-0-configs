@@ -5,7 +5,7 @@ export function isOutOfRange(value: number): boolean {
 
 export function assertPositive(value: number): void {
   if (value < 0) {
-    // should error: missing `throw`
+    // should error: `new` used for its side effects
     new Error('value must be positive');
   }
 }

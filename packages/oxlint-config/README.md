@@ -31,8 +31,12 @@ export default defineConfig({
 ```
 
 > ⚠️ NOTE
-> Typescript config has rules that require type aware option to be enabled
+> `typescriptConfig` requires the type aware option to be enabled.
 > See <https://oxc.rs/docs/guide/usage/linter/type-aware>
+>
+> It must come after `baseConfig`: it turns off the `base` rules that have a type aware
+> counterpart (`require-await`, `no-throw-literal`, `prefer-promise-reject-errors` and
+> `promise/catch-or-return`), so without type aware linting those checks do not run at all.
 
 ```ts
 import { baseConfig } from '@marcalexiei/oxlint-config/base';
@@ -64,9 +68,12 @@ export default defineConfig({
 ```
 
 > ⚠️ NOTE
-> `reactConfig` must come after `baseConfig`: it overrides `unicorn/import-style` so that
-> named imports (`import { useState } from 'react'`) are the only accepted way to import
-> React, as [recommended by its documentation](https://legacy.reactjs.org/blog/2020/09/22/introducing-the-new-jsx-transform.html#removing-unused-react-imports).
+> `reactConfig` must come after `baseConfig`, since it overrides two of its rules:
+>
+> - `unicorn/import-style`: named imports (`import { useState } from 'react'`) are the only
+>   accepted way to import React, as [recommended by its documentation](https://legacy.reactjs.org/blog/2020/09/22/introducing-the-new-jsx-transform.html#removing-unused-react-imports)
+> - `prefer-arrow-callback`: named functions are accepted as callbacks, so that
+>   `memo(function Name() {})` can give a wrapped component its display name
 
 ### Vitest
 

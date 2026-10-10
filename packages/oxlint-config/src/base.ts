@@ -621,7 +621,11 @@ const baseConfig: OxlintConfig = {
     'oxc/double-comparisons': 'error',
     'oxc/erasing-op': 'error',
     'oxc/misrefactored-assign-op': 'error',
-    'oxc/missing-throw': 'error',
+
+    // handled by no-new
+    // https://oxc.rs/docs/guide/usage/linter/rules/oxc/missing-throw.html
+    'oxc/missing-throw': 'off',
+
     'oxc/no-accumulating-spread': 'error',
 
     // ban language features
@@ -661,10 +665,7 @@ const baseConfig: OxlintConfig = {
     // needed to wrap callback based APIs
     // https://oxc.rs/docs/guide/usage/linter/rules/promise/avoid-new.html
     'promise/avoid-new': 'off',
-
-    // handled by the type-aware typescript/no-floating-promises rule
-    // https://oxc.rs/docs/guide/usage/linter/rules/promise/catch-or-return.html
-    'promise/catch-or-return': 'off',
+    'promise/catch-or-return': 'error',
 
     // guess callbacks from their name (`done`, `next`, `cb`)
     'promise/no-callback-in-promise': 'off',

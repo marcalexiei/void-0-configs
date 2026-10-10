@@ -85,6 +85,20 @@ describe('config', () => {
     expect(diagnostics).toMatchSnapshot();
   });
 
+  it('oxc', async () => {
+    const { code, diagnostics } = await run('./fixtures/oxc');
+
+    expect(code).toBe(1);
+    expect(diagnostics).toMatchSnapshot();
+  });
+
+  it('promise', async () => {
+    const { code, diagnostics } = await run('./fixtures/promise');
+
+    expect(code).toBe(1);
+    expect(diagnostics).toMatchSnapshot();
+  });
+
   it('react', async () => {
     const { code, diagnostics } = await run('./fixtures/react');
 

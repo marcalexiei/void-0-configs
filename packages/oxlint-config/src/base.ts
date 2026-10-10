@@ -1,7 +1,7 @@
 import type { OxlintConfig } from 'oxlint';
 
 const baseConfig: OxlintConfig = {
-  plugins: ['eslint', 'import', 'unicorn'],
+  plugins: ['eslint', 'import', 'oxc', 'promise', 'unicorn'],
 
   rules: {
     //=============================================================================
@@ -579,6 +579,100 @@ const baseConfig: OxlintConfig = {
     'import/no-webpack-loader-syntax': 'error',
     'import/prefer-default-export': 'off',
     'import/unambiguous': 'error',
+
+    //=============================================================================
+    // OXC
+    //=============================================================================
+    // https://oxc.rs/docs/guide/usage/linter/rules.html?sort=name&dir=asc&scope=oxc
+
+    'oxc/approx-constant': 'error',
+    'oxc/bad-array-method-on-arguments': 'error',
+
+    // handled by no-bitwise
+    // https://oxc.rs/docs/guide/usage/linter/rules/oxc/bad-bitwise-operator.html
+    'oxc/bad-bitwise-operator': 'off',
+
+    'oxc/bad-char-at-comparison': 'error',
+    'oxc/bad-comparison-sequence': 'error',
+    'oxc/bad-match-all-arg': 'error',
+    'oxc/bad-min-max-func': 'error',
+    'oxc/bad-object-literal-comparison': 'error',
+    'oxc/bad-replace-all-arg': 'error',
+    'oxc/branches-sharing-code': 'error',
+    'oxc/const-comparisons': 'error',
+    'oxc/double-comparisons': 'error',
+    'oxc/erasing-op': 'error',
+    'oxc/misrefactored-assign-op': 'error',
+    'oxc/missing-throw': 'error',
+    'oxc/no-accumulating-spread': 'error',
+
+    // ban language features
+    'oxc/no-async-await': 'off',
+    'oxc/no-optional-chaining': 'off',
+    'oxc/no-rest-spread-properties': 'off',
+
+    // only valid for Express 4, reports fastify and hono handlers too
+    // https://oxc.rs/docs/guide/usage/linter/rules/oxc/no-async-endpoint-handlers.html
+    'oxc/no-async-endpoint-handlers': 'off',
+
+    // https://oxc.rs/docs/guide/usage/linter/rules/oxc/no-barrel-file.html
+    'oxc/no-barrel-file': ['error', { threshold: 100 }],
+
+    'oxc/no-const-enum': 'error',
+
+    // immutable updates rely on spreading inside `map`
+    // https://oxc.rs/docs/guide/usage/linter/rules/oxc/no-map-spread.html
+    'oxc/no-map-spread': 'off',
+
+    // reports functions declaring an explicit `this` parameter too
+    // https://oxc.rs/docs/guide/usage/linter/rules/oxc/no-this-in-exported-function.html
+    'oxc/no-this-in-exported-function': 'off',
+
+    'oxc/number-arg-out-of-range': 'error',
+    'oxc/only-used-in-recursion': 'error',
+    'oxc/uninvoked-array-callback': 'error',
+
+    //=============================================================================
+    // PROMISE
+    //=============================================================================
+    // https://oxc.rs/docs/guide/usage/linter/rules.html?sort=name&dir=asc&scope=promise
+
+    // https://oxc.rs/docs/guide/usage/linter/rules/promise/always-return.html
+    'promise/always-return': ['error', { ignoreLastCallback: true }],
+
+    // needed to wrap callback based APIs
+    // https://oxc.rs/docs/guide/usage/linter/rules/promise/avoid-new.html
+    'promise/avoid-new': 'off',
+
+    // handled by the type-aware typescript/no-floating-promises rule
+    // https://oxc.rs/docs/guide/usage/linter/rules/promise/catch-or-return.html
+    'promise/catch-or-return': 'off',
+
+    // guess callbacks from their name (`done`, `next`, `cb`)
+    'promise/no-callback-in-promise': 'off',
+    'promise/no-promise-in-callback': 'off',
+    'promise/prefer-await-to-callbacks': 'off',
+
+    'promise/no-multiple-resolved': 'error',
+    'promise/no-nesting': 'error',
+    'promise/no-new-statics': 'error',
+    'promise/no-return-in-finally': 'error',
+
+    // handled by unicorn/no-useless-promise-resolve-reject
+    // https://oxc.rs/docs/guide/usage/linter/rules/promise/no-return-wrap.html
+    'promise/no-return-wrap': 'off',
+
+    'promise/param-names': 'error',
+
+    // https://oxc.rs/docs/guide/usage/linter/rules/promise/prefer-await-to-then.html
+    'promise/prefer-await-to-then': 'off',
+
+    // `then(a, b)` is not equivalent to `then(a).catch(b)`
+    // https://oxc.rs/docs/guide/usage/linter/rules/promise/prefer-catch.html
+    'promise/prefer-catch': 'off',
+
+    'promise/spec-only': 'error',
+    'promise/valid-params': 'error',
   },
 } as const satisfies OxlintConfig;
 

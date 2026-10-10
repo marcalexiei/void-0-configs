@@ -26,6 +26,18 @@ export const CONFIG_DATA: Array<{
         allowMissing: [],
       },
       {
+        name: 'oxc',
+        scope: 'oxc',
+        rulePrefix: 'oxc',
+        allowMissing: [],
+      },
+      {
+        name: 'promise',
+        scope: 'promise',
+        rulePrefix: 'promise',
+        allowMissing: [],
+      },
+      {
         name: 'unicorn',
         scope: 'unicorn',
         rulePrefix: 'unicorn',

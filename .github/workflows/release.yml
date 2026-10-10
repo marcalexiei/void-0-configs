@@ -14,18 +14,24 @@ concurrency: ${{ github.workflow }}-${{ github.ref }}
 
 permissions: {}
 
+defaults:
+  run:
+    shell: bash
+
 env:
   HUSKY: 0
 
 jobs:
   release:
     name: Release
+    environment: release-npm
     if: ${{ github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.head_repository.full_name == github.repository }}
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
 
     permissions:
-      contents: write
-      pull-requests: write
+      contents: write # required to push release commits and tags
+      pull-requests: write # required to create and update release PRs
       id-token: write # added for provenance
 
     steps:
@@ -56,7 +62,8 @@ jobs:
 
   on-ci-fail:
     name: 'Failure'
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
+    timeout-minutes: 1
     if: ${{ github.event.workflow_run.conclusion == 'failure' }}
     steps:
-      - run: echo 'CI failed. Release won't be executed'
+      - run: echo "CI failed. Release won't be executed"

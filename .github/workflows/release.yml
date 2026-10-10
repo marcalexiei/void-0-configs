@@ -24,6 +24,7 @@ env:
 jobs:
   release:
     name: Release
+    environment: release-npm
     if: ${{ github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.head_repository.full_name == github.repository }}
     runs-on: ubuntu-24.04
     timeout-minutes: 10
@@ -39,7 +40,6 @@ jobs:
         uses: marcalexiei/github-actions/setup-github-app-user-bot@e3b04865510c657477cc722854b31a3b74c72c09 # v2.2.0
         with:
           app-id: ${{ vars.RELEASE_HELPER_APP_ID }}
-          # jactionlint ignore=secrets-outside-env
           private-key: ${{ secrets.RELEASE_HELPER_PRIVATE_KEY }}
 
       - name: Checkout

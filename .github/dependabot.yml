@@ -5,6 +5,8 @@ updates:
     directory: '/'
     schedule:
       interval: 'monthly'
+    cooldown:
+      default-days: 7
 
   - package-ecosystem: 'npm'
     directory: '/'
@@ -19,3 +21,5 @@ updates:
       changesets:
         patterns:
           - '@changesets/*'
+    cooldown:
+      default-days: 7

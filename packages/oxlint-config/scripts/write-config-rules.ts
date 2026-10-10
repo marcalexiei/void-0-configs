@@ -2,7 +2,6 @@ import fs from 'node:fs';
 import path from 'node:path';
 import process from 'node:process';
 
-// @ts-expect-error
 import { log, OXLINT_RULES } from './_utils.ts';
 
 /**

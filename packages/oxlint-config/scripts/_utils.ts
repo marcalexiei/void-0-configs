@@ -114,7 +114,6 @@ export function log(type: 'info' | 'error' | 'success' | (string & {}), ...other
       throw new Error('Invalid type for log');
   }
 
-  // biome-ignore lint/suspicious/noConsole: logger function
   console.log(icon, ...others);
   return;
 }

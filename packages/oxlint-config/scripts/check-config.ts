@@ -1,6 +1,5 @@
 import path from 'node:path';
 
-// @ts-expect-error
 import { CONFIG_DATA, log, OXLINT_RULES } from './_utils.ts';
 
 let hasMissingRules = false;

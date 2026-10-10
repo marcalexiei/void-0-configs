@@ -39,7 +39,7 @@ const baseConfig: OxlintConfig = {
     'default-param-last': 'error',
     eqeqeq: 'error',
     'for-direction': 'error',
-    'func-name-matching': 'off',
+    'func-name-matching': 'error',
     'func-names': 'error',
     'func-style': 'off',
     'getter-return': 'error',
@@ -60,6 +60,12 @@ const baseConfig: OxlintConfig = {
 
           // alias for version
           'v',
+
+          // zod namespace
+          'z',
+
+          // unused placeholder
+          '_',
         ],
       },
     ],
@@ -71,7 +77,7 @@ const baseConfig: OxlintConfig = {
     // https://oxc.rs/docs/guide/usage/linter/rules/eslint/init-declarations.html
     'init-declarations': 'off',
 
-    'logical-assignment-operators': 'off',
+    'logical-assignment-operators': 'error',
 
     // https://oxc.rs/docs/guide/usage/linter/rules/eslint/max-classes-per-file.html
     'max-classes-per-file': 'error',
@@ -394,7 +400,11 @@ const baseConfig: OxlintConfig = {
     ],
 
     'unicorn/import-style': 'error',
-    'unicorn/max-nested-calls': 'error',
+
+    // default of 3 is reached by plain zod schemas
+    // https://oxc.rs/docs/guide/usage/linter/rules/unicorn/max-nested-calls.html
+    'unicorn/max-nested-calls': ['error', { max: 5 }],
+
     'unicorn/new-for-builtins': 'error',
     'unicorn/no-abusive-eslint-disable': 'error',
     'unicorn/no-accessor-recursion': 'error',
@@ -526,7 +536,10 @@ const baseConfig: OxlintConfig = {
     'unicorn/require-module-specifiers': 'error',
     'unicorn/require-number-to-fixed-digits-argument': 'error',
     'unicorn/require-post-message-target-origin': 'error',
-    'unicorn/switch-case-braces': 'error',
+
+    // https://oxc.rs/docs/guide/usage/linter/rules/unicorn/switch-case-braces.html
+    'unicorn/switch-case-braces': ['error', 'avoid'],
+
     'unicorn/switch-case-break-position': 'error',
     'unicorn/text-encoding-identifier-case': 'error',
     'unicorn/throw-new-error': 'error',
@@ -568,14 +581,22 @@ const baseConfig: OxlintConfig = {
     'import/no-named-as-default-member': 'error',
     'import/no-named-default': 'error',
     'import/no-named-export': 'off',
-    'import/no-namespace': 'error',
+
+    // zod documents the namespace import as the way to import it
+    // https://oxc.rs/docs/guide/usage/linter/rules/import/no-namespace.html
+    'import/no-namespace': ['error', { ignore: ['zod', 'zod/**'] }],
+
     'import/no-nodejs-modules': 'off',
 
     // https://oxc.rs/docs/guide/usage/linter/rules/import/no-relative-parent-imports.html
     'import/no-relative-parent-imports': 'off',
 
     'import/no-self-import': 'error',
-    'import/no-unassigned-import': 'error',
+
+    // style files can only be imported for their side effects
+    // https://oxc.rs/docs/guide/usage/linter/rules/import/no-unassigned-import.html
+    'import/no-unassigned-import': ['error', { allow: ['**/*.{css,scss,sass,less}'] }],
+
     'import/no-webpack-loader-syntax': 'error',
     'import/prefer-default-export': 'off',
     'import/unambiguous': 'error',

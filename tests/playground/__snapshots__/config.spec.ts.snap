@@ -227,24 +227,6 @@ exports[`config > async-await 1`] = `
     "severity": "error",
     "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/await-thenable.html",
   },
-  {
-    "code": "eslint(require-await)",
-    "filename": "fixtures/async-await/promises.ts",
-    "help": "Consider removing the \`async\` keyword.",
-    "labels": [
-      {
-        "span": {
-          "column": 23,
-          "length": 31,
-          "line": 7,
-          "offset": 141,
-        },
-      },
-    ],
-    "message": "Async function has no \`await\` expression.",
-    "severity": "error",
-    "url": "https://oxc.rs/docs/guide/usage/linter/rules/eslint/require-await.html",
-  },
 ]
 `;
 

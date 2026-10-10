@@ -72,7 +72,6 @@ const typescriptConfig: OxlintConfig = {
     'typescript/no-non-null-assertion': 'error',
     'typescript/no-redundant-type-constituents': 'error',
     'typescript/no-require-imports': 'error',
-    'typescript/no-restricted-types': 'error',
     'typescript/no-this-alias': 'error',
     'typescript/no-unnecessary-boolean-literal-compare': 'error',
     'typescript/no-unnecessary-condition': 'error',

@@ -27,10 +27,9 @@ const reactConfig: OxlintConfig = {
     // https://oxc.rs/docs/guide/usage/linter/rules/react/exhaustive-effect-dependencies.html
     'react/exhaustive-effect-dependencies': 'off',
 
-    // require an explicit list to be useful
+    // by default it bans `className` and `style` on every component
+    // https://oxc.rs/docs/guide/usage/linter/rules/react/forbid-component-props.html
     'react/forbid-component-props': 'off',
-    'react/forbid-dom-props': 'off',
-    'react/forbid-elements': 'off',
 
     'react/forward-ref-uses-ref': 'error',
     'react/function-component-definition': 'off',

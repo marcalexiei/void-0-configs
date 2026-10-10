@@ -60,8 +60,6 @@ const vitestConfig: OxlintConfig = {
     'vitest/no-interpolation-in-snapshots': 'error',
     'vitest/no-large-snapshots': 'error',
     'vitest/no-mocks-import': 'error',
-    'vitest/no-restricted-matchers': 'error',
-    'vitest/no-restricted-vi-methods': 'error',
     'vitest/no-standalone-expect': 'error',
     'vitest/no-test-prefixes': 'error',
     'vitest/no-test-return-statement': 'error',

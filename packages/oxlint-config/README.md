@@ -138,6 +138,18 @@ export default defineConfig({
 });
 ```
 
+### Rules left to you
+
+Some rules report nothing until they are given options, so the configs do not set them.
+Add the ones you need to your own `rules`:
+
+| Config       | Rules                                                                       |
+| :----------- | :-------------------------------------------------------------------------- |
+| `base`       | `id-denylist`, `id-match`, `no-restricted-globals`, `no-restricted-imports` |
+| `typescript` | `typescript/no-restricted-types`                                            |
+| `react`      | `react/forbid-dom-props`, `react/forbid-elements`                           |
+| `vitest`     | `vitest/no-restricted-matchers`, `vitest/no-restricted-vi-methods`          |
+
 ## CI
 
 Consider creating a `lint:ci` script so you can rely on `format` option with `github` value to generate better annotations for warning and errors.

@@ -46,10 +46,6 @@ const baseConfig: OxlintConfig = {
     'grouped-accessor-pairs': 'error',
     'guard-for-in': 'error',
 
-    // requires an explicit list of names to be useful
-    // https://oxc.rs/docs/guide/usage/linter/rules/eslint/id-denylist.html
-    'id-denylist': 'off',
-
     // https://oxc.rs/docs/guide/usage/linter/rules/eslint/id-length.html
     'id-length': [
       'error',
@@ -69,10 +65,6 @@ const baseConfig: OxlintConfig = {
         ],
       },
     ],
-
-    // requires an explicit pattern to be useful
-    // https://oxc.rs/docs/guide/usage/linter/rules/eslint/id-match.html
-    'id-match': 'off',
 
     // https://oxc.rs/docs/guide/usage/linter/rules/eslint/init-declarations.html
     'init-declarations': 'off',
@@ -213,9 +205,6 @@ const baseConfig: OxlintConfig = {
     // which requires `export { default } from '...'` when re-exporting a default export.
     // https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-restricted-exports.html
     'no-restricted-exports': ['error', { restrictedNamedExports: ['then'] }],
-
-    'no-restricted-globals': 'error',
-    'no-restricted-imports': 'error',
 
     // https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-restricted-properties.html
     'no-restricted-properties': [

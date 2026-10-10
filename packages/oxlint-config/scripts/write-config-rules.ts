@@ -2,7 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import process from 'node:process';
 
-import { log, OXLINT_RULES } from './_utils.ts';
+import { CONFIG_DATA, log, OXLINT_RULES } from './_utils.ts';
 
 /**
  * ```shell
@@ -33,10 +33,18 @@ if (pluginScopes.has(pluginScope) === false) {
 
 const configRules = OXLINT_RULES.filter((it) => it.scope === pluginScope);
 
+const plugin = CONFIG_DATA.flatMap((it) => it.plugins).find((it) => it.scope === pluginScope);
+const skippedRules = new Set([...(plugin?.allowMissing ?? []), ...(plugin?.needsOptions ?? [])]);
+const rulePrefix = plugin ? plugin.rulePrefix : pluginScope.replaceAll('_', '-');
+
 const rules: Record<string, string> = {};
 
 for (const rule of configRules) {
-  const ruleName = `${pluginScope}/${rule.value}`;
+  if (skippedRules.has(rule.value)) {
+    continue;
+  }
+
+  const ruleName = rulePrefix ? `${rulePrefix}/${rule.value}` : rule.value;
   rules[ruleName] = 'error';
 }
 

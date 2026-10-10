@@ -9,7 +9,7 @@ export const CONFIG_DATA: Array<{
     rulePrefix: string | null;
     /** Rules the config may leave unset: deprecated ones, or ones set by another config */
     allowMissing: Array<string>;
-    /** Rules that do nothing without consumer options: the config must not set them */
+    /** Rules that do nothing without options: the config may only set them with options */
     needsOptions: Array<string>;
   }>;
 }> = [

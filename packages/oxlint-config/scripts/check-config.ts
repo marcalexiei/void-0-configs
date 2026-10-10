@@ -16,10 +16,12 @@ for (const config of CONFIG_DATA) {
     const unexpectedRules: Array<string> = [];
     for (const rule of configRules) {
       const ruleName = plugin.rulePrefix ? `${plugin.rulePrefix}/${rule.value}` : rule.value;
-      const isSet = Boolean(configData.rules[ruleName]);
+      const ruleValue: unknown = configData.rules[ruleName];
+      const isSet = Boolean(ruleValue);
+      const hasOptions = Array.isArray(ruleValue) && ruleValue.length > 1;
 
       if (plugin.needsOptions.includes(rule.value)) {
-        if (isSet) {
+        if (isSet && !hasOptions) {
           unexpectedRules.push(ruleName);
         }
       } else if (!isSet && !plugin.allowMissing.includes(rule.value)) {
@@ -34,7 +36,7 @@ for (const config of CONFIG_DATA) {
     }
     if (unexpectedRules.length) {
       hasErrors = true;
-      log('error', configMessage, 'rules left to the consumer:', unexpectedRules.join(', '));
+      log('error', configMessage, 'rules set without options:', unexpectedRules.join(', '));
     }
     if (!missingRules.length && !unexpectedRules.length) {
       log('success', configMessage, ' all rules set');

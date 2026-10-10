@@ -1159,7 +1159,10 @@ const baseConfig: OxlintConfig = {
 
     // style files can only be imported for their side effects
     // https://oxc.rs/docs/guide/usage/linter/rules/import/no-unassigned-import.html
-    'import/no-unassigned-import': ['error', { allow: ['**/*.{css,scss,sass,less}'] }],
+    'import/no-unassigned-import': [
+      'error',
+      { allow: ['**/*.{css,scss,sass,less,pcss,postcss,styl,stylus}'] },
+    ],
 
     // https://oxc.rs/docs/guide/usage/linter/rules/import/no-webpack-loader-syntax.html
     'import/no-webpack-loader-syntax': 'error',

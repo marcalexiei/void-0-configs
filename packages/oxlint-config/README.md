@@ -17,6 +17,9 @@ pnpm i --save-dev oxlint oxlint-tsgolint @marcalexiei/oxlint-config
 Each config is a separate entry point, to combine through `extends`.
 `baseConfig` always comes first: the other configs override some of its rules.
 
+`no-undef` is on, so declare where the code runs with `env`: without it, globals such as
+`console` or `document` are reported as undefined.
+
 ### JavaScript
 
 ```ts
@@ -25,6 +28,9 @@ import { baseConfig } from '@marcalexiei/oxlint-config/base';
 import { defineConfig } from 'oxlint';
 
 export default defineConfig({
+  env: {
+    node: true,
+  },
   extends: [baseConfig],
 });
 ```
@@ -37,6 +43,9 @@ import { typescriptConfig } from '@marcalexiei/oxlint-config/typescript';
 import { defineConfig } from 'oxlint';
 
 export default defineConfig({
+  env: {
+    node: true,
+  },
   extends: [baseConfig, typescriptConfig],
   options: {
     typeAware: true,
@@ -60,6 +69,9 @@ import { typescriptConfig } from '@marcalexiei/oxlint-config/typescript';
 import { defineConfig } from 'oxlint';
 
 export default defineConfig({
+  env: {
+    browser: true,
+  },
   extends: [baseConfig, typescriptConfig, reactConfig],
   options: {
     typeAware: true,
@@ -70,8 +82,9 @@ export default defineConfig({
 > ⚠️ NOTE
 > `reactConfig` overrides two `base` rules:
 >
-> - `unicorn/import-style`: named imports (`import { useState } from 'react'`) are the only
->   accepted way to import React, as [recommended by its documentation](https://legacy.reactjs.org/blog/2020/09/22/introducing-the-new-jsx-transform.html#removing-unused-react-imports)
+> - `unicorn/import-style`: default imports of React are reported, which together with
+>   `import/no-namespace` leaves named imports (`import { useState } from 'react'`) as the
+>   only accepted form, as [recommended by its documentation](https://legacy.reactjs.org/blog/2020/09/22/introducing-the-new-jsx-transform.html#removing-unused-react-imports)
 > - `prefer-arrow-callback`: named functions are accepted as callbacks, so that
 >   `memo(function Name() {})` can give a wrapped component its display name
 
@@ -104,6 +117,10 @@ import { vitestConfig } from '@marcalexiei/oxlint-config/vitest';
 import { defineConfig } from 'oxlint';
 
 export default defineConfig({
+  env: {
+    browser: true,
+    node: true,
+  },
   extends: [baseConfig, typescriptConfig],
   options: {
     typeAware: true,
@@ -128,6 +145,9 @@ import { baseConfig, disableMaxStatementsConfig } from '@marcalexiei/oxlint-conf
 import { defineConfig } from 'oxlint';
 
 export default defineConfig({
+  env: {
+    node: true,
+  },
   extends: [baseConfig],
   overrides: [
     {

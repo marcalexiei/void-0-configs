@@ -311,11 +311,12 @@ const reactConfig: OxlintConfig = {
     // UNICORN
     //=============================================================================
 
-    // named imports are the form recommended by the React documentation
+    // named imports are the form recommended by the React documentation,
+    // namespace ones are left to import/no-namespace
     // https://oxc.rs/docs/guide/usage/linter/rules/unicorn/import-style.html
     'unicorn/import-style': [
       'error',
-      { styles: { react: { default: false, named: true, namespace: false } } },
+      { styles: { react: { default: false, named: true, namespace: true } } },
     ],
   },
 };

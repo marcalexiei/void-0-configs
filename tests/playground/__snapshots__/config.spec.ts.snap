@@ -3,42 +3,6 @@
 exports[`config > async-await 1`] = `
 [
   {
-    "code": "unicorn(no-unnecessary-await)",
-    "filename": "fixtures/async-await/await-thenable.ts",
-    "help": "Consider removing the \`await\`",
-    "labels": [
-      {
-        "span": {
-          "column": 1,
-          "length": 5,
-          "line": 1,
-          "offset": 0,
-        },
-      },
-    ],
-    "message": "Unexpected \`await\` on a non-Promise value",
-    "severity": "error",
-    "url": "https://oxc.rs/docs/guide/usage/linter/rules/unicorn/no-unnecessary-await.html",
-  },
-  {
-    "code": "unicorn(no-unnecessary-await)",
-    "filename": "fixtures/async-await/await-thenable.ts",
-    "help": "Consider removing the \`await\`",
-    "labels": [
-      {
-        "span": {
-          "column": 1,
-          "length": 5,
-          "line": 2,
-          "offset": 10,
-        },
-      },
-    ],
-    "message": "Unexpected \`await\` on a non-Promise value",
-    "severity": "error",
-    "url": "https://oxc.rs/docs/guide/usage/linter/rules/unicorn/no-unnecessary-await.html",
-  },
-  {
     "code": "typescript(explicit-function-return-type)",
     "filename": "fixtures/async-await/await-thenable.ts",
     "help": "Require explicit return types on functions and class methods.",
@@ -226,6 +190,46 @@ exports[`config > async-await 1`] = `
     "message": "Unexpected \`await\` of a non-Promise (non-"Thenable") value.",
     "severity": "error",
     "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/await-thenable.html",
+  },
+]
+`;
+
+exports[`config > base 1`] = `
+[
+  {
+    "code": "unicorn(import-style)",
+    "filename": "fixtures/base/index.ts",
+    "labels": [
+      {
+        "span": {
+          "column": 1,
+          "length": 33,
+          "line": 2,
+          "offset": 66,
+        },
+      },
+    ],
+    "message": "Use default import for module \`node:path\`.",
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/unicorn/import-style.html",
+  },
+  {
+    "code": "eslint(prefer-arrow-callback)",
+    "filename": "fixtures/base/index.ts",
+    "help": "Use an arrow function instead.",
+    "labels": [
+      {
+        "span": {
+          "column": 20,
+          "length": 47,
+          "line": 8,
+          "offset": 250,
+        },
+      },
+    ],
+    "message": "Unexpected function expression.",
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/eslint/prefer-arrow-callback.html",
   },
 ]
 `;
@@ -653,7 +657,7 @@ exports[`config > react 1`] = `
         },
       },
     ],
-    "message": "Use named import for module \`react\`.",
+    "message": "Use named or namespace import for module \`react\`.",
     "severity": "error",
     "url": "https://oxc.rs/docs/guide/usage/linter/rules/unicorn/import-style.html",
   },
@@ -674,23 +678,6 @@ exports[`config > react 1`] = `
     "message": "Usage of namespaced aka wildcard "*" imports prohibited",
     "severity": "error",
     "url": "https://oxc.rs/docs/guide/usage/linter/rules/import/no-namespace.html",
-  },
-  {
-    "code": "unicorn(import-style)",
-    "filename": "fixtures/react/import-namespace.tsx",
-    "labels": [
-      {
-        "span": {
-          "column": 1,
-          "length": 31,
-          "line": 1,
-          "offset": 0,
-        },
-      },
-    ],
-    "message": "Use named import for module \`react\`.",
-    "severity": "error",
-    "url": "https://oxc.rs/docs/guide/usage/linter/rules/unicorn/import-style.html",
   },
   {
     "code": "react(jsx-no-useless-fragment)",
@@ -1191,24 +1178,6 @@ exports[`config > typescript 1`] = `
     "message": "Use "@ts-expect-error" instead of @ts-ignore, as "@ts-ignore" will do nothing if the following line is error-free.",
     "severity": "error",
     "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/ban-ts-comment.html",
-  },
-  {
-    "code": "typescript(prefer-ts-expect-error)",
-    "filename": "fixtures/typescript/example.ts",
-    "help": "Use "@ts-expect-error" to ensure an error is actually being suppressed.",
-    "labels": [
-      {
-        "span": {
-          "column": 3,
-          "length": 37,
-          "line": 9,
-          "offset": 109,
-        },
-      },
-    ],
-    "message": "Enforce using \`@ts-expect-error\` over \`@ts-ignore\`",
-    "severity": "error",
-    "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/prefer-ts-expect-error.html",
   },
   {
     "code": "eslint(id-length)",

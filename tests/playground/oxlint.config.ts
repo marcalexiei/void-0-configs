@@ -5,7 +5,7 @@ import { vitestConfig } from '@marcalexiei/oxlint-config/vitest';
 import { defineConfig } from 'oxlint';
 
 export default defineConfig({
-  extends: [baseConfig, typescriptConfig, reactConfig],
+  extends: [baseConfig, typescriptConfig],
   options: {
     typeAware: true,
   },
@@ -13,6 +13,10 @@ export default defineConfig({
     console: 'readonly',
   },
   overrides: [
+    {
+      files: ['fixtures/{react,react-valid}/**'],
+      ...reactConfig,
+    },
     {
       files: ['**/*.{spec,test}.ts'],
       ...vitestConfig,

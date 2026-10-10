@@ -8,7 +8,9 @@ These rules reported the same code as another rule and are now off. The
 `typescript` config turns off `require-await`, `no-throw-literal`,
 `prefer-promise-reject-errors` and `promise/catch-or-return`, since their
 type-aware counterparts are on, so it must be listed after the `base` config and
-used with `typeAware: true`. The others:
+used with `typeAware: true`. One case is no longer reported: the type-aware
+`require-await` accepts an `async` function without `await` when it returns a
+promise. The others:
 
 - `typescript/explicit-module-boundary-types`: `off`, handled by
   `typescript/explicit-function-return-type`
@@ -25,7 +27,8 @@ Rules that conflicted with common code:
   reach the default
 - `unicorn/switch-case-braces`: `avoid`, braces are only required when a case
   declares something
-- `import/no-unassigned-import`: allows style files (`css`, `scss`, `sass`, `less`)
+- `import/no-unassigned-import`: allows style files (`css`, `scss`, `sass`, `less`,
+  `pcss`, `postcss`, `styl`, `stylus`)
 - `vitest/require-hook`: allows `ruleTester.run`
 
 - `typescript/no-unsafe-type-assertion`: `off`

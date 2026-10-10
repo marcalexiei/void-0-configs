@@ -23,6 +23,10 @@ const typescriptConfig: OxlintConfig = {
     // https://oxc.rs/docs/guide/usage/linter/rules/promise/catch-or-return.html
     'promise/catch-or-return': 'off',
 
+    // handled by typescript/await-thenable
+    // https://oxc.rs/docs/guide/usage/linter/rules/unicorn/no-unnecessary-await.html
+    'unicorn/no-unnecessary-await': 'off',
+
     // handled by typescript/prefer-string-starts-ends-with
     // https://oxc.rs/docs/guide/usage/linter/rules/unicorn/prefer-string-starts-ends-with.html
     'unicorn/prefer-string-starts-ends-with': 'off',
@@ -311,8 +315,9 @@ const typescriptConfig: OxlintConfig = {
     // https://oxc.rs/docs/guide/usage/linter/rules/typescript/prefer-string-starts-ends-with.html
     'typescript/prefer-string-starts-ends-with': 'error',
 
+    // handled by typescript/ban-ts-comment
     // https://oxc.rs/docs/guide/usage/linter/rules/typescript/prefer-ts-expect-error.html
-    'typescript/prefer-ts-expect-error': 'error',
+    'typescript/prefer-ts-expect-error': 'off',
 
     // `require-await` rule conflicts with this `promise-function-async`.
     // I'm disabling this one since we might end up marking an async function without `await` as `async`.

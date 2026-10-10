@@ -43,10 +43,14 @@ function run(fixturePath: string): Promise<{
     });
 
     proc.on('close', (code) => {
-      const { diagnostics } = JSON.parse(stdout) as { diagnostics: Array<Diagnostics> };
-      normalizeDiagnostics(diagnostics);
+      try {
+        const { diagnostics } = JSON.parse(stdout) as { diagnostics: Array<Diagnostics> };
+        normalizeDiagnostics(diagnostics);
 
-      resolve({ code: code as number, diagnostics, stderr, stdout });
+        resolve({ code: code as number, diagnostics, stderr, stdout });
+      } catch (error) {
+        reject(new Error(`oxlint did not print JSON:\n${stderr || stdout}`, { cause: error }));
+      }
     });
 
     proc.on('error', reject);
@@ -54,6 +58,13 @@ function run(fixturePath: string): Promise<{
 }
 
 describe('config', () => {
+  it('base', async () => {
+    const { code, diagnostics } = await run('./fixtures/base');
+
+    expect(code).toBe(1);
+    expect(diagnostics).toMatchSnapshot();
+  });
+
   it('async-await', async () => {
     const { code, diagnostics } = await run('./fixtures/async-await');
 

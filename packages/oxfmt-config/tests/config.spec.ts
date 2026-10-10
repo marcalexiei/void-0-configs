@@ -105,6 +105,10 @@ describe('defineConfig', () => {
     expect(defineConfig({ sortImports: false }).sortImports).toBe(false);
   });
 
+  it('keeps the preset when sortImports is true', () => {
+    expect(defineConfig({ sortImports: true }).sortImports).toEqual(defineConfig().sortImports);
+  });
+
   it('does not mutate the preset between calls', () => {
     defineConfig({ printWidth: 120, sortImports: { newlinesBetween: false } });
 

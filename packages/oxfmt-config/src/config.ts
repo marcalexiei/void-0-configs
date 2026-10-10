@@ -55,12 +55,12 @@ const baseConfig: OxfmtConfig = {
 };
 
 function mergeSortImports(userValue: SortImportsUserConfig | undefined): SortImportsUserConfig {
-  if (userValue === undefined) {
+  if (userValue === undefined || userValue === true) {
     return baseSortImports;
   }
 
-  if (typeof userValue === 'boolean') {
-    return userValue;
+  if (userValue === false) {
+    return false;
   }
 
   return { ...baseSortImports, ...userValue };
@@ -70,7 +70,7 @@ function mergeSortImports(userValue: SortImportsUserConfig | undefined): SortImp
  * Merges an oxfmt config on top of this preset.
  *
  * Top level keys are overridden, `sortImports` is merged one level deep unless it is
- * set to a boolean, and `overrides` are appended to the preset ones so they win.
+ * set to `false`, and `overrides` are appended to the preset ones so they win.
  */
 function defineConfig(userConfig: OxfmtConfig = {}): OxfmtConfig {
   return {

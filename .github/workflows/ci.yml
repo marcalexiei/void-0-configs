@@ -81,10 +81,14 @@ jobs:
         run: pnpm run typecheck
 
       - name: Format
-        run: pnpm run format
+        run: pnpm run format:check
 
-      # - name: Lint
-      #   run: pnpm run lint
+      # the playground lints itself with the built config
+      - name: Run build
+        run: pnpm run build
+
+      - name: Lint
+        run: pnpm run lint
 
   ci-ok:
     name: CI OK

@@ -35,11 +35,15 @@ function run(fixturePath: string): Promise<{
     let stdout = '';
     let stderr = '';
 
-    proc.stdout.on('data', (data) => (stdout += data));
-    proc.stderr.on('data', (data) => (stderr += data));
+    proc.stdout.on('data', (data) => {
+      stdout += data;
+    });
+    proc.stderr.on('data', (data) => {
+      stderr += data;
+    });
 
     proc.on('close', (code) => {
-      const diagnostics = JSON.parse(stdout).diagnostics as Array<Diagnostics>;
+      const { diagnostics } = JSON.parse(stdout) as { diagnostics: Array<Diagnostics> };
       normalizeDiagnostics(diagnostics);
 
       resolve({ code: code as number, diagnostics, stderr, stdout });

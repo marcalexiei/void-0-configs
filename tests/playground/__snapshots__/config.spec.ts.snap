@@ -341,6 +341,247 @@ exports[`config > import-type 1`] = `
 ]
 `;
 
+exports[`config > react 1`] = `
+[
+  {
+    "code": "react(display-name)",
+    "filename": "fixtures/react/display-name.tsx",
+    "help": "Add a \`displayName\` property to the component.",
+    "labels": [
+      {
+        "span": {
+          "column": 14,
+          "length": 20,
+          "line": 3,
+          "offset": 65,
+        },
+      },
+    ],
+    "message": "Component definition is missing display name.",
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/react/display-name.html",
+  },
+  {
+    "code": "react(display-name)",
+    "filename": "fixtures/react/display-name.tsx",
+    "help": "Add a \`displayName\` property to the context.",
+    "labels": [
+      {
+        "span": {
+          "column": 14,
+          "length": 18,
+          "line": 7,
+          "offset": 196,
+        },
+      },
+    ],
+    "message": "Context definition is missing display name.",
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/react/display-name.html",
+  },
+  {
+    "code": "react-hooks(exhaustive-deps)",
+    "filename": "fixtures/react/hooks.tsx",
+    "help": "Either include it or remove the dependency array.",
+    "labels": [
+      {
+        "label": "useEffect uses \`boh\` here",
+        "span": {
+          "column": 5,
+          "length": 3,
+          "line": 12,
+          "offset": 251,
+        },
+      },
+      {
+        "span": {
+          "column": 6,
+          "length": 2,
+          "line": 13,
+          "offset": 269,
+        },
+      },
+    ],
+    "message": "React Hook useEffect has a missing dependency: 'boh'",
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/react/exhaustive-deps.html",
+  },
+  {
+    "code": "react-hooks(exhaustive-deps)",
+    "filename": "fixtures/react/hooks.tsx",
+    "help": "Either include it or remove the dependency array.",
+    "labels": [
+      {
+        "label": "useMemo uses \`boh\` here",
+        "span": {
+          "column": 30,
+          "length": 3,
+          "line": 19,
+          "offset": 352,
+        },
+      },
+      {
+        "span": {
+          "column": 42,
+          "length": 2,
+          "line": 19,
+          "offset": 364,
+        },
+      },
+    ],
+    "message": "React Hook useMemo has a missing dependency: 'boh'",
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/react/exhaustive-deps.html",
+  },
+  {
+    "code": "react-hooks(rules-of-hooks)",
+    "filename": "fixtures/react/hooks.tsx",
+    "help": "Move the Hook call before the condition, or call it unconditionally and branch inside the Hook/effect instead.",
+    "labels": [
+      {
+        "label": "This Hook call is not reachable on every render path.",
+        "span": {
+          "column": 16,
+          "length": 29,
+          "line": 19,
+          "offset": 338,
+        },
+      },
+    ],
+    "message": "React Hook "useMemo" is called conditionally. React Hooks must be called in the exact same order in every component render.",
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/react/rules-of-hooks.html",
+  },
+  {
+    "code": "unicorn(import-style)",
+    "filename": "fixtures/react/import-default.tsx",
+    "labels": [
+      {
+        "span": {
+          "column": 1,
+          "length": 26,
+          "line": 1,
+          "offset": 0,
+        },
+      },
+    ],
+    "message": "Use named import for module \`react\`.",
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/unicorn/import-style.html",
+  },
+  {
+    "code": "import(no-namespace)",
+    "filename": "fixtures/react/import-namespace.tsx",
+    "help": "Use named or default imports",
+    "labels": [
+      {
+        "span": {
+          "column": 13,
+          "length": 5,
+          "line": 1,
+          "offset": 12,
+        },
+      },
+    ],
+    "message": "Usage of namespaced aka wildcard "*" imports prohibited",
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/import/no-namespace.html",
+  },
+  {
+    "code": "unicorn(import-style)",
+    "filename": "fixtures/react/import-namespace.tsx",
+    "labels": [
+      {
+        "span": {
+          "column": 1,
+          "length": 31,
+          "line": 1,
+          "offset": 0,
+        },
+      },
+    ],
+    "message": "Use named import for module \`react\`.",
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/unicorn/import-style.html",
+  },
+  {
+    "code": "react(jsx-no-useless-fragment)",
+    "filename": "fixtures/react/no-useless-fragment.tsx",
+    "help": "Replace \`<>
+        <div />
+        <div />
+      </>\` with \`<div />
+        <div />\`.",
+    "labels": [
+      {
+        "span": {
+          "column": 7,
+          "length": 2,
+          "line": 6,
+          "offset": 104,
+        },
+      },
+    ],
+    "message": "Passing a fragment to a HTML element is useless.",
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/react/jsx-no-useless-fragment.html",
+  },
+  {
+    "code": "react(jsx-no-useless-fragment)",
+    "filename": "fixtures/react/no-useless-fragment.tsx",
+    "labels": [
+      {
+        "span": {
+          "column": 10,
+          "length": 2,
+          "line": 15,
+          "offset": 220,
+        },
+      },
+    ],
+    "message": "Fragments should contain more than one child.",
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/react/jsx-no-useless-fragment.html",
+  },
+  {
+    "code": "react(jsx-boolean-value)",
+    "filename": "fixtures/react/shorthand-boolean.tsx",
+    "help": "Delete this code.",
+    "labels": [
+      {
+        "span": {
+          "column": 24,
+          "length": 7,
+          "line": 13,
+          "offset": 260,
+        },
+      },
+    ],
+    "message": "Value must be omitted for boolean attribute "isActive"",
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/react/jsx-boolean-value.html",
+  },
+  {
+    "code": "react(jsx-fragments)",
+    "filename": "fixtures/react/shorthand-fragment.tsx",
+    "help": "Use \`<></>\` instead of \`<React.Fragment></React.Fragment>\`.",
+    "labels": [
+      {
+        "span": {
+          "column": 11,
+          "length": 8,
+          "line": 5,
+          "offset": 125,
+        },
+      },
+    ],
+    "message": "Shorthand form for React fragments is preferred.",
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/react/jsx-fragments.html",
+  },
+]
+`;
+
 exports[`config > type-aware 1`] = `
 [
   {
@@ -407,25 +648,10 @@ exports[`config > type-aware 1`] = `
   {
     "code": "typescript(no-unsafe-type-assertion)",
     "filename": "fixtures/type-aware/no-unsafe-type-assertion.ts",
+    "help": "Consider using type guards or a safer assertion.",
     "labels": [
       {
-        "span": {
-          "column": 10,
-          "length": 17,
-          "line": 2,
-          "offset": 58,
-        },
-      },
-    ],
-    "message": "Unsafe assertion from \`any\` detected: consider using type guards or a safer assertion.",
-    "severity": "error",
-    "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/no-unsafe-type-assertion.html",
-  },
-  {
-    "code": "typescript(no-unsafe-type-assertion)",
-    "filename": "fixtures/type-aware/no-unsafe-type-assertion.ts",
-    "labels": [
-      {
+        "label": "Original expression has type \`any\`.",
         "span": {
           "column": 10,
           "length": 12,
@@ -433,8 +659,61 @@ exports[`config > type-aware 1`] = `
           "offset": 58,
         },
       },
+      {
+        "label": "Asserted type is \`T\`.",
+        "span": {
+          "column": 26,
+          "length": 1,
+          "line": 2,
+          "offset": 74,
+        },
+      },
+      {
+        "span": {
+          "column": 23,
+          "length": 4,
+          "line": 2,
+          "offset": 71,
+        },
+      },
     ],
-    "message": "Unsafe assertion to \`any\` detected: consider using a more specific type to ensure safety.",
+    "message": "Unsafe assertion from \`any\` detected.",
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/no-unsafe-type-assertion.html",
+  },
+  {
+    "code": "typescript(no-unsafe-type-assertion)",
+    "filename": "fixtures/type-aware/no-unsafe-type-assertion.ts",
+    "help": "Consider using a more specific type to ensure safety.",
+    "labels": [
+      {
+        "label": "Original expression has type \`string\`.",
+        "span": {
+          "column": 10,
+          "length": 5,
+          "line": 2,
+          "offset": 58,
+        },
+      },
+      {
+        "label": "Asserted type is \`any\`.",
+        "span": {
+          "column": 19,
+          "length": 3,
+          "line": 2,
+          "offset": 67,
+        },
+      },
+      {
+        "span": {
+          "column": 16,
+          "length": 6,
+          "line": 2,
+          "offset": 64,
+        },
+      },
+    ],
+    "message": "Unsafe assertion to \`any\` detected.",
     "severity": "error",
     "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/no-unsafe-type-assertion.html",
   },
@@ -869,11 +1148,29 @@ exports[`config > typescript 1`] = `
     "filename": "fixtures/typescript/unsafe-call.ts",
     "labels": [
       {
+        "label": "Assigned value has type \`any\`.",
+        "span": {
+          "column": 16,
+          "length": 17,
+          "line": 7,
+          "offset": 74,
+        },
+      },
+      {
+        "label": "Target is inferred as \`any\`.",
         "span": {
           "column": 7,
-          "length": 26,
+          "length": 6,
           "line": 7,
           "offset": 65,
+        },
+      },
+      {
+        "span": {
+          "column": 14,
+          "length": 1,
+          "line": 7,
+          "offset": 72,
         },
       },
     ],

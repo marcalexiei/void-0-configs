@@ -4,7 +4,7 @@
   "description": "Custom oxlint config",
   "keywords": [
     "config",
-    "format",
+    "lint",
     "oxc",
     "oxlint"
   ],

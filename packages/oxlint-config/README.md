@@ -6,7 +6,7 @@
 pnpm i --save-dev oxlint @marcalexiei/oxlint-config
 ```
 
-If you are using ts:
+With TypeScript:
 
 ```sh
 pnpm i --save-dev oxlint oxlint-tsgolint @marcalexiei/oxlint-config
@@ -14,10 +14,24 @@ pnpm i --save-dev oxlint oxlint-tsgolint @marcalexiei/oxlint-config
 
 ## Usage
 
-### TS
+Each config is a separate entry point, to combine through `extends`.
+`baseConfig` always comes first: the other configs override some of its rules.
+
+### JavaScript
 
 ```ts
 // oxlint.config.ts
+import { baseConfig } from '@marcalexiei/oxlint-config/base';
+import { defineConfig } from 'oxlint';
+
+export default defineConfig({
+  extends: [baseConfig],
+});
+```
+
+### TypeScript
+
+```ts
 import { baseConfig } from '@marcalexiei/oxlint-config/base';
 import { typescriptConfig } from '@marcalexiei/oxlint-config/typescript';
 import { defineConfig } from 'oxlint';
@@ -34,22 +48,8 @@ export default defineConfig({
 > `typescriptConfig` requires the type aware option to be enabled.
 > See <https://oxc.rs/docs/guide/usage/linter/type-aware>
 >
-> It must come after `baseConfig`: it turns off the `base` rules that have a type aware
-> counterpart (`require-await`, `no-throw-literal`, `prefer-promise-reject-errors` and
-> `promise/catch-or-return`), so without type aware linting those checks do not run at all.
-
-```ts
-import { baseConfig } from '@marcalexiei/oxlint-config/base';
-import { typescriptConfig } from '@marcalexiei/oxlint-config/typescript';
-import { defineConfig } from 'oxlint';
-
-export default defineConfig({
-  extends: [baseConfig, typescriptConfig],
-  options: {
-    typeAware: true,
-  },
-});
-```
+> It turns off the `base` rules that have a type aware counterpart, such as `require-await`
+> or `no-throw-literal`, so without type aware linting those checks do not run at all.
 
 ### React
 
@@ -68,14 +68,34 @@ export default defineConfig({
 ```
 
 > ⚠️ NOTE
-> `reactConfig` must come after `baseConfig`, since it overrides two of its rules:
+> `reactConfig` overrides two `base` rules:
 >
 > - `unicorn/import-style`: named imports (`import { useState } from 'react'`) are the only
 >   accepted way to import React, as [recommended by its documentation](https://legacy.reactjs.org/blog/2020/09/22/introducing-the-new-jsx-transform.html#removing-unused-react-imports)
 > - `prefer-arrow-callback`: named functions are accepted as callbacks, so that
 >   `memo(function Name() {})` can give a wrapped component its display name
 
+### DOM
+
+`domConfig` adds `unicorn/prefer-modern-dom-apis`, which only makes sense for code running in
+a browser.
+
+```ts
+import { baseConfig } from '@marcalexiei/oxlint-config/base';
+import { domConfig } from '@marcalexiei/oxlint-config/dom';
+import { defineConfig } from 'oxlint';
+
+export default defineConfig({
+  env: {
+    browser: true,
+  },
+  extends: [baseConfig, domConfig],
+});
+```
+
 ### Vitest
+
+`vitestConfig` is meant for test files only, so it goes in `overrides`.
 
 ```ts
 import { baseConfig } from '@marcalexiei/oxlint-config/base';
@@ -84,18 +104,37 @@ import { vitestConfig } from '@marcalexiei/oxlint-config/vitest';
 import { defineConfig } from 'oxlint';
 
 export default defineConfig({
-  env: {
-    browser: true,
-    node: true,
-  },
   extends: [baseConfig, typescriptConfig],
+  options: {
+    typeAware: true,
+  },
   overrides: [
     {
       files: ['**/*.{spec,test}.ts'],
       ...vitestConfig,
     },
   ],
-  plugins: [],
+});
+```
+
+### Size limits
+
+`baseConfig` limits the size of files and functions (`max-lines`, `max-lines-per-function`
+and `max-statements`). `disableMaxStatementsConfig` turns the three rules off where the
+limits get in the way, like test files.
+
+```ts
+import { baseConfig, disableMaxStatementsConfig } from '@marcalexiei/oxlint-config/base';
+import { defineConfig } from 'oxlint';
+
+export default defineConfig({
+  extends: [baseConfig],
+  overrides: [
+    {
+      files: ['**/*.{spec,test}.ts'],
+      ...disableMaxStatementsConfig,
+    },
+  ],
 });
 ```
 

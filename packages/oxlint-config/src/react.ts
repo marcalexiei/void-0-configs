@@ -9,18 +9,23 @@ const reactConfig: OxlintConfig = {
     //=============================================================================
     // https://oxc.rs/docs/guide/usage/linter/rules.html?sort=name&dir=asc&scope=react
 
+    // https://oxc.rs/docs/guide/usage/linter/rules/react/button-has-type.html
     'react/button-has-type': 'error',
 
     // reports any capitalized function call, like `Intl.DateTimeFormat()`
     // https://oxc.rs/docs/guide/usage/linter/rules/react/capitalized-calls.html
     'react/capitalized-calls': 'off',
 
+    // https://oxc.rs/docs/guide/usage/linter/rules/react/checked-requires-onchange-or-readonly.html
     'react/checked-requires-onchange-or-readonly': 'error',
 
     // https://oxc.rs/docs/guide/usage/linter/rules/react/display-name.html
     'react/display-name': ['error', { checkContextObjects: true }],
 
+    // https://oxc.rs/docs/guide/usage/linter/rules/react/error-boundaries.html
     'react/error-boundaries': 'error',
+
+    // https://oxc.rs/docs/guide/usage/linter/rules/react/exhaustive-deps.html
     'react/exhaustive-deps': 'error',
 
     // handled by react/exhaustive-deps
@@ -31,8 +36,13 @@ const reactConfig: OxlintConfig = {
     // https://oxc.rs/docs/guide/usage/linter/rules/react/forbid-component-props.html
     'react/forbid-component-props': 'off',
 
+    // https://oxc.rs/docs/guide/usage/linter/rules/react/forward-ref-uses-ref.html
     'react/forward-ref-uses-ref': 'error',
+
+    // https://oxc.rs/docs/guide/usage/linter/rules/react/function-component-definition.html
     'react/function-component-definition': 'off',
+
+    // https://oxc.rs/docs/guide/usage/linter/rules/react/globals.html
     'react/globals': 'error',
 
     // reports `const [value] = useState()`, there is no option to allow it
@@ -43,6 +53,7 @@ const reactConfig: OxlintConfig = {
     // https://oxc.rs/docs/guide/usage/linter/rules/react/hooks.html
     'react/hooks': 'off',
 
+    // https://oxc.rs/docs/guide/usage/linter/rules/react/iframe-missing-sandbox.html
     'react/iframe-missing-sandbox': 'error',
 
     // https://oxc.rs/docs/guide/usage/linter/rules/react/immutability.html
@@ -71,6 +82,7 @@ const reactConfig: OxlintConfig = {
     // https://oxc.rs/docs/guide/usage/linter/rules/react/jsx-fragments.html
     'react/jsx-fragments': ['error', 'syntax'],
 
+    // https://oxc.rs/docs/guide/usage/linter/rules/react/jsx-handler-names.html
     'react/jsx-handler-names': 'off',
 
     // https://oxc.rs/docs/guide/usage/linter/rules/react/jsx-key.html
@@ -83,15 +95,23 @@ const reactConfig: OxlintConfig = {
       },
     ],
 
+    // https://oxc.rs/docs/guide/usage/linter/rules/react/jsx-max-depth.html
     'react/jsx-max-depth': 'off',
+
+    // https://oxc.rs/docs/guide/usage/linter/rules/react/jsx-no-comment-textnodes.html
     'react/jsx-no-comment-textnodes': 'error',
+
+    // https://oxc.rs/docs/guide/usage/linter/rules/react/jsx-no-constructed-context-values.html
     'react/jsx-no-constructed-context-values': 'error',
+
+    // https://oxc.rs/docs/guide/usage/linter/rules/react/jsx-no-duplicate-props.html
     'react/jsx-no-duplicate-props': 'error',
 
     // only useful for projects that translate every string
     // https://oxc.rs/docs/guide/usage/linter/rules/react/jsx-no-literals.html
     'react/jsx-no-literals': 'off',
 
+    // https://oxc.rs/docs/guide/usage/linter/rules/react/jsx-no-script-url.html
     'react/jsx-no-script-url': 'error',
 
     // browsers imply `noopener` for `target="_blank"`
@@ -106,18 +126,32 @@ const reactConfig: OxlintConfig = {
     // https://oxc.rs/docs/guide/usage/linter/rules/react/jsx-no-useless-fragment.html
     'react/jsx-no-useless-fragment': ['error', { allowExpressions: true }],
 
+    // https://oxc.rs/docs/guide/usage/linter/rules/react/jsx-pascal-case.html
     'react/jsx-pascal-case': 'error',
+
+    // https://oxc.rs/docs/guide/usage/linter/rules/react/jsx-props-no-spread-multi.html
     'react/jsx-props-no-spread-multi': 'error',
+
+    // https://oxc.rs/docs/guide/usage/linter/rules/react/jsx-props-no-spreading.html
     'react/jsx-props-no-spreading': 'off',
 
     // handled by react/exhaustive-deps
     // https://oxc.rs/docs/guide/usage/linter/rules/react/memo-dependencies.html
     'react/memo-dependencies': 'off',
 
+    // https://oxc.rs/docs/guide/usage/linter/rules/react/no-array-index-key.html
     'react/no-array-index-key': 'error',
+
+    // https://oxc.rs/docs/guide/usage/linter/rules/react/no-children-prop.html
     'react/no-children-prop': 'error',
+
+    // https://oxc.rs/docs/guide/usage/linter/rules/react/no-clone-element.html
     'react/no-clone-element': 'error',
+
+    // https://oxc.rs/docs/guide/usage/linter/rules/react/no-danger.html
     'react/no-danger': 'error',
+
+    // https://oxc.rs/docs/guide/usage/linter/rules/react/no-danger-with-children.html
     'react/no-danger-with-children': 'error',
 
     // handled by react/set-state-in-effect
@@ -125,29 +159,71 @@ const reactConfig: OxlintConfig = {
     'react/no-deriving-state-in-effects': 'off',
 
     // error boundaries are still written as classes
+    // https://oxc.rs/docs/guide/usage/linter/rules/react/no-did-mount-set-state.html
     'react/no-did-mount-set-state': 'error',
+
+    // error boundaries are still written as classes
+    // https://oxc.rs/docs/guide/usage/linter/rules/react/no-did-update-set-state.html
     'react/no-did-update-set-state': 'error',
+
+    // error boundaries are still written as classes
+    // https://oxc.rs/docs/guide/usage/linter/rules/react/no-direct-mutation-state.html
     'react/no-direct-mutation-state': 'error',
+
+    // error boundaries are still written as classes
+    // https://oxc.rs/docs/guide/usage/linter/rules/react/no-is-mounted.html
     'react/no-is-mounted': 'error',
+
+    // error boundaries are still written as classes
+    // https://oxc.rs/docs/guide/usage/linter/rules/react/no-redundant-should-component-update.html
     'react/no-redundant-should-component-update': 'error',
+
+    // error boundaries are still written as classes
+    // https://oxc.rs/docs/guide/usage/linter/rules/react/no-string-refs.html
     'react/no-string-refs': 'error',
+
+    // error boundaries are still written as classes
+    // https://oxc.rs/docs/guide/usage/linter/rules/react/no-unsafe.html
     'react/no-unsafe': 'error',
+
+    // error boundaries are still written as classes
+    // https://oxc.rs/docs/guide/usage/linter/rules/react/no-will-update-set-state.html
     'react/no-will-update-set-state': 'error',
+
+    // error boundaries are still written as classes
+    // https://oxc.rs/docs/guide/usage/linter/rules/react/prefer-es6-class.html
     'react/prefer-es6-class': 'error',
+
+    // error boundaries are still written as classes
+    // https://oxc.rs/docs/guide/usage/linter/rules/react/require-render-return.html
     'react/require-render-return': 'error',
 
     // error boundaries need `setState`
     // https://oxc.rs/docs/guide/usage/linter/rules/react/no-set-state.html
     'react/no-set-state': 'off',
 
+    // https://oxc.rs/docs/guide/usage/linter/rules/react/state-in-constructor.html
     'react/state-in-constructor': 'off',
 
+    // https://oxc.rs/docs/guide/usage/linter/rules/react/no-find-dom-node.html
     'react/no-find-dom-node': 'error',
+
+    // https://oxc.rs/docs/guide/usage/linter/rules/react/no-multi-comp.html
     'react/no-multi-comp': 'off',
+
+    // https://oxc.rs/docs/guide/usage/linter/rules/react/no-namespace.html
     'react/no-namespace': 'error',
+
+    // https://oxc.rs/docs/guide/usage/linter/rules/react/no-object-type-as-default-prop.html
     'react/no-object-type-as-default-prop': 'error',
+
+    // https://oxc.rs/docs/guide/usage/linter/rules/react/no-react-children.html
     'react/no-react-children': 'error',
+
+    // https://oxc.rs/docs/guide/usage/linter/rules/react/no-render-return-value.html
     'react/no-render-return-value': 'error',
+
+    // https://oxc.rs/docs/guide/usage/linter/rules/react/no-this-in-sfc.html
     'react/no-this-in-sfc': 'error',
 
     // reports every apostrophe in text
@@ -158,6 +234,7 @@ const reactConfig: OxlintConfig = {
     // https://oxc.rs/docs/guide/usage/linter/rules/react/no-unknown-property.html
     'react/no-unknown-property': 'off',
 
+    // https://oxc.rs/docs/guide/usage/linter/rules/react/no-unstable-nested-components.html
     'react/no-unstable-nested-components': 'error',
 
     // depends on the bundler supporting fast refresh
@@ -167,24 +244,39 @@ const reactConfig: OxlintConfig = {
     // https://oxc.rs/docs/guide/usage/linter/rules/react/prefer-function-component.html
     'react/prefer-function-component': ['error', { allowErrorBoundary: true }],
 
+    // https://oxc.rs/docs/guide/usage/linter/rules/react/preserve-manual-memoization.html
     'react/preserve-manual-memoization': 'error',
+
+    // https://oxc.rs/docs/guide/usage/linter/rules/react/purity.html
     'react/purity': 'error',
 
     // not needed with the automatic JSX runtime
     // https://oxc.rs/docs/guide/usage/linter/rules/react/react-in-jsx-scope.html
     'react/react-in-jsx-scope': 'off',
 
+    // https://oxc.rs/docs/guide/usage/linter/rules/react/refs.html
     'react/refs': 'error',
 
     // would report the disable comment of every other react rule
     // https://oxc.rs/docs/guide/usage/linter/rules/react/rule-suppression.html
     'react/rule-suppression': 'off',
 
+    // https://oxc.rs/docs/guide/usage/linter/rules/react/rules-of-hooks.html
     'react/rules-of-hooks': 'error',
+
+    // https://oxc.rs/docs/guide/usage/linter/rules/react/self-closing-comp.html
     'react/self-closing-comp': 'error',
+
+    // https://oxc.rs/docs/guide/usage/linter/rules/react/set-state-in-effect.html
     'react/set-state-in-effect': 'error',
+
+    // https://oxc.rs/docs/guide/usage/linter/rules/react/set-state-in-render.html
     'react/set-state-in-render': 'error',
+
+    // https://oxc.rs/docs/guide/usage/linter/rules/react/static-components.html
     'react/static-components': 'error',
+
+    // https://oxc.rs/docs/guide/usage/linter/rules/react/style-prop-object.html
     'react/style-prop-object': 'error',
 
     // handled by no-const-assign and the type checker
@@ -195,9 +287,16 @@ const reactConfig: OxlintConfig = {
     // https://oxc.rs/docs/guide/usage/linter/rules/react/todo.html
     'react/todo': 'off',
 
+    // https://oxc.rs/docs/guide/usage/linter/rules/react/unsupported-syntax.html
     'react/unsupported-syntax': 'error',
+
+    // https://oxc.rs/docs/guide/usage/linter/rules/react/use-memo.html
     'react/use-memo': 'error',
+
+    // https://oxc.rs/docs/guide/usage/linter/rules/react/void-dom-elements-no-children.html
     'react/void-dom-elements-no-children': 'error',
+
+    // https://oxc.rs/docs/guide/usage/linter/rules/react/void-use-memo.html
     'react/void-use-memo': 'error',
 
     //=============================================================================

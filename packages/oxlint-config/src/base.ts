@@ -136,13 +136,9 @@ const baseConfig: OxlintConfig = {
     'no-dupe-keys': 'error',
     'no-duplicate-case': 'error',
 
+    // handled by import/no-duplicates
     // https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-duplicate-imports.html
-    'no-duplicate-imports': [
-      'error',
-      {
-        allowSeparateTypeImports: true,
-      },
-    ],
+    'no-duplicate-imports': 'off',
 
     // https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-else-return.html
     'no-else-return': ['error', { allowElseIf: false }],
@@ -172,9 +168,7 @@ const baseConfig: OxlintConfig = {
     'no-implicit-coercion': ['error', { allow: ['!!'] }],
 
     'no-implicit-globals': 'off',
-
-    // handled by the type-aware typescript/no-implied-eval rule
-    'no-implied-eval': 'off',
+    'no-implied-eval': 'error',
 
     'no-import-assign': 'error',
     'no-inline-comments': 'off',
@@ -408,7 +402,11 @@ const baseConfig: OxlintConfig = {
     'unicorn/new-for-builtins': 'error',
     'unicorn/no-abusive-eslint-disable': 'error',
     'unicorn/no-accessor-recursion': 'error',
-    'unicorn/no-anonymous-default-export': 'error',
+
+    // handled by import/no-anonymous-default-export
+    // https://oxc.rs/docs/guide/usage/linter/rules/unicorn/no-anonymous-default-export.html
+    'unicorn/no-anonymous-default-export': 'off',
+
     'unicorn/no-array-callback-reference': 'error',
     'unicorn/no-array-fill-with-reference-type': 'error',
     'unicorn/no-array-for-each': 'error',
@@ -424,17 +422,29 @@ const baseConfig: OxlintConfig = {
     'unicorn/no-empty-file': 'error',
     'unicorn/no-hex-escape': 'error',
     'unicorn/no-immediate-mutation': 'error',
-    'unicorn/no-instanceof-array': 'error',
+
+    // handled by unicorn/no-instanceof-builtins
+    // https://oxc.rs/docs/guide/usage/linter/rules/unicorn/no-instanceof-array.html
+    'unicorn/no-instanceof-array': 'off',
+
     'unicorn/no-instanceof-builtins': 'error',
     'unicorn/no-invalid-fetch-options': 'error',
     'unicorn/no-invalid-remove-event-listener': 'error',
-    'unicorn/no-length-as-slice-end': 'error',
+
+    // handled by unicorn/no-unnecessary-slice-end
+    // https://oxc.rs/docs/guide/usage/linter/rules/unicorn/no-length-as-slice-end.html
+    'unicorn/no-length-as-slice-end': 'off',
+
     'unicorn/no-lonely-if': 'error',
     'unicorn/no-magic-array-flat-depth': 'error',
     'unicorn/no-negated-condition': 'error',
 
     'unicorn/no-negation-in-equality-check': 'error',
-    'unicorn/no-nested-ternary': 'error',
+
+    // handled by no-nested-ternary
+    // https://oxc.rs/docs/guide/usage/linter/rules/unicorn/no-nested-ternary.html
+    'unicorn/no-nested-ternary': 'off',
+
     'unicorn/no-new-array': 'error',
     'unicorn/no-new-buffer': 'error',
 

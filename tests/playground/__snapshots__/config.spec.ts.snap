@@ -770,6 +770,163 @@ exports[`config > react 1`] = `
 ]
 `;
 
+exports[`config > reported-once 1`] = `
+[
+  {
+    "code": "import(no-duplicates)",
+    "filename": "fixtures/reported-once/index.ts",
+    "help": "Merge these imports into a single import statement",
+    "labels": [
+      {
+        "label": "It is first imported here",
+        "span": {
+          "column": 26,
+          "length": 9,
+          "line": 1,
+          "offset": 25,
+        },
+      },
+      {
+        "span": {
+          "column": 27,
+          "length": 9,
+          "line": 2,
+          "offset": 62,
+        },
+      },
+    ],
+    "message": "Module 'node:fs' is imported more than once in this file",
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/import/no-duplicates.html",
+  },
+  {
+    "code": "eslint(no-undef)",
+    "filename": "fixtures/reported-once/index.ts",
+    "help": "Either define 'setTimeout' or remove the reference to it. If 'setTimeout' is a global variable, add it to the 'globals' configuration.",
+    "labels": [
+      {
+        "span": {
+          "column": 17,
+          "length": 10,
+          "line": 9,
+          "offset": 354,
+        },
+      },
+    ],
+    "message": "'setTimeout' is not defined.",
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-undef.html",
+  },
+  {
+    "code": "eslint(max-params)",
+    "filename": "fixtures/reported-once/index.ts",
+    "help": "This rule enforces a maximum number of parameters allowed in function definitions.",
+    "labels": [
+      {
+        "span": {
+          "column": 15,
+          "length": 66,
+          "line": 4,
+          "offset": 88,
+        },
+      },
+    ],
+    "message": "Function 'probe' has too many parameters (4). Maximum allowed is 3.",
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/eslint/max-params.html",
+  },
+  {
+    "code": "eslint(no-nested-ternary)",
+    "filename": "fixtures/reported-once/index.ts",
+    "help": "Refactor nested ternary expressions into if-else statements for better readability.",
+    "labels": [
+      {
+        "span": {
+          "column": 18,
+          "length": 24,
+          "line": 5,
+          "offset": 190,
+        },
+      },
+    ],
+    "message": "Do not nest ternary expressions.",
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-nested-ternary.html",
+  },
+  {
+    "code": "unicorn(no-instanceof-builtins)",
+    "filename": "fixtures/reported-once/index.ts",
+    "help": "Use \`Array.isArray(…)\`, \`typeof … === 'string'\`, or another realm-safe alternative instead",
+    "labels": [
+      {
+        "span": {
+          "column": 19,
+          "length": 21,
+          "line": 6,
+          "offset": 234,
+        },
+      },
+    ],
+    "message": "Do not use \`instanceof\` with built-in constructors",
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/unicorn/no-instanceof-builtins.html",
+  },
+  {
+    "code": "unicorn(no-unnecessary-slice-end)",
+    "filename": "fixtures/reported-once/index.ts",
+    "help": "Consider omitting the unnecessary end argument.",
+    "labels": [
+      {
+        "span": {
+          "column": 32,
+          "length": 11,
+          "line": 7,
+          "offset": 288,
+        },
+      },
+    ],
+    "message": "Passing \`text.length\` as the \`end\` argument is unnecessary.",
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/unicorn/no-unnecessary-slice-end.html",
+  },
+  {
+    "code": "typescript(prefer-string-starts-ends-with)",
+    "filename": "fixtures/reported-once/index.ts",
+    "labels": [
+      {
+        "span": {
+          "column": 18,
+          "length": 17,
+          "line": 8,
+          "offset": 319,
+        },
+      },
+    ],
+    "message": "Use 'String#startsWith' method instead.",
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/prefer-string-starts-ends-with.html",
+  },
+  {
+    "code": "typescript(no-implied-eval)",
+    "filename": "fixtures/reported-once/index.ts",
+    "help": "Consider passing a function.",
+    "labels": [
+      {
+        "span": {
+          "column": 28,
+          "length": 9,
+          "line": 9,
+          "offset": 365,
+        },
+      },
+    ],
+    "message": "Implied eval.",
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/no-implied-eval.html",
+  },
+]
+`;
+
 exports[`config > type-aware 1`] = `
 [
   {

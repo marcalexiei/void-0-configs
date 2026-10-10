@@ -4,12 +4,16 @@ const typescriptConfig: OxlintConfig = {
   plugins: ['typescript'],
   rules: {
     // handled by their type-aware typescript counterpart
+    'no-implied-eval': 'off',
     'no-throw-literal': 'off',
     'prefer-promise-reject-errors': 'off',
     'require-await': 'off',
 
     // handled by typescript/no-floating-promises
     'promise/catch-or-return': 'off',
+
+    // handled by typescript/prefer-string-starts-ends-with
+    'unicorn/prefer-string-starts-ends-with': 'off',
 
     'typescript/adjacent-overload-signatures': 'error',
     'typescript/array-type': ['error', { default: 'generic' }],
@@ -116,7 +120,7 @@ const typescriptConfig: OxlintConfig = {
     'typescript/prefer-string-starts-ends-with': 'error',
     'typescript/prefer-ts-expect-error': 'error',
 
-    // `require-wait` rule conflicts with this `promise-function-async`.
+    // `require-await` rule conflicts with this `promise-function-async`.
     // I'm disabling this one since we might end up marking an async function without `await` as `async`.
     // Also Typescript return type annotations should clearly declare if the Promise is async or not.
     // https://oxc.rs/docs/guide/usage/linter/rules/typescript/promise-function-async.html

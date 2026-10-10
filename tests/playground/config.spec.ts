@@ -113,6 +113,13 @@ describe('config', () => {
     expect(diagnostics).toStrictEqual([]);
   });
 
+  it('reported-once', async () => {
+    const { code, diagnostics } = await run('./fixtures/reported-once');
+
+    expect(code).toBe(1);
+    expect(diagnostics).toMatchSnapshot();
+  });
+
   it('tuned-valid', async () => {
     const { code, diagnostics } = await run('./fixtures/tuned-valid');
 

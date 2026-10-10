@@ -774,7 +774,7 @@ exports[`config > type-aware 1`] = `
 [
   {
     "code": "eslint(id-length)",
-    "filename": "fixtures/type-aware/no-unsafe-type-assertion.ts",
+    "filename": "fixtures/type-aware/no-unnecessary-type-parameters.ts",
     "labels": [
       {
         "span": {
@@ -791,7 +791,7 @@ exports[`config > type-aware 1`] = `
   },
   {
     "code": "typescript(no-explicit-any)",
-    "filename": "fixtures/type-aware/no-unsafe-type-assertion.ts",
+    "filename": "fixtures/type-aware/no-unnecessary-type-parameters.ts",
     "help": "Use \`unknown\` instead, this will force you to explicitly, and safely, assert the type is correct.",
     "labels": [
       {
@@ -809,7 +809,7 @@ exports[`config > type-aware 1`] = `
   },
   {
     "code": "typescript(no-unnecessary-type-parameters)",
-    "filename": "fixtures/type-aware/no-unsafe-type-assertion.ts",
+    "filename": "fixtures/type-aware/no-unnecessary-type-parameters.ts",
     "labels": [
       {
         "label": "This is the only usage of type parameter T in the signature.",
@@ -832,78 +832,6 @@ exports[`config > type-aware 1`] = `
     "message": "Type parameter T is used only once in the function signature.",
     "severity": "error",
     "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/no-unnecessary-type-parameters.html",
-  },
-  {
-    "code": "typescript(no-unsafe-type-assertion)",
-    "filename": "fixtures/type-aware/no-unsafe-type-assertion.ts",
-    "help": "Consider using type guards or a safer assertion.",
-    "labels": [
-      {
-        "label": "Original expression has type \`any\`.",
-        "span": {
-          "column": 10,
-          "length": 12,
-          "line": 2,
-          "offset": 58,
-        },
-      },
-      {
-        "label": "Asserted type is \`T\`.",
-        "span": {
-          "column": 26,
-          "length": 1,
-          "line": 2,
-          "offset": 74,
-        },
-      },
-      {
-        "span": {
-          "column": 23,
-          "length": 4,
-          "line": 2,
-          "offset": 71,
-        },
-      },
-    ],
-    "message": "Unsafe assertion from \`any\` detected.",
-    "severity": "error",
-    "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/no-unsafe-type-assertion.html",
-  },
-  {
-    "code": "typescript(no-unsafe-type-assertion)",
-    "filename": "fixtures/type-aware/no-unsafe-type-assertion.ts",
-    "help": "Consider using a more specific type to ensure safety.",
-    "labels": [
-      {
-        "label": "Original expression has type \`string\`.",
-        "span": {
-          "column": 10,
-          "length": 5,
-          "line": 2,
-          "offset": 58,
-        },
-      },
-      {
-        "label": "Asserted type is \`any\`.",
-        "span": {
-          "column": 19,
-          "length": 3,
-          "line": 2,
-          "offset": 67,
-        },
-      },
-      {
-        "span": {
-          "column": 16,
-          "length": 6,
-          "line": 2,
-          "offset": 64,
-        },
-      },
-    ],
-    "message": "Unsafe assertion to \`any\` detected.",
-    "severity": "error",
-    "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/no-unsafe-type-assertion.html",
   },
 ]
 `;

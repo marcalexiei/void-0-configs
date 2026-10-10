@@ -25,4 +25,8 @@ Rules that conflicted with common code:
 - `import/no-unassigned-import`: allows style files (`css`, `scss`, `sass`, `less`)
 - `vitest/require-hook`: allows `ruleTester.run`
 
-Newly enabled: `logical-assignment-operators` and `func-name-matching`.
+- `typescript/no-unsafe-type-assertion`: `off`
+- `no-inline-comments`: `off`
+
+Newly enabled: `logical-assignment-operators`, `func-name-matching` and
+`unicorn/no-negated-condition`.

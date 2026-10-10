@@ -85,7 +85,7 @@ const typescriptConfig: OxlintConfig = {
     'typescript/no-unsafe-function-type': 'error',
     'typescript/no-unsafe-member-access': 'error',
     'typescript/no-unsafe-return': 'error',
-    'typescript/no-unsafe-type-assertion': 'error',
+    'typescript/no-unsafe-type-assertion': 'off',
     'typescript/no-unsafe-unary-minus': 'error',
     'typescript/no-useless-default-assignment': 'error',
     'typescript/no-useless-empty-export': 'error',

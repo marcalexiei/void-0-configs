@@ -177,7 +177,7 @@ const baseConfig: OxlintConfig = {
     'no-implied-eval': 'off',
 
     'no-import-assign': 'error',
-    'no-inline-comments': 'error',
+    'no-inline-comments': 'off',
     'no-inner-declarations': 'error',
     'no-invalid-regexp': 'error',
     'no-irregular-whitespace': 'error',
@@ -196,7 +196,7 @@ const baseConfig: OxlintConfig = {
     'no-multi-assign': 'error',
     'no-multi-str': 'error',
 
-    // makes earlier return easier
+    // handled by unicorn/no-negated-condition
     // https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-negated-condition.html
     'no-negated-condition': 'off',
 
@@ -431,10 +431,7 @@ const baseConfig: OxlintConfig = {
     'unicorn/no-length-as-slice-end': 'error',
     'unicorn/no-lonely-if': 'error',
     'unicorn/no-magic-array-flat-depth': 'error',
-
-    // makes earlier return easier
-    // https://oxc.rs/docs/guide/usage/linter/rules/unicorn/no-negated-condition.html
-    'unicorn/no-negated-condition': 'off',
+    'unicorn/no-negated-condition': 'error',
 
     'unicorn/no-negation-in-equality-check': 'error',
     'unicorn/no-nested-ternary': 'error',

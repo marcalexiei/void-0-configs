@@ -6,10 +6,11 @@
     "build": "pnpm -r run build",
     "format": "oxfmt",
     "format:check": "oxfmt --check",
+    "lint": "pnpm -r run lint",
     "typecheck": "pnpm -r run typecheck",
     "test": "pnpm -r run test",
     "release": "pnpm run build && changeset publish",
-    "check-all": "pnpm run build && pnpm run test --run && pnpm run format:check && pnpm run typecheck"
+    "check-all": "pnpm run build && pnpm run test --run && pnpm run format:check && pnpm run lint && pnpm run typecheck"
   },
   "devDependencies": {
     "@changesets/changelog-github": "1.0.1",

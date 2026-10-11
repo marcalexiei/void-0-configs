@@ -4,7 +4,7 @@
   "description": "Custom oxlint config",
   "keywords": [
     "config",
-    "format",
+    "lint",
     "oxc",
     "oxlint"
   ],
@@ -31,7 +31,7 @@
     "access": "public"
   },
   "scripts": {
-    "build": "tsc -p tsconfig.build.json",
+    "build": "rm -rf dist && tsc -p tsconfig.build.json",
     "typecheck": "tsc",
     "rules:check": "node ./scripts/check-config.ts",
     "rules:write": "node ./scripts/write-config-rules.ts"

@@ -7,7 +7,10 @@ export const CONFIG_DATA: Array<{
     name: string;
     scope: string;
     rulePrefix: string | null;
+    /** Rules the config may leave unset: deprecated ones, or ones set by another config */
     allowMissing: Array<string>;
+    /** Rules that do nothing without options: the config may only set them with options */
+    needsOptions: Array<string>;
   }>;
 }> = [
   {
@@ -18,30 +21,35 @@ export const CONFIG_DATA: Array<{
         scope: 'eslint',
         rulePrefix: null,
         allowMissing: [],
+        needsOptions: ['id-denylist', 'id-match', 'no-restricted-globals', 'no-restricted-imports'],
       },
       {
         name: 'import',
         scope: 'import',
         rulePrefix: 'import',
         allowMissing: [],
+        needsOptions: [],
       },
       {
         name: 'oxc',
         scope: 'oxc',
         rulePrefix: 'oxc',
         allowMissing: [],
+        needsOptions: [],
       },
       {
         name: 'promise',
         scope: 'promise',
         rulePrefix: 'promise',
         allowMissing: [],
+        needsOptions: [],
       },
       {
         name: 'unicorn',
         scope: 'unicorn',
         rulePrefix: 'unicorn',
         allowMissing: ['prefer-modern-dom-apis'],
+        needsOptions: [],
       },
     ],
   },
@@ -53,6 +61,7 @@ export const CONFIG_DATA: Array<{
         scope: 'react',
         rulePrefix: 'react',
         allowMissing: [],
+        needsOptions: ['forbid-dom-props', 'forbid-elements'],
       },
     ],
   },
@@ -68,6 +77,7 @@ export const CONFIG_DATA: Array<{
           // https://oxc.rs/docs/guide/usage/linter/rules/typescript/ban-types
           'ban-types',
         ],
+        needsOptions: ['no-restricted-types'],
       },
     ],
   },
@@ -79,6 +89,7 @@ export const CONFIG_DATA: Array<{
         scope: 'vitest',
         rulePrefix: 'vitest',
         allowMissing: [],
+        needsOptions: ['no-restricted-matchers', 'no-restricted-vi-methods'],
       },
     ],
   },
@@ -114,7 +125,6 @@ export function log(type: 'info' | 'error' | 'success' | (string & {}), ...other
       throw new Error('Invalid type for log');
   }
 
-  // biome-ignore lint/suspicious/noConsole: logger function
   console.log(icon, ...others);
   return;
 }

@@ -54,30 +54,60 @@ const baseConfig: OxfmtConfig = {
   overrides: baseOverrides,
 };
 
-function mergeSortImports(userValue: SortImportsUserConfig | undefined): SortImportsUserConfig {
-  if (userValue === undefined) {
-    return baseSortImports;
+function mergeSortImports(
+  userValue: SortImportsUserConfig | undefined,
+  base: SortImportsConfig = baseSortImports,
+): SortImportsUserConfig {
+  if (userValue === undefined || userValue === true) {
+    return base;
   }
 
-  if (typeof userValue === 'boolean') {
-    return userValue;
+  if (userValue === false) {
+    return false;
   }
 
-  return { ...baseSortImports, ...userValue };
+  return { ...base, ...userValue };
+}
+
+// oxfmt replaces `sortImports` with the override value instead of merging the two
+function mergeOverride(
+  override: OxfmtOverrideConfig,
+  sortImports: SortImportsConfig,
+): OxfmtOverrideConfig {
+  if (override.options?.sortImports === undefined) {
+    return override;
+  }
+
+  return {
+    ...override,
+    options: {
+      ...override.options,
+      sortImports: mergeSortImports(override.options.sortImports, sortImports),
+    },
+  };
 }
 
 /**
  * Merges an oxfmt config on top of this preset.
  *
  * Top level keys are overridden, `sortImports` is merged one level deep unless it is
- * set to a boolean, and `overrides` are appended to the preset ones so they win.
+ * set to `false`, and `overrides` are appended to the preset ones so they win.
+ * A `sortImports` inside an override is merged the same way.
  */
 function defineConfig(userConfig: OxfmtConfig = {}): OxfmtConfig {
+  const sortImports = mergeSortImports(userConfig.sortImports);
+  const overrideSortImports = typeof sortImports === 'object' ? sortImports : baseSortImports;
+
   return {
     ...baseConfig,
     ...userConfig,
-    sortImports: mergeSortImports(userConfig.sortImports),
-    overrides: [...baseOverrides, ...(userConfig.overrides ?? [])],
+    sortImports,
+    overrides: [
+      ...baseOverrides,
+      ...(userConfig.overrides ?? []).map((override) =>
+        mergeOverride(override, overrideSortImports),
+      ),
+    ],
   };
 }
 

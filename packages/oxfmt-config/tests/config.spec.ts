@@ -105,6 +105,30 @@ describe('defineConfig', () => {
     expect(defineConfig({ sortImports: false }).sortImports).toBe(false);
   });
 
+  it('keeps the preset when an override sets sortImports to true', () => {
+    const config = defineConfig({
+      overrides: [{ files: ['**/*.ts'], options: { sortImports: true } }],
+    });
+
+    expect(config.overrides?.at(-1)?.options?.sortImports).toEqual(defineConfig().sortImports);
+  });
+
+  it('merges the sortImports of an override on top of the top level one', () => {
+    const config = defineConfig({
+      sortImports: { groups: ['builtin', 'external'] },
+      overrides: [{ files: ['**/*.ts'], options: { sortImports: { newlinesBetween: false } } }],
+    });
+
+    expect(config.overrides?.at(-1)?.options?.sortImports).toEqual({
+      groups: ['builtin', 'external'],
+      newlinesBetween: false,
+    });
+  });
+
+  it('keeps the preset when sortImports is true', () => {
+    expect(defineConfig({ sortImports: true }).sortImports).toEqual(defineConfig().sortImports);
+  });
+
   it('does not mutate the preset between calls', () => {
     defineConfig({ printWidth: 120, sortImports: { newlinesBetween: false } });
 

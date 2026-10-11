@@ -35,14 +35,22 @@ function run(fixturePath: string): Promise<{
     let stdout = '';
     let stderr = '';
 
-    proc.stdout.on('data', (data) => (stdout += data));
-    proc.stderr.on('data', (data) => (stderr += data));
+    proc.stdout.on('data', (data) => {
+      stdout += data;
+    });
+    proc.stderr.on('data', (data) => {
+      stderr += data;
+    });
 
     proc.on('close', (code) => {
-      const diagnostics = JSON.parse(stdout).diagnostics as Array<Diagnostics>;
-      normalizeDiagnostics(diagnostics);
+      try {
+        const { diagnostics } = JSON.parse(stdout) as { diagnostics: Array<Diagnostics> };
+        normalizeDiagnostics(diagnostics);
 
-      resolve({ code: code as number, diagnostics, stderr, stdout });
+        resolve({ code: code as number, diagnostics, stderr, stdout });
+      } catch (error) {
+        reject(new Error(`oxlint did not print JSON:\n${stderr || stdout}`, { cause: error }));
+      }
     });
 
     proc.on('error', reject);
@@ -50,6 +58,13 @@ function run(fixturePath: string): Promise<{
 }
 
 describe('config', () => {
+  it('base', async () => {
+    const { code, diagnostics } = await run('./fixtures/base');
+
+    expect(code).toBe(1);
+    expect(diagnostics).toMatchSnapshot();
+  });
+
   it('async-await', async () => {
     const { code, diagnostics } = await run('./fixtures/async-await');
 
@@ -111,6 +126,13 @@ describe('config', () => {
 
     expect(code).toBe(0);
     expect(diagnostics).toStrictEqual([]);
+  });
+
+  it('reported-once', async () => {
+    const { code, diagnostics } = await run('./fixtures/reported-once');
+
+    expect(code).toBe(1);
+    expect(diagnostics).toMatchSnapshot();
   });
 
   it('tuned-valid', async () => {

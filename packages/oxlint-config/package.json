@@ -23,6 +23,7 @@
   "exports": {
     "./base": "./dist/base.js",
     "./dom": "./dist/dom.js",
+    "./react": "./dist/react.js",
     "./typescript": "./dist/typescript.js",
     "./vitest": "./dist/vitest.js"
   },

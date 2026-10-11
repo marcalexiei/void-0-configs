@@ -47,6 +47,27 @@ export default defineConfig({
 });
 ```
 
+### React
+
+```ts
+import { baseConfig } from '@marcalexiei/oxlint-config/base';
+import { reactConfig } from '@marcalexiei/oxlint-config/react';
+import { typescriptConfig } from '@marcalexiei/oxlint-config/typescript';
+import { defineConfig } from 'oxlint';
+
+export default defineConfig({
+  extends: [baseConfig, typescriptConfig, reactConfig],
+  options: {
+    typeAware: true,
+  },
+});
+```
+
+> ⚠️ NOTE
+> `reactConfig` must come after `baseConfig`: it overrides `unicorn/import-style` so that
+> named imports (`import { useState } from 'react'`) are the only accepted way to import
+> React, as [recommended by its documentation](https://legacy.reactjs.org/blog/2020/09/22/introducing-the-new-jsx-transform.html#removing-unused-react-imports).
+
 ### Vitest
 
 ```ts

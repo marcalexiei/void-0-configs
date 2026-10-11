@@ -34,6 +34,17 @@ export const CONFIG_DATA: Array<{
     ],
   },
   {
+    name: 'react',
+    plugins: [
+      {
+        name: 'react',
+        scope: 'react',
+        rulePrefix: 'react',
+        allowMissing: [],
+      },
+    ],
+  },
+  {
     name: 'typescript',
     plugins: [
       {

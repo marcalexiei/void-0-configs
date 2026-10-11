@@ -85,6 +85,20 @@ describe('config', () => {
     expect(diagnostics).toMatchSnapshot();
   });
 
+  it('react', async () => {
+    const { code, diagnostics } = await run('./fixtures/react');
+
+    expect(code).toBe(1);
+    expect(diagnostics).toMatchSnapshot();
+  });
+
+  it('react-valid', async () => {
+    const { code, diagnostics } = await run('./fixtures/react-valid');
+
+    expect(code).toBe(0);
+    expect(diagnostics).toStrictEqual([]);
+  });
+
   it('vitest', async () => {
     const { code, diagnostics } = await run('./fixtures/vitest');
 

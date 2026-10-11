@@ -9,7 +9,9 @@
   "devDependencies": {
     "@marcalexiei/oxlint-config": "workspace:*",
     "@types/node": "catalog:dev",
+    "@types/react": "19.3.0",
     "oxlint": "catalog:dev",
-    "oxlint-tsgolint": "catalog:dev"
+    "oxlint-tsgolint": "catalog:dev",
+    "react": "19.3.0"
   }
 }

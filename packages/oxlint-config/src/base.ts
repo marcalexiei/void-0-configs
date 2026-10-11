@@ -1,7 +1,7 @@
 import type { OxlintConfig } from 'oxlint';
 
 const baseConfig: OxlintConfig = {
-  plugins: ['eslint', 'import', 'unicorn'],
+  plugins: ['eslint', 'import', 'oxc', 'promise', 'unicorn'],
 
   rules: {
     //=============================================================================
@@ -39,7 +39,7 @@ const baseConfig: OxlintConfig = {
     'default-param-last': 'error',
     eqeqeq: 'error',
     'for-direction': 'error',
-    'func-name-matching': 'off',
+    'func-name-matching': 'error',
     'func-names': 'error',
     'func-style': 'off',
     'getter-return': 'error',
@@ -60,6 +60,12 @@ const baseConfig: OxlintConfig = {
 
           // alias for version
           'v',
+
+          // zod namespace
+          'z',
+
+          // unused placeholder
+          '_',
         ],
       },
     ],
@@ -71,7 +77,7 @@ const baseConfig: OxlintConfig = {
     // https://oxc.rs/docs/guide/usage/linter/rules/eslint/init-declarations.html
     'init-declarations': 'off',
 
-    'logical-assignment-operators': 'off',
+    'logical-assignment-operators': 'error',
 
     // https://oxc.rs/docs/guide/usage/linter/rules/eslint/max-classes-per-file.html
     'max-classes-per-file': 'error',
@@ -171,7 +177,7 @@ const baseConfig: OxlintConfig = {
     'no-implied-eval': 'off',
 
     'no-import-assign': 'error',
-    'no-inline-comments': 'error',
+    'no-inline-comments': 'off',
     'no-inner-declarations': 'error',
     'no-invalid-regexp': 'error',
     'no-irregular-whitespace': 'error',
@@ -190,7 +196,7 @@ const baseConfig: OxlintConfig = {
     'no-multi-assign': 'error',
     'no-multi-str': 'error',
 
-    // makes earlier return easier
+    // handled by unicorn/no-negated-condition
     // https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-negated-condition.html
     'no-negated-condition': 'off',
 
@@ -394,7 +400,11 @@ const baseConfig: OxlintConfig = {
     ],
 
     'unicorn/import-style': 'error',
-    'unicorn/max-nested-calls': 'error',
+
+    // default of 3 is reached by plain zod schemas
+    // https://oxc.rs/docs/guide/usage/linter/rules/unicorn/max-nested-calls.html
+    'unicorn/max-nested-calls': ['error', { max: 5 }],
+
     'unicorn/new-for-builtins': 'error',
     'unicorn/no-abusive-eslint-disable': 'error',
     'unicorn/no-accessor-recursion': 'error',
@@ -421,10 +431,7 @@ const baseConfig: OxlintConfig = {
     'unicorn/no-length-as-slice-end': 'error',
     'unicorn/no-lonely-if': 'error',
     'unicorn/no-magic-array-flat-depth': 'error',
-
-    // makes earlier return easier
-    // https://oxc.rs/docs/guide/usage/linter/rules/unicorn/no-negated-condition.html
-    'unicorn/no-negated-condition': 'off',
+    'unicorn/no-negated-condition': 'error',
 
     'unicorn/no-negation-in-equality-check': 'error',
     'unicorn/no-nested-ternary': 'error',
@@ -526,7 +533,10 @@ const baseConfig: OxlintConfig = {
     'unicorn/require-module-specifiers': 'error',
     'unicorn/require-number-to-fixed-digits-argument': 'error',
     'unicorn/require-post-message-target-origin': 'error',
-    'unicorn/switch-case-braces': 'error',
+
+    // https://oxc.rs/docs/guide/usage/linter/rules/unicorn/switch-case-braces.html
+    'unicorn/switch-case-braces': ['error', 'avoid'],
+
     'unicorn/switch-case-break-position': 'error',
     'unicorn/text-encoding-identifier-case': 'error',
     'unicorn/throw-new-error': 'error',
@@ -568,17 +578,120 @@ const baseConfig: OxlintConfig = {
     'import/no-named-as-default-member': 'error',
     'import/no-named-default': 'error',
     'import/no-named-export': 'off',
-    'import/no-namespace': 'error',
+
+    // zod documents the namespace import as the way to import it
+    // https://oxc.rs/docs/guide/usage/linter/rules/import/no-namespace.html
+    'import/no-namespace': ['error', { ignore: ['zod', 'zod/**'] }],
+
     'import/no-nodejs-modules': 'off',
 
     // https://oxc.rs/docs/guide/usage/linter/rules/import/no-relative-parent-imports.html
     'import/no-relative-parent-imports': 'off',
 
     'import/no-self-import': 'error',
-    'import/no-unassigned-import': 'error',
+
+    // style files can only be imported for their side effects
+    // https://oxc.rs/docs/guide/usage/linter/rules/import/no-unassigned-import.html
+    'import/no-unassigned-import': ['error', { allow: ['**/*.{css,scss,sass,less}'] }],
+
     'import/no-webpack-loader-syntax': 'error',
     'import/prefer-default-export': 'off',
     'import/unambiguous': 'error',
+
+    //=============================================================================
+    // OXC
+    //=============================================================================
+    // https://oxc.rs/docs/guide/usage/linter/rules.html?sort=name&dir=asc&scope=oxc
+
+    'oxc/approx-constant': 'error',
+    'oxc/bad-array-method-on-arguments': 'error',
+
+    // handled by no-bitwise
+    // https://oxc.rs/docs/guide/usage/linter/rules/oxc/bad-bitwise-operator.html
+    'oxc/bad-bitwise-operator': 'off',
+
+    'oxc/bad-char-at-comparison': 'error',
+    'oxc/bad-comparison-sequence': 'error',
+    'oxc/bad-match-all-arg': 'error',
+    'oxc/bad-min-max-func': 'error',
+    'oxc/bad-object-literal-comparison': 'error',
+    'oxc/bad-replace-all-arg': 'error',
+    'oxc/branches-sharing-code': 'error',
+    'oxc/const-comparisons': 'error',
+    'oxc/double-comparisons': 'error',
+    'oxc/erasing-op': 'error',
+    'oxc/misrefactored-assign-op': 'error',
+
+    // handled by no-new
+    // https://oxc.rs/docs/guide/usage/linter/rules/oxc/missing-throw.html
+    'oxc/missing-throw': 'off',
+
+    'oxc/no-accumulating-spread': 'error',
+
+    // ban language features
+    'oxc/no-async-await': 'off',
+    'oxc/no-optional-chaining': 'off',
+    'oxc/no-rest-spread-properties': 'off',
+
+    // only valid for Express 4, reports fastify and hono handlers too
+    // https://oxc.rs/docs/guide/usage/linter/rules/oxc/no-async-endpoint-handlers.html
+    'oxc/no-async-endpoint-handlers': 'off',
+
+    // https://oxc.rs/docs/guide/usage/linter/rules/oxc/no-barrel-file.html
+    'oxc/no-barrel-file': ['error', { threshold: 100 }],
+
+    'oxc/no-const-enum': 'error',
+
+    // immutable updates rely on spreading inside `map`
+    // https://oxc.rs/docs/guide/usage/linter/rules/oxc/no-map-spread.html
+    'oxc/no-map-spread': 'off',
+
+    // reports functions declaring an explicit `this` parameter too
+    // https://oxc.rs/docs/guide/usage/linter/rules/oxc/no-this-in-exported-function.html
+    'oxc/no-this-in-exported-function': 'off',
+
+    'oxc/number-arg-out-of-range': 'error',
+    'oxc/only-used-in-recursion': 'error',
+    'oxc/uninvoked-array-callback': 'error',
+
+    //=============================================================================
+    // PROMISE
+    //=============================================================================
+    // https://oxc.rs/docs/guide/usage/linter/rules.html?sort=name&dir=asc&scope=promise
+
+    // https://oxc.rs/docs/guide/usage/linter/rules/promise/always-return.html
+    'promise/always-return': ['error', { ignoreLastCallback: true }],
+
+    // needed to wrap callback based APIs
+    // https://oxc.rs/docs/guide/usage/linter/rules/promise/avoid-new.html
+    'promise/avoid-new': 'off',
+    'promise/catch-or-return': 'error',
+
+    // guess callbacks from their name (`done`, `next`, `cb`)
+    'promise/no-callback-in-promise': 'off',
+    'promise/no-promise-in-callback': 'off',
+    'promise/prefer-await-to-callbacks': 'off',
+
+    'promise/no-multiple-resolved': 'error',
+    'promise/no-nesting': 'error',
+    'promise/no-new-statics': 'error',
+    'promise/no-return-in-finally': 'error',
+
+    // handled by unicorn/no-useless-promise-resolve-reject
+    // https://oxc.rs/docs/guide/usage/linter/rules/promise/no-return-wrap.html
+    'promise/no-return-wrap': 'off',
+
+    'promise/param-names': 'error',
+
+    // https://oxc.rs/docs/guide/usage/linter/rules/promise/prefer-await-to-then.html
+    'promise/prefer-await-to-then': 'off',
+
+    // `then(a, b)` is not equivalent to `then(a).catch(b)`
+    // https://oxc.rs/docs/guide/usage/linter/rules/promise/prefer-catch.html
+    'promise/prefer-catch': 'off',
+
+    'promise/spec-only': 'error',
+    'promise/valid-params': 'error',
   },
 } as const satisfies OxlintConfig;
 

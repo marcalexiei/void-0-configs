@@ -1,7 +1,7 @@
 import type { OxlintConfig } from 'oxlint';
 
 const reactConfig: OxlintConfig = {
-  plugins: ['react', 'unicorn'],
+  plugins: ['eslint', 'react', 'unicorn'],
 
   rules: {
     //=============================================================================
@@ -10,7 +10,11 @@ const reactConfig: OxlintConfig = {
     // https://oxc.rs/docs/guide/usage/linter/rules.html?sort=name&dir=asc&scope=react
 
     'react/button-has-type': 'error',
-    'react/capitalized-calls': 'error',
+
+    // reports any capitalized function call, like `Intl.DateTimeFormat()`
+    // https://oxc.rs/docs/guide/usage/linter/rules/react/capitalized-calls.html
+    'react/capitalized-calls': 'off',
+
     'react/checked-requires-onchange-or-readonly': 'error',
 
     // https://oxc.rs/docs/guide/usage/linter/rules/react/display-name.html
@@ -95,7 +99,9 @@ const reactConfig: OxlintConfig = {
     // https://oxc.rs/docs/guide/usage/linter/rules/react/jsx-no-target-blank.html
     'react/jsx-no-target-blank': 'off',
 
-    'react/jsx-no-undef': 'error',
+    // handled by no-undef
+    // https://oxc.rs/docs/guide/usage/linter/rules/react/jsx-no-undef.html
+    'react/jsx-no-undef': 'off',
 
     // `<>{children}</>` is needed to return an element from a `ReactNode`
     // https://oxc.rs/docs/guide/usage/linter/rules/react/jsx-no-useless-fragment.html
@@ -114,20 +120,27 @@ const reactConfig: OxlintConfig = {
     'react/no-clone-element': 'error',
     'react/no-danger': 'error',
     'react/no-danger-with-children': 'error',
-    'react/no-deriving-state-in-effects': 'error',
 
-    // class components are reported by react/prefer-function-component
-    'react/no-did-mount-set-state': 'off',
-    'react/no-did-update-set-state': 'off',
-    'react/no-direct-mutation-state': 'off',
-    'react/no-is-mounted': 'off',
-    'react/no-redundant-should-component-update': 'off',
+    // handled by react/set-state-in-effect
+    // https://oxc.rs/docs/guide/usage/linter/rules/react/no-deriving-state-in-effects.html
+    'react/no-deriving-state-in-effects': 'off',
+
+    // error boundaries are still written as classes
+    'react/no-did-mount-set-state': 'error',
+    'react/no-did-update-set-state': 'error',
+    'react/no-direct-mutation-state': 'error',
+    'react/no-is-mounted': 'error',
+    'react/no-redundant-should-component-update': 'error',
+    'react/no-string-refs': 'error',
+    'react/no-unsafe': 'error',
+    'react/no-will-update-set-state': 'error',
+    'react/prefer-es6-class': 'error',
+    'react/require-render-return': 'error',
+
+    // error boundaries need `setState`
+    // https://oxc.rs/docs/guide/usage/linter/rules/react/no-set-state.html
     'react/no-set-state': 'off',
-    'react/no-string-refs': 'off',
-    'react/no-unsafe': 'off',
-    'react/no-will-update-set-state': 'off',
-    'react/prefer-es6-class': 'off',
-    'react/require-render-return': 'off',
+
     'react/state-in-constructor': 'off',
 
     'react/no-find-dom-node': 'error',
@@ -187,6 +200,14 @@ const reactConfig: OxlintConfig = {
     'react/use-memo': 'error',
     'react/void-dom-elements-no-children': 'error',
     'react/void-use-memo': 'error',
+
+    //=============================================================================
+    // ESLINT
+    //=============================================================================
+
+    // `memo(function Name() {})` is how a wrapped component gets its display name
+    // https://oxc.rs/docs/guide/usage/linter/rules/eslint/prefer-arrow-callback.html
+    'prefer-arrow-callback': ['error', { allowNamedFunctions: true, allowUnboundThis: true }],
 
     //=============================================================================
     // UNICORN

@@ -12,6 +12,7 @@
     "@types/react": "19.3.0",
     "oxlint": "catalog:dev",
     "oxlint-tsgolint": "catalog:dev",
-    "react": "19.3.0"
+    "react": "19.3.0",
+    "zod": "4.6.5"
   }
 }

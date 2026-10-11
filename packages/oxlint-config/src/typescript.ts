@@ -3,6 +3,14 @@ import type { OxlintConfig } from 'oxlint';
 const typescriptConfig: OxlintConfig = {
   plugins: ['typescript'],
   rules: {
+    // handled by their type-aware typescript counterpart
+    'no-throw-literal': 'off',
+    'prefer-promise-reject-errors': 'off',
+    'require-await': 'off',
+
+    // handled by typescript/no-floating-promises
+    'promise/catch-or-return': 'off',
+
     'typescript/adjacent-overload-signatures': 'error',
     'typescript/array-type': ['error', { default: 'generic' }],
     'typescript/await-thenable': 'error',
@@ -19,7 +27,11 @@ const typescriptConfig: OxlintConfig = {
     'typescript/dot-notation': 'error',
     'typescript/explicit-function-return-type': 'error',
     'typescript/explicit-member-accessibility': ['error', { accessibility: 'no-public' }],
-    'typescript/explicit-module-boundary-types': 'error',
+
+    // handled by typescript/explicit-function-return-type
+    // https://oxc.rs/docs/guide/usage/linter/rules/typescript/explicit-module-boundary-types.html
+    'typescript/explicit-module-boundary-types': 'off',
+
     'typescript/method-signature-style': ['error', 'property'],
     'typescript/no-array-delete': 'error',
     'typescript/no-base-to-string': 'error',
@@ -29,7 +41,11 @@ const typescriptConfig: OxlintConfig = {
     'typescript/no-duplicate-enum-values': 'error',
     'typescript/no-duplicate-type-constituents': 'error',
     'typescript/no-dynamic-delete': 'error',
-    'typescript/no-empty-interface': 'error',
+
+    // handled by typescript/no-empty-object-type
+    // https://oxc.rs/docs/guide/usage/linter/rules/typescript/no-empty-interface.html
+    'typescript/no-empty-interface': 'off',
+
     'typescript/no-empty-object-type': 'error',
     'typescript/no-explicit-any': 'error',
     'typescript/no-extra-non-null-assertion': 'error',
@@ -72,7 +88,7 @@ const typescriptConfig: OxlintConfig = {
     'typescript/no-unsafe-function-type': 'error',
     'typescript/no-unsafe-member-access': 'error',
     'typescript/no-unsafe-return': 'error',
-    'typescript/no-unsafe-type-assertion': 'error',
+    'typescript/no-unsafe-type-assertion': 'off',
     'typescript/no-unsafe-unary-minus': 'error',
     'typescript/no-useless-default-assignment': 'error',
     'typescript/no-useless-empty-export': 'error',

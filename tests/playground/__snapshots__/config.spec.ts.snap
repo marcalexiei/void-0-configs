@@ -227,24 +227,6 @@ exports[`config > async-await 1`] = `
     "severity": "error",
     "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/await-thenable.html",
   },
-  {
-    "code": "eslint(require-await)",
-    "filename": "fixtures/async-await/promises.ts",
-    "help": "Consider removing the \`async\` keyword.",
-    "labels": [
-      {
-        "span": {
-          "column": 23,
-          "length": 31,
-          "line": 7,
-          "offset": 141,
-        },
-      },
-    ],
-    "message": "Async function has no \`await\` expression.",
-    "severity": "error",
-    "url": "https://oxc.rs/docs/guide/usage/linter/rules/eslint/require-await.html",
-  },
 ]
 `;
 
@@ -341,6 +323,194 @@ exports[`config > import-type 1`] = `
 ]
 `;
 
+exports[`config > oxc 1`] = `
+[
+  {
+    "code": "oxc(const-comparisons)",
+    "filename": "fixtures/oxc/index.ts",
+    "help": "since \`1\` < \`10\`, the expression evaluates to false for any value of \`value\`",
+    "labels": [
+      {
+        "label": "Requires that \`value < 1\` ",
+        "span": {
+          "column": 10,
+          "length": 9,
+          "line": 3,
+          "offset": 116,
+        },
+      },
+      {
+        "label": "Requires that \`value > 10\` ",
+        "span": {
+          "column": 23,
+          "length": 10,
+          "line": 3,
+          "offset": 129,
+        },
+      },
+    ],
+    "message": "Unexpected constant comparison",
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/oxc/const-comparisons.html",
+  },
+  {
+    "code": "eslint(no-new)",
+    "filename": "fixtures/oxc/index.ts",
+    "help": "Assign the result of 'new' to a variable or compare it to a reference.",
+    "labels": [
+      {
+        "span": {
+          "column": 5,
+          "length": 9,
+          "line": 9,
+          "offset": 274,
+        },
+      },
+    ],
+    "message": "Do not use 'new' for side effects.",
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-new.html",
+  },
+  {
+    "code": "oxc(bad-replace-all-arg)",
+    "filename": "fixtures/oxc/index.ts",
+    "help": "To replace all occurrences of a string, use the \`replaceAll\` method with the global flag (g) in the regular expression.",
+    "labels": [
+      {
+        "label": "\`replaceAll\` called here",
+        "span": {
+          "column": 16,
+          "length": 10,
+          "line": 15,
+          "offset": 424,
+        },
+      },
+      {
+        "label": "RegExp supplied here",
+        "span": {
+          "column": 27,
+          "length": 3,
+          "line": 15,
+          "offset": 435,
+        },
+      },
+    ],
+    "message": "Global flag (g) is missing in the regular expression supplied to the \`replaceAll\` method.",
+    "note": "Unlike \`replace\`, \`replaceAll\` throws a \`TypeError\` when passed a non-global regular expression instead of replacing only the first match.",
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/oxc/bad-replace-all-arg.html",
+  },
+  {
+    "code": "oxc(no-const-enum)",
+    "filename": "fixtures/oxc/index.ts",
+    "help": "Const enums are not supported by bundlers and are incompatible with the isolatedModules mode. Their use can lead to import nonexistent values (because const enums are erased).",
+    "labels": [
+      {
+        "span": {
+          "column": 8,
+          "length": 5,
+          "line": 19,
+          "offset": 472,
+        },
+      },
+    ],
+    "message": "Unexpected const enum",
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/oxc/no-const-enum.html",
+  },
+]
+`;
+
+exports[`config > promise 1`] = `
+[
+  {
+    "code": "promise(always-return)",
+    "filename": "fixtures/promise/index.ts",
+    "labels": [
+      {
+        "span": {
+          "column": 13,
+          "length": 42,
+          "line": 5,
+          "offset": 155,
+        },
+      },
+    ],
+    "message": "Each then() should return a value or throw",
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/promise/always-return.html",
+  },
+  {
+    "code": "promise(no-multiple-resolved)",
+    "filename": "fixtures/promise/index.ts",
+    "labels": [
+      {
+        "span": {
+          "column": 5,
+          "length": 22,
+          "line": 20,
+          "offset": 462,
+        },
+      },
+    ],
+    "message": "Promise should not be resolved multiple times. Promise is already resolved on line 19.",
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/promise/no-multiple-resolved.html",
+  },
+  {
+    "code": "promise(no-multiple-resolved)",
+    "filename": "fixtures/promise/index.ts",
+    "labels": [
+      {
+        "span": {
+          "column": 5,
+          "length": 11,
+          "line": 19,
+          "offset": 445,
+        },
+      },
+    ],
+    "message": "Promise should not be resolved multiple times. Promise is potentially resolved on line 16.",
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/promise/no-multiple-resolved.html",
+  },
+  {
+    "code": "promise(param-names)",
+    "filename": "fixtures/promise/index.ts",
+    "labels": [
+      {
+        "span": {
+          "column": 23,
+          "length": 3,
+          "line": 14,
+          "offset": 344,
+        },
+      },
+    ],
+    "message": "Promise constructor parameters must be named to match \`^_?resolve$\`",
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/promise/param-names.html",
+  },
+  {
+    "code": "promise(param-names)",
+    "filename": "fixtures/promise/index.ts",
+    "labels": [
+      {
+        "span": {
+          "column": 28,
+          "length": 2,
+          "line": 14,
+          "offset": 349,
+        },
+      },
+    ],
+    "message": "Promise constructor parameters must be named to match \`^_?reject$\`",
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/promise/param-names.html",
+  },
+]
+`;
+
 exports[`config > react 1`] = `
 [
   {
@@ -378,6 +548,24 @@ exports[`config > react 1`] = `
     "message": "Context definition is missing display name.",
     "severity": "error",
     "url": "https://oxc.rs/docs/guide/usage/linter/rules/react/display-name.html",
+  },
+  {
+    "code": "react(no-direct-mutation-state)",
+    "filename": "fixtures/react/error-boundary.tsx",
+    "help": "Calling \`setState()\` afterwards will replace the mutations you made via \`this.state\`.",
+    "labels": [
+      {
+        "span": {
+          "column": 5,
+          "length": 19,
+          "line": 17,
+          "offset": 401,
+        },
+      },
+    ],
+    "message": "Never mutate \`this.state\` directly.",
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/react/no-direct-mutation-state.html",
   },
   {
     "code": "react-hooks(exhaustive-deps)",
@@ -585,8 +773,103 @@ exports[`config > react 1`] = `
 exports[`config > type-aware 1`] = `
 [
   {
+    "code": "typescript(no-generated-empty-object-type)",
+    "filename": "fixtures/type-aware/counterparts.ts",
+    "labels": [
+      {
+        "span": {
+          "column": 21,
+          "length": 18,
+          "line": 6,
+          "offset": 120,
+        },
+      },
+    ],
+    "message": "This type resolves to \`{}\`, the empty object type. This was likely not intentional.",
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/no-generated-empty-object-type.html",
+  },
+  {
+    "code": "typescript(require-await)",
+    "filename": "fixtures/type-aware/counterparts.ts",
+    "labels": [
+      {
+        "span": {
+          "column": 1,
+          "length": 29,
+          "line": 9,
+          "offset": 188,
+        },
+      },
+    ],
+    "message": "Function has no 'await' expression.",
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/require-await.html",
+  },
+  {
+    "code": "typescript(only-throw-error)",
+    "filename": "fixtures/type-aware/counterparts.ts",
+    "labels": [
+      {
+        "span": {
+          "column": 9,
+          "length": 9,
+          "line": 15,
+          "offset": 347,
+        },
+      },
+    ],
+    "message": "Expected an error object to be thrown.",
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/only-throw-error.html",
+  },
+  {
+    "code": "typescript(prefer-promise-reject-errors)",
+    "filename": "fixtures/type-aware/counterparts.ts",
+    "labels": [
+      {
+        "span": {
+          "column": 10,
+          "length": 25,
+          "line": 20,
+          "offset": 477,
+        },
+      },
+    ],
+    "message": "Expected the Promise rejection reason to be an Error.",
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/prefer-promise-reject-errors.html",
+  },
+  {
+    "code": "typescript(no-floating-promises)",
+    "filename": "fixtures/type-aware/counterparts.ts",
+    "help": "The promise must end with a call to .catch, or end with a call to .then with a rejection handler, or be explicitly marked as ignored with the \`void\` operator.",
+    "labels": [
+      {
+        "label": "This unhandled promise-like value has type \`Promise<string>\`.",
+        "span": {
+          "column": 3,
+          "length": 36,
+          "line": 25,
+          "offset": 617,
+        },
+      },
+      {
+        "span": {
+          "column": 3,
+          "length": 36,
+          "line": 25,
+          "offset": 617,
+        },
+      },
+    ],
+    "message": "Promises must be awaited, add void operator to ignore.",
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/no-floating-promises.html",
+  },
+  {
     "code": "eslint(id-length)",
-    "filename": "fixtures/type-aware/no-unsafe-type-assertion.ts",
+    "filename": "fixtures/type-aware/no-unnecessary-type-parameters.ts",
     "labels": [
       {
         "span": {
@@ -603,7 +886,7 @@ exports[`config > type-aware 1`] = `
   },
   {
     "code": "typescript(no-explicit-any)",
-    "filename": "fixtures/type-aware/no-unsafe-type-assertion.ts",
+    "filename": "fixtures/type-aware/no-unnecessary-type-parameters.ts",
     "help": "Use \`unknown\` instead, this will force you to explicitly, and safely, assert the type is correct.",
     "labels": [
       {
@@ -621,7 +904,7 @@ exports[`config > type-aware 1`] = `
   },
   {
     "code": "typescript(no-unnecessary-type-parameters)",
-    "filename": "fixtures/type-aware/no-unsafe-type-assertion.ts",
+    "filename": "fixtures/type-aware/no-unnecessary-type-parameters.ts",
     "labels": [
       {
         "label": "This is the only usage of type parameter T in the signature.",
@@ -644,78 +927,6 @@ exports[`config > type-aware 1`] = `
     "message": "Type parameter T is used only once in the function signature.",
     "severity": "error",
     "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/no-unnecessary-type-parameters.html",
-  },
-  {
-    "code": "typescript(no-unsafe-type-assertion)",
-    "filename": "fixtures/type-aware/no-unsafe-type-assertion.ts",
-    "help": "Consider using type guards or a safer assertion.",
-    "labels": [
-      {
-        "label": "Original expression has type \`any\`.",
-        "span": {
-          "column": 10,
-          "length": 12,
-          "line": 2,
-          "offset": 58,
-        },
-      },
-      {
-        "label": "Asserted type is \`T\`.",
-        "span": {
-          "column": 26,
-          "length": 1,
-          "line": 2,
-          "offset": 74,
-        },
-      },
-      {
-        "span": {
-          "column": 23,
-          "length": 4,
-          "line": 2,
-          "offset": 71,
-        },
-      },
-    ],
-    "message": "Unsafe assertion from \`any\` detected.",
-    "severity": "error",
-    "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/no-unsafe-type-assertion.html",
-  },
-  {
-    "code": "typescript(no-unsafe-type-assertion)",
-    "filename": "fixtures/type-aware/no-unsafe-type-assertion.ts",
-    "help": "Consider using a more specific type to ensure safety.",
-    "labels": [
-      {
-        "label": "Original expression has type \`string\`.",
-        "span": {
-          "column": 10,
-          "length": 5,
-          "line": 2,
-          "offset": 58,
-        },
-      },
-      {
-        "label": "Asserted type is \`any\`.",
-        "span": {
-          "column": 19,
-          "length": 3,
-          "line": 2,
-          "offset": 67,
-        },
-      },
-      {
-        "span": {
-          "column": 16,
-          "length": 6,
-          "line": 2,
-          "offset": 64,
-        },
-      },
-    ],
-    "message": "Unsafe assertion to \`any\` detected.",
-    "severity": "error",
-    "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/no-unsafe-type-assertion.html",
   },
 ]
 `;
@@ -1108,6 +1319,40 @@ exports[`config > typescript 1`] = `
     "message": "Prefer top-level await over using a promise chain.",
     "severity": "error",
     "url": "https://oxc.rs/docs/guide/usage/linter/rules/unicorn/prefer-top-level-await.html",
+  },
+  {
+    "code": "promise(valid-params)",
+    "filename": "fixtures/typescript/unsafe-call.ts",
+    "labels": [
+      {
+        "span": {
+          "column": 1,
+          "length": 31,
+          "line": 10,
+          "offset": 118,
+        },
+      },
+    ],
+    "message": "\`Promise.catch()\` requires 1 argument, but received 0.",
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/promise/valid-params.html",
+  },
+  {
+    "code": "promise(valid-params)",
+    "filename": "fixtures/typescript/unsafe-call.ts",
+    "labels": [
+      {
+        "span": {
+          "column": 1,
+          "length": 23,
+          "line": 10,
+          "offset": 118,
+        },
+      },
+    ],
+    "message": "\`Promise.then()\` requires 1 or 2 arguments, but received 0.",
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/promise/valid-params.html",
   },
   {
     "code": "typescript(no-unsafe-call)",

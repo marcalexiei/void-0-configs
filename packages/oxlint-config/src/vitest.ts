@@ -124,7 +124,11 @@ const vitestConfig: OxlintConfig = {
     'vitest/prefer-to-have-length': 'error',
     'vitest/prefer-todo': 'error',
     'vitest/require-awaited-expect-poll': 'error',
-    'vitest/require-hook': 'error',
+
+    // `RuleTester` registers its own tests
+    // https://oxc.rs/docs/guide/usage/linter/rules/vitest/require-hook
+    'vitest/require-hook': ['error', { allowedFunctionCalls: ['ruleTester.run'] }],
+
     'vitest/require-local-test-context-for-concurrent-snapshots': 'error',
     'vitest/require-mock-type-parameters': 'error',
 

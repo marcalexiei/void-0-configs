@@ -1,5 +1,18 @@
 # @marcalexiei/oxfmt-config
 
+## 2.0.1
+
+### Patch Changes
+
+- [#108](https://github.com/marcalexiei/void-0-configs/pull/108) [`22b0dd5`](https://github.com/marcalexiei/void-0-configs/commit/22b0dd51f6544ac8aff93ec854c61b202b6ef29f) - fix: stop publishing source maps
+  
+  They pointed at sources that are not published.
+
+- [#108](https://github.com/marcalexiei/void-0-configs/pull/108) [`22b0dd5`](https://github.com/marcalexiei/void-0-configs/commit/22b0dd51f6544ac8aff93ec854c61b202b6ef29f) - fix: keep the preset import groups when `sortImports` is `true`
+  
+  `true` was passed through to oxfmt, which sorted with its own default groups. A
+  `sortImports` inside `overrides` is now merged with the preset too.
+
 ## 2.0.0
 
 ### Major Changes

@@ -1,4 +1,5 @@
 import { baseConfig } from '@marcalexiei/oxlint-config/base';
+import { nodeConfig } from '@marcalexiei/oxlint-config/node';
 import { reactConfig } from '@marcalexiei/oxlint-config/react';
 import { reactPerfConfig } from '@marcalexiei/oxlint-config/react-perf';
 import { typescriptConfig } from '@marcalexiei/oxlint-config/typescript';
@@ -14,6 +15,11 @@ export default defineConfig({
     console: 'readonly',
   },
   overrides: [
+    {
+      files: ['fixtures/node/**'],
+      env: { node: true },
+      ...nodeConfig,
+    },
     {
       files: ['fixtures/{react,react-valid,react-perf}/**'],
       ...reactConfig,

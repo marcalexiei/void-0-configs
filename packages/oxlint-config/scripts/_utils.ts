@@ -54,6 +54,18 @@ export const CONFIG_DATA: Array<{
     ],
   },
   {
+    name: 'node',
+    plugins: [
+      {
+        name: 'node',
+        scope: 'node',
+        rulePrefix: 'node',
+        allowMissing: [],
+        needsOptions: [],
+      },
+    ],
+  },
+  {
     name: 'react',
     plugins: [
       {

@@ -130,6 +130,41 @@ export default defineConfig({
 });
 ```
 
+### Node
+
+`nodeConfig` adds the `node` plugin rules that catch mistakes in CommonJS and callback code,
+such as `exports = {}` or a callback error that is never read. `node/no-sync`,
+`node/no-process-env` and `node/no-top-level-await` stay off: scripts, servers and CLIs rely on
+what they report.
+
+```ts
+import { baseConfig } from '@marcalexiei/oxlint-config/base';
+import { nodeConfig } from '@marcalexiei/oxlint-config/node';
+import { defineConfig } from 'oxlint';
+
+export default defineConfig({
+  env: {
+    node: true,
+  },
+  extends: [baseConfig, nodeConfig],
+});
+```
+
+A published library can turn `node/no-top-level-await` on for its sources, so that it can still
+be loaded with `require(esm)`:
+
+```ts
+export default defineConfig({
+  extends: [baseConfig, nodeConfig],
+  overrides: [
+    {
+      files: ['src/**'],
+      rules: { 'node/no-top-level-await': 'error' },
+    },
+  ],
+});
+```
+
 ### Vitest
 
 `vitestConfig` is meant for test files only, so it goes in `overrides`. It also turns off the

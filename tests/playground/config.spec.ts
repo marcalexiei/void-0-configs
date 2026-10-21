@@ -3,6 +3,7 @@ import { spawn } from 'node:child_process';
 import { describe, expect, it } from 'vitest';
 
 interface Diagnostics {
+  code: string;
   filename: string;
 }
 
@@ -98,6 +99,16 @@ describe('config', () => {
 
     expect(code).toBe(1);
     expect(diagnostics).toMatchSnapshot();
+  });
+
+  it('node', async () => {
+    const { code, diagnostics } = await run('./fixtures/node');
+
+    expect(code).toBe(1);
+    // the CommonJS fixture also trips base and typescript rules, which other tests cover
+    expect(
+      diagnostics.filter((diagnostic) => diagnostic.code.startsWith('node(')),
+    ).toMatchSnapshot();
   });
 
   it('oxc', async () => {

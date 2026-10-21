@@ -327,6 +327,154 @@ exports[`config > import-type 1`] = `
 ]
 `;
 
+exports[`config > node 1`] = `
+[
+  {
+    "code": "node(exports-style)",
+    "filename": "fixtures/node/legacy.cjs",
+    "help": "Use \`module.exports\` instead.",
+    "labels": [
+      {
+        "span": {
+          "column": 1,
+          "length": 7,
+          "line": 23,
+          "offset": 395,
+        },
+      },
+    ],
+    "message": "Unexpected access to \`exports\`.",
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/node/exports-style.html",
+  },
+  {
+    "code": "node(no-mixed-requires)",
+    "filename": "fixtures/node/legacy.cjs",
+    "labels": [
+      {
+        "span": {
+          "column": 1,
+          "length": 53,
+          "line": 1,
+          "offset": 0,
+        },
+      },
+    ],
+    "message": "Do not mix 'require' and other declarations.",
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/node/no-mixed-requires.html",
+  },
+  {
+    "code": "node(no-path-concat)",
+    "filename": "fixtures/node/legacy.cjs",
+    "help": "Replace string concatenation of \`__dirname\` or \`__filename\` with \`path.join()\` or \`path.resolve()\`.",
+    "labels": [
+      {
+        "span": {
+          "column": 18,
+          "length": 28,
+          "line": 4,
+          "offset": 72,
+        },
+      },
+    ],
+    "message": "Use \`path.join()\` or \`path.resolve()\` instead of string concatenation",
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/node/no-path-concat.html",
+  },
+  {
+    "code": "node(no-new-require)",
+    "filename": "fixtures/node/legacy.cjs",
+    "help": "Separate \`require()\` from \`new\` operator",
+    "labels": [
+      {
+        "span": {
+          "column": 16,
+          "length": 27,
+          "line": 6,
+          "offset": 130,
+        },
+      },
+    ],
+    "message": "Unexpected use of \`new\` operator with \`require\`",
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/node/no-new-require.html",
+  },
+  {
+    "code": "node(global-require)",
+    "filename": "fixtures/node/legacy.cjs",
+    "help": "Move require() to top-level module scope",
+    "labels": [
+      {
+        "span": {
+          "column": 10,
+          "length": 18,
+          "line": 9,
+          "offset": 187,
+        },
+      },
+    ],
+    "message": "Unexpected require().",
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/node/global-require.html",
+  },
+  {
+    "code": "node(callback-return)",
+    "filename": "fixtures/node/legacy.cjs",
+    "help": "Return the callback call or add an explicit return immediately after it.",
+    "labels": [
+      {
+        "span": {
+          "column": 5,
+          "length": 35,
+          "line": 14,
+          "offset": 261,
+        },
+      },
+    ],
+    "message": "Expected return with your callback function.",
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/node/callback-return.html",
+  },
+  {
+    "code": "node(handle-callback-err)",
+    "filename": "fixtures/node/legacy.cjs",
+    "help": "Handle the error or rename the parameter if it's not an error.",
+    "labels": [
+      {
+        "span": {
+          "column": 15,
+          "length": 3,
+          "line": 19,
+          "offset": 364,
+        },
+      },
+    ],
+    "message": "Expected error to be handled.",
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/node/handle-callback-err.html",
+  },
+  {
+    "code": "node(no-exports-assign)",
+    "filename": "fixtures/node/legacy.cjs",
+    "help": "Use 'module.exports' instead.",
+    "labels": [
+      {
+        "span": {
+          "column": 1,
+          "length": 7,
+          "line": 23,
+          "offset": 395,
+        },
+      },
+    ],
+    "message": "Unexpected assignment to 'exports'.",
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/node/no-exports-assign.html",
+  },
+]
+`;
+
 exports[`config > oxc 1`] = `
 [
   {

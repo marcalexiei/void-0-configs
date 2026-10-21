@@ -121,6 +121,13 @@ describe('config', () => {
     expect(diagnostics).toMatchSnapshot();
   });
 
+  it('react-perf', async () => {
+    const { code, diagnostics } = await run('./fixtures/react-perf');
+
+    expect(code).toBe(1);
+    expect(diagnostics).toMatchSnapshot();
+  });
+
   it('react-valid', async () => {
     const { code, diagnostics } = await run('./fixtures/react-valid');
 

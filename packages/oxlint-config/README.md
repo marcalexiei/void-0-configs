@@ -88,6 +88,30 @@ export default defineConfig({
 > - `prefer-arrow-callback`: named functions are accepted as callbacks, so that
 >   `memo(function Name() {})` can give a wrapped component its display name
 
+### React perf
+
+`reactPerfConfig` reports functions, objects, arrays and JSX created during render and passed
+as props to a component, which make it re-render. It is opt-in: with React Compiler these
+values are memoized for you. Props of native elements such as `<button>` are not reported.
+
+```ts
+import { baseConfig } from '@marcalexiei/oxlint-config/base';
+import { reactConfig } from '@marcalexiei/oxlint-config/react';
+import { reactPerfConfig } from '@marcalexiei/oxlint-config/react-perf';
+import { typescriptConfig } from '@marcalexiei/oxlint-config/typescript';
+import { defineConfig } from 'oxlint';
+
+export default defineConfig({
+  env: {
+    browser: true,
+  },
+  extends: [baseConfig, typescriptConfig, reactConfig, reactPerfConfig],
+  options: {
+    typeAware: true,
+  },
+});
+```
+
 ### DOM
 
 `domConfig` adds `unicorn/prefer-modern-dom-apis`, which only makes sense for code running in

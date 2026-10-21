@@ -66,6 +66,18 @@ export const CONFIG_DATA: Array<{
     ],
   },
   {
+    name: 'react-perf',
+    plugins: [
+      {
+        name: 'react-perf',
+        scope: 'react_perf',
+        rulePrefix: 'react-perf',
+        allowMissing: [],
+        needsOptions: [],
+      },
+    ],
+  },
+  {
     name: 'typescript',
     plugins: [
       {

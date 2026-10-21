@@ -757,6 +757,83 @@ exports[`config > react 1`] = `
 ]
 `;
 
+exports[`config > react-perf 1`] = `
+[
+  {
+    "code": "react-perf(jsx-no-jsx-as-prop)",
+    "filename": "fixtures/react-perf/inline-props.tsx",
+    "help": "simplify props or memoize props in the parent component (https://react.dev/reference/react/memo#my-component-rerenders-when-a-prop-is-an-object-or-array).",
+    "labels": [
+      {
+        "span": {
+          "column": 19,
+          "length": 8,
+          "line": 26,
+          "offset": 588,
+        },
+      },
+    ],
+    "message": "JSX attribute values should not contain other JSX.",
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/react_perf/jsx-no-jsx-as-prop.html",
+  },
+  {
+    "code": "react-perf(jsx-no-new-function-as-prop)",
+    "filename": "fixtures/react-perf/inline-props.tsx",
+    "help": "simplify props or memoize props in the parent component (https://react.dev/reference/react/memo#my-component-rerenders-when-a-prop-is-an-object-or-array).",
+    "labels": [
+      {
+        "span": {
+          "column": 39,
+          "length": 8,
+          "line": 26,
+          "offset": 608,
+        },
+      },
+    ],
+    "message": "JSX attribute values should not contain functions created in the same scope.",
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/react_perf/jsx-no-new-function-as-prop.html",
+  },
+  {
+    "code": "react-perf(jsx-no-new-object-as-prop)",
+    "filename": "fixtures/react-perf/inline-props.tsx",
+    "help": "simplify props or memoize props in the parent component (https://react.dev/reference/react/memo#my-component-rerenders-when-a-prop-is-an-object-or-array).",
+    "labels": [
+      {
+        "span": {
+          "column": 56,
+          "length": 16,
+          "line": 26,
+          "offset": 625,
+        },
+      },
+    ],
+    "message": "JSX attribute values should not contain objects created in the same scope.",
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/react_perf/jsx-no-new-object-as-prop.html",
+  },
+  {
+    "code": "react-perf(jsx-no-new-array-as-prop)",
+    "filename": "fixtures/react-perf/inline-props.tsx",
+    "help": "simplify props or memoize props in the parent component (https://react.dev/reference/react/memo#my-component-rerenders-when-a-prop-is-an-object-or-array).",
+    "labels": [
+      {
+        "span": {
+          "column": 80,
+          "length": 10,
+          "line": 26,
+          "offset": 649,
+        },
+      },
+    ],
+    "message": "JSX attribute values should not contain Arrays created in the same scope.",
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/react_perf/jsx-no-new-array-as-prop.html",
+  },
+]
+`;
+
 exports[`config > reported-once 1`] = `
 [
   {

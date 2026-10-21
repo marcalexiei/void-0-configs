@@ -23,6 +23,7 @@
   "exports": {
     "./base": "./dist/base.js",
     "./dom": "./dist/dom.js",
+    "./node": "./dist/node.js",
     "./react": "./dist/react.js",
     "./react-perf": "./dist/react-perf.js",
     "./typescript": "./dist/typescript.js",

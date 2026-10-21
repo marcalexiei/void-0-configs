@@ -1,8 +1,22 @@
 import type { OxlintConfig } from 'oxlint';
 
 const vitestConfig: OxlintConfig = {
-  plugins: ['vitest'],
+  plugins: ['eslint', 'vitest'],
   rules: {
+    //=============================================================================
+    // ESLINT
+    //=============================================================================
+
+    // a test file holds whole suites, and a `describe` body counts as one function
+    // https://oxc.rs/docs/guide/usage/linter/rules/eslint/max-lines.html
+    'max-lines': 'off',
+
+    // https://oxc.rs/docs/guide/usage/linter/rules/eslint/max-lines-per-function.html
+    'max-lines-per-function': 'off',
+
+    // https://oxc.rs/docs/guide/usage/linter/rules/eslint/max-statements.html
+    'max-statements': 'off',
+
     //=============================================================================
     // VITEST
     //=============================================================================

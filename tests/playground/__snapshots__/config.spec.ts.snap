@@ -1517,31 +1517,14 @@ exports[`config > typescript 1`] = `
   {
     "code": "typescript(no-unsafe-assignment)",
     "filename": "fixtures/typescript/unsafe-call.ts",
+    "help": "Assigned value has type \`any\`, so the target is also inferred as \`any\`. Use a safely typed value or \`unknown\`, and narrow it before use.",
     "labels": [
       {
-        "label": "Assigned value has type \`any\`.",
-        "span": {
-          "column": 16,
-          "length": 17,
-          "line": 7,
-          "offset": 74,
-        },
-      },
-      {
-        "label": "Target is inferred as \`any\`.",
         "span": {
           "column": 7,
-          "length": 6,
+          "length": 26,
           "line": 7,
           "offset": 65,
-        },
-      },
-      {
-        "span": {
-          "column": 14,
-          "length": 1,
-          "line": 7,
-          "offset": 72,
         },
       },
     ],

@@ -1,5 +1,32 @@
 # @marcalexiei/oxlint-config
 
+## 1.7.0
+
+### Minor Changes
+
+- [#114](https://github.com/marcalexiei/void-0-configs/pull/114) [`cfbcff7`](https://github.com/marcalexiei/void-0-configs/commit/cfbcff7307bbd5a95af316959a0850542569a9f3) - feat: report mutation of props and state
+  
+  The `react` config sets `react/immutability` to `error`.
+
+- [#117](https://github.com/marcalexiei/void-0-configs/pull/117) [`2081c29`](https://github.com/marcalexiei/void-0-configs/commit/2081c2924c3770be6adb2de79ccf2455183c144b) - feat: add `node` config
+  
+  Available at `@marcalexiei/oxlint-config/node`, it sets every rule of the `node` plugin. It
+  reports mistakes in CommonJS and callback code, and leaves `node/no-sync`, `node/no-process-env`
+  and `node/no-top-level-await` off.
+
+- [#116](https://github.com/marcalexiei/void-0-configs/pull/116) [`8c9cd1b`](https://github.com/marcalexiei/void-0-configs/commit/8c9cd1b58a140f8145edb6d8520599a98d3ac2b8) - feat: add `react-perf` config
+  
+  Available at `@marcalexiei/oxlint-config/react-perf`, it sets every rule of the `react-perf`
+  plugin. It is opt-in, for projects without React Compiler, and skips props of native elements.
+
+### Patch Changes
+
+- [#115](https://github.com/marcalexiei/void-0-configs/pull/115) [`1fcfbda`](https://github.com/marcalexiei/void-0-configs/commit/1fcfbdad4ce1527b0dc5e065c2c62e19237fd00c) - fix: stop applying size limits to test files
+  
+  The `vitest` config turns off `max-lines`, `max-lines-per-function` and `max-statements`,
+  since a `describe` body counts as one function. `disableMaxStatementsConfig` is no longer
+  needed in test overrides.
+
 ## 1.6.0
 
 ### Minor Changes

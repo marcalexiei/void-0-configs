@@ -39,6 +39,7 @@ const reactConfig: OxlintConfig = {
     // https://oxc.rs/docs/guide/usage/linter/rules/react/forward-ref-uses-ref.html
     'react/forward-ref-uses-ref': 'error',
 
+    // both function declarations and arrow functions are fine as components
     // https://oxc.rs/docs/guide/usage/linter/rules/react/function-component-definition.html
     'react/function-component-definition': 'off',
 
@@ -57,7 +58,7 @@ const reactConfig: OxlintConfig = {
     'react/iframe-missing-sandbox': 'error',
 
     // https://oxc.rs/docs/guide/usage/linter/rules/react/immutability.html
-    'react/immutability': 'off',
+    'react/immutability': 'error',
 
     // flags every call to the listed libraries, there is nothing to fix at the call site
     // https://oxc.rs/docs/guide/usage/linter/rules/react/incompatible-library.html
@@ -82,6 +83,7 @@ const reactConfig: OxlintConfig = {
     // https://oxc.rs/docs/guide/usage/linter/rules/react/jsx-fragments.html
     'react/jsx-fragments': ['error', 'syntax'],
 
+    // naming convention, not a defect
     // https://oxc.rs/docs/guide/usage/linter/rules/react/jsx-handler-names.html
     'react/jsx-handler-names': 'off',
 
@@ -95,6 +97,7 @@ const reactConfig: OxlintConfig = {
       },
     ],
 
+    // the default depth of 2 fails on ordinary layouts
     // https://oxc.rs/docs/guide/usage/linter/rules/react/jsx-max-depth.html
     'react/jsx-max-depth': 'off',
 
@@ -132,6 +135,7 @@ const reactConfig: OxlintConfig = {
     // https://oxc.rs/docs/guide/usage/linter/rules/react/jsx-props-no-spread-multi.html
     'react/jsx-props-no-spread-multi': 'error',
 
+    // wrapper components forward their props
     // https://oxc.rs/docs/guide/usage/linter/rules/react/jsx-props-no-spreading.html
     'react/jsx-props-no-spreading': 'off',
 
@@ -202,12 +206,14 @@ const reactConfig: OxlintConfig = {
     // https://oxc.rs/docs/guide/usage/linter/rules/react/no-set-state.html
     'react/no-set-state': 'off',
 
+    // classes are left for error boundaries, where either style works
     // https://oxc.rs/docs/guide/usage/linter/rules/react/state-in-constructor.html
     'react/state-in-constructor': 'off',
 
     // https://oxc.rs/docs/guide/usage/linter/rules/react/no-find-dom-node.html
     'react/no-find-dom-node': 'error',
 
+    // small private components can live next to their parent
     // https://oxc.rs/docs/guide/usage/linter/rules/react/no-multi-comp.html
     'react/no-multi-comp': 'off',
 

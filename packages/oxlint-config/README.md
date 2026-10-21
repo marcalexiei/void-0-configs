@@ -108,7 +108,8 @@ export default defineConfig({
 
 ### Vitest
 
-`vitestConfig` is meant for test files only, so it goes in `overrides`.
+`vitestConfig` is meant for test files only, so it goes in `overrides`. It also turns off the
+`baseConfig` size limits, since a `describe` body counts as one function.
 
 ```ts
 import { baseConfig } from '@marcalexiei/oxlint-config/base';
@@ -138,7 +139,7 @@ export default defineConfig({
 
 `baseConfig` limits the size of files and functions (`max-lines`, `max-lines-per-function`
 and `max-statements`). `disableMaxStatementsConfig` turns the three rules off where the
-limits get in the way, like test files.
+limits get in the way, like generated code or scripts.
 
 ```ts
 import { baseConfig, disableMaxStatementsConfig } from '@marcalexiei/oxlint-config/base';
@@ -151,7 +152,7 @@ export default defineConfig({
   extends: [baseConfig],
   overrides: [
     {
-      files: ['**/*.{spec,test}.ts'],
+      files: ['scripts/**'],
       ...disableMaxStatementsConfig,
     },
   ],

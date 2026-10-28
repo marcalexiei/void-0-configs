@@ -7,7 +7,7 @@ const typescriptConfig: OxlintConfig = {
     // https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-implied-eval.html
     'no-implied-eval': 'off',
 
-    // handled by their type-aware typescript counterpart
+    // handled by typescript/only-throw-error
     // https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-throw-literal.html
     'no-throw-literal': 'off',
 
@@ -237,6 +237,7 @@ const typescriptConfig: OxlintConfig = {
     // https://oxc.rs/docs/guide/usage/linter/rules/typescript/no-unsafe-return.html
     'typescript/no-unsafe-return': 'error',
 
+    // assertions after a runtime check are how values get narrowed
     // https://oxc.rs/docs/guide/usage/linter/rules/typescript/no-unsafe-type-assertion.html
     'typescript/no-unsafe-type-assertion': 'off',
 
@@ -255,6 +256,7 @@ const typescriptConfig: OxlintConfig = {
     // https://oxc.rs/docs/guide/usage/linter/rules/typescript/no-wrapper-object-types.html
     'typescript/no-wrapper-object-types': 'error',
 
+    // conflicts with typescript/no-non-null-assertion
     // https://oxc.rs/docs/guide/usage/linter/rules/typescript/non-nullable-type-assertion-style.html
     'typescript/non-nullable-type-assertion-style': 'off',
 
@@ -300,6 +302,7 @@ const typescriptConfig: OxlintConfig = {
     // https://oxc.rs/docs/guide/usage/linter/rules/typescript/prefer-readonly.html
     'typescript/prefer-readonly': 'error',
 
+    // would ask for `Readonly<>` on nearly every parameter
     // https://oxc.rs/docs/guide/usage/linter/rules/typescript/prefer-readonly-parameter-types.html
     'typescript/prefer-readonly-parameter-types': 'off',
 
@@ -343,6 +346,7 @@ const typescriptConfig: OxlintConfig = {
     // https://oxc.rs/docs/guide/usage/linter/rules/typescript/return-await.html
     'typescript/return-await': 'error',
 
+    // truthiness checks on strings and numbers are intentional
     // https://oxc.rs/docs/guide/usage/linter/rules/typescript/strict-boolean-expressions.html
     'typescript/strict-boolean-expressions': 'off',
 

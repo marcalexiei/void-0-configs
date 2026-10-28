@@ -121,10 +121,10 @@ const vitestConfig: OxlintConfig = {
     'vitest/no-unneeded-async-expect-function': 'error',
 
     // https://oxc.rs/docs/guide/usage/linter/rules/vitest/padding-around-after-all-blocks.html
-    'vitest/padding-around-after-all-blocks': 'off',
+    'vitest/padding-around-after-all-blocks': 'error',
 
     // https://oxc.rs/docs/guide/usage/linter/rules/vitest/padding-around-test-blocks.html
-    'vitest/padding-around-test-blocks': 'off',
+    'vitest/padding-around-test-blocks': 'error',
 
     // https://oxc.rs/docs/guide/usage/linter/rules/vitest/prefer-called-exactly-once-with.html
     'vitest/prefer-called-exactly-once-with': 'error',

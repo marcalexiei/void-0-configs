@@ -266,7 +266,7 @@ const baseConfig: OxlintConfig = {
     'no-implicit-coercion': ['error', { allow: ['!!'] }],
 
     // https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-implicit-globals.html
-    'no-implicit-globals': 'off',
+    'no-implicit-globals': 'error',
 
     // https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-implied-eval.html
     'no-implied-eval': 'error',
@@ -1038,7 +1038,7 @@ const baseConfig: OxlintConfig = {
     'unicorn/prefer-structured-clone': 'error',
 
     // https://oxc.rs/docs/guide/usage/linter/rules/unicorn/prefer-ternary.html
-    'unicorn/prefer-ternary': 'off',
+    'unicorn/prefer-ternary': 'error',
 
     // https://oxc.rs/docs/guide/usage/linter/rules/unicorn/prefer-top-level-await.html
     'unicorn/prefer-top-level-await': 'error',

@@ -27,6 +27,7 @@ const baseConfig: OxlintConfig = {
     // https://oxc.rs/docs/guide/usage/linter/rules/eslint/block-scoped-var.html
     'block-scoped-var': 'error',
 
+    // commented-out code and identifiers start lowercase
     // https://oxc.rs/docs/guide/usage/linter/rules/eslint/capitalized-comments.html
     'capitalized-comments': 'off',
 
@@ -63,6 +64,7 @@ const baseConfig: OxlintConfig = {
     // https://oxc.rs/docs/guide/usage/linter/rules/eslint/func-names.html
     'func-names': 'error',
 
+    // declarations and arrow functions are both fine
     // https://oxc.rs/docs/guide/usage/linter/rules/eslint/func-style.html
     'func-style': 'off',
 
@@ -95,6 +97,7 @@ const baseConfig: OxlintConfig = {
       },
     ],
 
+    // a `let` assigned in branches starts without a value
     // https://oxc.rs/docs/guide/usage/linter/rules/eslint/init-declarations.html
     'init-declarations': 'off',
 
@@ -271,6 +274,7 @@ const baseConfig: OxlintConfig = {
     // https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-import-assign.html
     'no-import-assign': 'error',
 
+    // a short trailing comment explains its line
     // https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-inline-comments.html
     'no-inline-comments': 'off',
 
@@ -304,6 +308,7 @@ const baseConfig: OxlintConfig = {
     // https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-loss-of-precision.html
     'no-loss-of-precision': 'error',
 
+    // would report every literal in layout code, tests and options
     // https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-magic-numbers.html
     'no-magic-numbers': 'off',
 
@@ -415,6 +420,7 @@ const baseConfig: OxlintConfig = {
     // https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-template-curly-in-string.html
     'no-template-curly-in-string': 'error',
 
+    // ternaries are fine; no-nested-ternary keeps them flat
     // https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-ternary.html
     'no-ternary': 'off',
 
@@ -434,6 +440,7 @@ const baseConfig: OxlintConfig = {
     // https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-undefined.html
     'no-undefined': 'off',
 
+    // external APIs use them, like zod's `_zod` and GraphQL's `__typename`
     // https://oxc.rs/docs/guide/usage/linter/rules/eslint/no-underscore-dangle.html
     'no-underscore-dangle': 'off',
 
@@ -598,15 +605,18 @@ const baseConfig: OxlintConfig = {
     // https://oxc.rs/docs/guide/usage/linter/rules/eslint/require-await.html
     'require-await': 'error',
 
+    // the patterns rarely meet characters outside the BMP, where the flag matters most
     // https://oxc.rs/docs/guide/usage/linter/rules/eslint/require-unicode-regexp.html
     'require-unicode-regexp': 'off',
 
     // https://oxc.rs/docs/guide/usage/linter/rules/eslint/require-yield.html
     'require-yield': 'error',
 
+    // handled by oxfmt `sortImports`
     // https://oxc.rs/docs/guide/usage/linter/rules/eslint/sort-imports.html
     'sort-imports': 'off',
 
+    // keys follow meaning, not the alphabet
     // https://oxc.rs/docs/guide/usage/linter/rules/eslint/sort-keys.html
     'sort-keys': 'off',
 
@@ -625,6 +635,7 @@ const baseConfig: OxlintConfig = {
     // https://oxc.rs/docs/guide/usage/linter/rules/eslint/valid-typeof.html
     'valid-typeof': 'error',
 
+    // handled by no-var
     // https://oxc.rs/docs/guide/usage/linter/rules/eslint/vars-on-top.html
     'vars-on-top': 'off',
 
@@ -793,6 +804,7 @@ const baseConfig: OxlintConfig = {
     // https://oxc.rs/docs/guide/usage/linter/rules/unicorn/no-new-buffer.html
     'unicorn/no-new-buffer': 'error',
 
+    // DOM and JSON APIs return `null`
     // https://oxc.rs/docs/guide/usage/linter/rules/unicorn/no-null.html
     'unicorn/no-null': 'off',
 
@@ -856,7 +868,7 @@ const baseConfig: OxlintConfig = {
     // https://oxc.rs/docs/guide/usage/linter/rules/unicorn/no-useless-spread.html
     'unicorn/no-useless-spread': 'error',
 
-    // handled by typescript/switch-exhaustiveness-check
+    // conflicts with typescript/switch-exhaustiveness-check, which wants a `case` for each union member
     // https://oxc.rs/docs/guide/usage/linter/rules/unicorn/no-useless-switch-case.html
     'unicorn/no-useless-switch-case': 'off',
 

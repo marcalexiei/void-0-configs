@@ -85,6 +85,7 @@ const vitestConfig: OxlintConfig = {
     // https://oxc.rs/docs/guide/usage/linter/rules/vitest/no-focused-tests.html
     'vitest/no-focused-tests': 'warn',
 
+    // hooks are how suites set up
     // https://oxc.rs/docs/guide/usage/linter/rules/vitest/no-hooks.html
     'vitest/no-hooks': 'off',
 
@@ -94,6 +95,7 @@ const vitestConfig: OxlintConfig = {
     // https://oxc.rs/docs/guide/usage/linter/rules/vitest/no-import-node-test.html
     'vitest/no-import-node-test': 'error',
 
+    // conflicts with vitest/prefer-importing-vitest-globals
     // https://oxc.rs/docs/guide/usage/linter/rules/vitest/no-importing-vitest-globals.html
     'vitest/no-importing-vitest-globals': 'off',
 
@@ -149,6 +151,7 @@ const vitestConfig: OxlintConfig = {
     // https://oxc.rs/docs/guide/usage/linter/rules/vitest/prefer-equality-matcher.html
     'vitest/prefer-equality-matcher': 'error',
 
+    // would ask every test for `expect.assertions(n)`
     // https://oxc.rs/docs/guide/usage/linter/rules/vitest/prefer-expect-assertions.html
     'vitest/prefer-expect-assertions': 'off',
 
@@ -170,6 +173,7 @@ const vitestConfig: OxlintConfig = {
     // https://oxc.rs/docs/guide/usage/linter/rules/vitest/prefer-importing-vitest-globals.html
     'vitest/prefer-importing-vitest-globals': 'error',
 
+    // titles can start with a function or component name
     // https://oxc.rs/docs/guide/usage/linter/rules/vitest/prefer-lowercase-title.html
     'vitest/prefer-lowercase-title': 'off',
 

@@ -1326,7 +1326,7 @@ const baseConfig: OxlintConfig = {
     'promise/param-names': 'error',
 
     // https://oxc.rs/docs/guide/usage/linter/rules/promise/prefer-await-to-then.html
-    'promise/prefer-await-to-then': 'off',
+    'promise/prefer-await-to-then': 'error',
 
     // `then(a, b)` is not equivalent to `then(a).catch(b)`
     // https://oxc.rs/docs/guide/usage/linter/rules/promise/prefer-catch.html

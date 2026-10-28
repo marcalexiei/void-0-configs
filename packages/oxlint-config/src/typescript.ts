@@ -23,9 +23,17 @@ const typescriptConfig: OxlintConfig = {
     // https://oxc.rs/docs/guide/usage/linter/rules/promise/catch-or-return.html
     'promise/catch-or-return': 'off',
 
+    // takes over from unicorn/no-useless-promise-resolve-reject inside `then` callbacks
+    // https://oxc.rs/docs/guide/usage/linter/rules/promise/no-return-wrap.html
+    'promise/no-return-wrap': 'error',
+
     // handled by typescript/await-thenable
     // https://oxc.rs/docs/guide/usage/linter/rules/unicorn/no-unnecessary-await.html
     'unicorn/no-unnecessary-await': 'off',
+
+    // conflicts with typescript/promise-function-async and typescript/require-await
+    // https://oxc.rs/docs/guide/usage/linter/rules/unicorn/no-useless-promise-resolve-reject.html
+    'unicorn/no-useless-promise-resolve-reject': 'off',
 
     // handled by typescript/prefer-string-starts-ends-with
     // https://oxc.rs/docs/guide/usage/linter/rules/unicorn/prefer-string-starts-ends-with.html
@@ -322,11 +330,8 @@ const typescriptConfig: OxlintConfig = {
     // https://oxc.rs/docs/guide/usage/linter/rules/typescript/prefer-ts-expect-error.html
     'typescript/prefer-ts-expect-error': 'off',
 
-    // `require-await` rule conflicts with this `promise-function-async`.
-    // I'm disabling this one since we might end up marking an async function without `await` as `async`.
-    // Also Typescript return type annotations should clearly declare if the Promise is async or not.
     // https://oxc.rs/docs/guide/usage/linter/rules/typescript/promise-function-async.html
-    'typescript/promise-function-async': 'off',
+    'typescript/promise-function-async': 'error',
 
     // https://oxc.rs/docs/guide/usage/linter/rules/typescript/related-getter-setter-pairs.html
     'typescript/related-getter-setter-pairs': 'error',

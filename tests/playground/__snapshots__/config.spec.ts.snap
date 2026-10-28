@@ -191,6 +191,23 @@ exports[`config > async-await 1`] = `
     "severity": "error",
     "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/await-thenable.html",
   },
+  {
+    "code": "typescript(promise-function-async)",
+    "filename": "fixtures/async-await/promises.ts",
+    "labels": [
+      {
+        "span": {
+          "column": 1,
+          "length": 79,
+          "line": 2,
+          "offset": 6,
+        },
+      },
+    ],
+    "message": "Functions that return promises must be async.",
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/promise-function-async.html",
+  },
 ]
 `;
 
@@ -576,6 +593,42 @@ exports[`config > oxc 1`] = `
 exports[`config > promise 1`] = `
 [
   {
+    "code": "promise(prefer-await-to-then)",
+    "filename": "fixtures/promise/index.ts",
+    "help": "Use \`await\` with \`try\`/\`catch\` instead of promise chaining for more readable and maintainable async code.",
+    "labels": [
+      {
+        "span": {
+          "column": 8,
+          "length": 4,
+          "line": 8,
+          "offset": 206,
+        },
+      },
+    ],
+    "message": "Prefer await to then()/catch()/finally()",
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/promise/prefer-await-to-then.html",
+  },
+  {
+    "code": "promise(prefer-await-to-then)",
+    "filename": "fixtures/promise/index.ts",
+    "help": "Use \`await\` with \`try\`/\`catch\` instead of promise chaining for more readable and maintainable async code.",
+    "labels": [
+      {
+        "span": {
+          "column": 8,
+          "length": 4,
+          "line": 5,
+          "offset": 150,
+        },
+      },
+    ],
+    "message": "Prefer await to then()/catch()/finally()",
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/promise/prefer-await-to-then.html",
+  },
+  {
     "code": "promise(always-return)",
     "filename": "fixtures/promise/index.ts",
     "labels": [
@@ -659,6 +712,40 @@ exports[`config > promise 1`] = `
     "message": "Promise constructor parameters must be named to match \`^_?reject$\`",
     "severity": "error",
     "url": "https://oxc.rs/docs/guide/usage/linter/rules/promise/param-names.html",
+  },
+  {
+    "code": "typescript(promise-function-async)",
+    "filename": "fixtures/promise/index.ts",
+    "labels": [
+      {
+        "span": {
+          "column": 1,
+          "length": 226,
+          "line": 1,
+          "offset": 0,
+        },
+      },
+    ],
+    "message": "Functions that return promises must be async.",
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/promise-function-async.html",
+  },
+  {
+    "code": "typescript(promise-function-async)",
+    "filename": "fixtures/promise/index.ts",
+    "labels": [
+      {
+        "span": {
+          "column": 1,
+          "length": 265,
+          "line": 12,
+          "offset": 228,
+        },
+      },
+    ],
+    "message": "Functions that return promises must be async.",
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/promise-function-async.html",
   },
 ]
 `;
@@ -1142,6 +1229,24 @@ exports[`config > reported-once 1`] = `
 exports[`config > type-aware 1`] = `
 [
   {
+    "code": "promise(prefer-await-to-then)",
+    "filename": "fixtures/type-aware/counterparts.ts",
+    "help": "Use \`await\` with \`try\`/\`catch\` instead of promise chaining for more readable and maintainable async code.",
+    "labels": [
+      {
+        "span": {
+          "column": 10,
+          "length": 4,
+          "line": 25,
+          "offset": 624,
+        },
+      },
+    ],
+    "message": "Prefer await to then()/catch()/finally()",
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/promise/prefer-await-to-then.html",
+  },
+  {
     "code": "typescript(no-generated-empty-object-type)",
     "filename": "fixtures/type-aware/counterparts.ts",
     "labels": [
@@ -1191,6 +1296,23 @@ exports[`config > type-aware 1`] = `
     "message": "Expected an error object to be thrown.",
     "severity": "error",
     "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/only-throw-error.html",
+  },
+  {
+    "code": "typescript(promise-function-async)",
+    "filename": "fixtures/type-aware/counterparts.ts",
+    "labels": [
+      {
+        "span": {
+          "column": 1,
+          "length": 82,
+          "line": 19,
+          "offset": 423,
+        },
+      },
+    ],
+    "message": "Functions that return promises must be async.",
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/promise-function-async.html",
   },
   {
     "code": "typescript(prefer-promise-reject-errors)",
@@ -1672,6 +1794,24 @@ exports[`config > typescript 1`] = `
     "url": "https://oxc.rs/docs/guide/usage/linter/rules/unicorn/prefer-top-level-await.html",
   },
   {
+    "code": "promise(prefer-await-to-then)",
+    "filename": "fixtures/typescript/unsafe-call.ts",
+    "help": "Use \`await\` with \`try\`/\`catch\` instead of promise chaining for more readable and maintainable async code.",
+    "labels": [
+      {
+        "span": {
+          "column": 25,
+          "length": 5,
+          "line": 10,
+          "offset": 142,
+        },
+      },
+    ],
+    "message": "Prefer await to then()/catch()/finally()",
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/promise/prefer-await-to-then.html",
+  },
+  {
     "code": "promise(valid-params)",
     "filename": "fixtures/typescript/unsafe-call.ts",
     "labels": [
@@ -1687,6 +1827,24 @@ exports[`config > typescript 1`] = `
     "message": "\`Promise.catch()\` requires 1 argument, but received 0.",
     "severity": "error",
     "url": "https://oxc.rs/docs/guide/usage/linter/rules/promise/valid-params.html",
+  },
+  {
+    "code": "promise(prefer-await-to-then)",
+    "filename": "fixtures/typescript/unsafe-call.ts",
+    "help": "Use \`await\` with \`try\`/\`catch\` instead of promise chaining for more readable and maintainable async code.",
+    "labels": [
+      {
+        "span": {
+          "column": 18,
+          "length": 4,
+          "line": 10,
+          "offset": 135,
+        },
+      },
+    ],
+    "message": "Prefer await to then()/catch()/finally()",
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/promise/prefer-await-to-then.html",
   },
   {
     "code": "promise(valid-params)",

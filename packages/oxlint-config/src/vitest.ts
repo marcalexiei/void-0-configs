@@ -184,7 +184,7 @@ const vitestConfig: OxlintConfig = {
     'vitest/prefer-mock-return-shorthand': 'error',
 
     // https://oxc.rs/docs/guide/usage/linter/rules/vitest/prefer-snapshot-hint.html
-    'vitest/prefer-snapshot-hint': 'off',
+    'vitest/prefer-snapshot-hint': 'error',
 
     // https://oxc.rs/docs/guide/usage/linter/rules/vitest/prefer-spy-on.html
     'vitest/prefer-spy-on': 'error',
@@ -217,7 +217,7 @@ const vitestConfig: OxlintConfig = {
     'vitest/prefer-to-contain': 'error',
 
     // https://oxc.rs/docs/guide/usage/linter/rules/vitest/prefer-to-have-been-called-times.html
-    'vitest/prefer-to-have-been-called-times': 'off',
+    'vitest/prefer-to-have-been-called-times': 'error',
 
     // https://oxc.rs/docs/guide/usage/linter/rules/vitest/prefer-to-have-length.html
     'vitest/prefer-to-have-length': 'error',

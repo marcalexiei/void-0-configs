@@ -1,5 +1,34 @@
 # @marcalexiei/oxlint-config
 
+## 1.8.0
+
+### Minor Changes
+
+- [#123](https://github.com/marcalexiei/void-0-configs/pull/123) [`52859ec`](https://github.com/marcalexiei/void-0-configs/commit/52859ec7256f95caaf0142874af4ec0b12b4155f) - feat: ask for `async` and `await` over promise chains
+  
+  The `typescript` config sets `typescript/promise-function-async` to `error`: a function that
+  returns a promise must be `async`, so it rejects instead of throwing. `oxlint --fix` fixes most
+  reports. A stub that returns a value it already has is written `async () => Promise.resolve(x)`,
+  so `unicorn/no-useless-promise-resolve-reject` is off there, and `promise/no-return-wrap` covers
+  `then` callbacks instead.
+  
+  The `base` config sets `promise/prefer-await-to-then` to `error`.
+
+- [#124](https://github.com/marcalexiei/void-0-configs/pull/124) [`9bc6e01`](https://github.com/marcalexiei/void-0-configs/commit/9bc6e01b31e91c1caa89b7f13835f6ed731989c1) - feat: name multiple snapshots and count calls with the matcher
+  
+  The `vitest` config sets two rules to `error`:
+  
+  - `vitest/prefer-snapshot-hint`: a test that takes more than one snapshot names each of them
+  - `vitest/prefer-to-have-been-called-times`: `toHaveBeenCalledTimes(n)` over
+    `expect(fn.mock.calls).toHaveLength(n)`
+
+- [#125](https://github.com/marcalexiei/void-0-configs/pull/125) [`8d05f22`](https://github.com/marcalexiei/void-0-configs/commit/8d05f22b3ea80005d50eea717c3b0b7d8045747b) - feat: turn on four style rules
+  
+  - `base`: `unicorn/prefer-ternary` and `no-implicit-globals`, which also reports
+    `declare function` in a global `.d.ts`
+  - `vitest`: `vitest/padding-around-test-blocks` and `vitest/padding-around-after-all-blocks`,
+    both fixed by `oxlint --fix`
+
 ## 1.7.0
 
 ### Minor Changes

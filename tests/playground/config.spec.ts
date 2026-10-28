@@ -24,7 +24,7 @@ function normalizeDiagnostics(asd: Array<Diagnostics>): void {
   });
 }
 
-function run(fixturePath: string): Promise<{
+async function run(fixturePath: string): Promise<{
   code: number;
   stdout: string;
   stderr: string;

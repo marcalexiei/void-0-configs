@@ -322,11 +322,8 @@ const typescriptConfig: OxlintConfig = {
     // https://oxc.rs/docs/guide/usage/linter/rules/typescript/prefer-ts-expect-error.html
     'typescript/prefer-ts-expect-error': 'off',
 
-    // `require-await` rule conflicts with this `promise-function-async`.
-    // I'm disabling this one since we might end up marking an async function without `await` as `async`.
-    // Also Typescript return type annotations should clearly declare if the Promise is async or not.
     // https://oxc.rs/docs/guide/usage/linter/rules/typescript/promise-function-async.html
-    'typescript/promise-function-async': 'off',
+    'typescript/promise-function-async': 'error',
 
     // https://oxc.rs/docs/guide/usage/linter/rules/typescript/related-getter-setter-pairs.html
     'typescript/related-getter-setter-pairs': 'error',

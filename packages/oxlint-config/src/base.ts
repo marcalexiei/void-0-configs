@@ -605,7 +605,7 @@ const baseConfig: OxlintConfig = {
     // https://oxc.rs/docs/guide/usage/linter/rules/eslint/require-await.html
     'require-await': 'error',
 
-    // most patterns are ASCII, where the flag changes nothing
+    // the patterns rarely meet characters outside the BMP, where the flag matters most
     // https://oxc.rs/docs/guide/usage/linter/rules/eslint/require-unicode-regexp.html
     'require-unicode-regexp': 'off',
 

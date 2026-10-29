@@ -230,6 +230,21 @@ Add the ones you need to your own `rules`:
 | `react`      | `react/forbid-dom-props`, `react/forbid-elements`                           |
 | `vitest`     | `vitest/no-restricted-matchers`, `vitest/no-restricted-vi-methods`          |
 
+### Unused disable directives
+
+A rule these configs turn off, or code that no longer breaks one, leaves `oxlint-disable`
+comments that suppress nothing. `reportUnusedDisableDirectives` reports them, but oxlint only
+reads it from the root config, so the configs cannot set it for you:
+
+```ts
+export default defineConfig({
+  extends: [baseConfig],
+  options: {
+    reportUnusedDisableDirectives: 'error',
+  },
+});
+```
+
 ## CI
 
 Consider creating a `lint:ci` script so you can rely on `format` option with `github` value to generate better annotations for warning and errors.

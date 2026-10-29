@@ -6,15 +6,21 @@ catalogs:
   dev:
     '@types/node': '24.19.1'
     'oxfmt': '0.72.0'
-    'oxlint': '1.88.0'
-    'oxlint-tsgolint': '7.0.2004'
+    'oxlint': '1.90.0'
+    'oxlint-tsgolint': '7.0.2005'
   peer:
     'oxfmt': '>=0.65.0 <1'
-    'oxlint': '>=1.86.0 <2'
-    'oxlint-tsgolint': '>=7.0.2003 <8'
+    'oxlint': '>=1.90.0 <2'
+    'oxlint-tsgolint': '>=7.0.2005 <8'
 
 # Deliberately stricter than pnpm's 1440 default (3 days vs 1)
 minimumReleaseAge: 4320
+# the configs track each oxlint release, which `rules:check` needs installed to pass
+minimumReleaseAgeExclude:
+  - 'oxlint'
+  - 'oxlint-tsgolint'
+  - '@oxlint/*'
+  - '@oxlint-tsgolint/*'
 
 # Reject a version with weaker publish trust evidence than an earlier one.
 trustPolicy: no-downgrade

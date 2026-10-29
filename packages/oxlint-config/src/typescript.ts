@@ -233,6 +233,9 @@ const typescriptConfig: OxlintConfig = {
     // https://oxc.rs/docs/guide/usage/linter/rules/typescript/no-unsafe-declaration-merging.html
     'typescript/no-unsafe-declaration-merging': 'error',
 
+    // https://oxc.rs/docs/guide/usage/linter/rules/typescript/no-unsafe-enum-assignment.html
+    'typescript/no-unsafe-enum-assignment': 'error',
+
     // https://oxc.rs/docs/guide/usage/linter/rules/typescript/no-unsafe-enum-comparison.html
     'typescript/no-unsafe-enum-comparison': 'error',
 

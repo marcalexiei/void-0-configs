@@ -104,6 +104,6 @@ jobs:
       contents: read # required to read the workflow file
     steps:
       - name: Check needed jobs
-        uses: marcalexiei/github-actions/check-needs@652ec15e6c9f4a6fa9dbfcf13c45787b29edfba2 # feat/check-needs, unreleased
+        uses: marcalexiei/github-actions/check-needs@4a51d6dfcaac0c263c6f2efd97249eafe0076721 # v2.5.0
         with:
           needs: ${{ toJSON(needs) }}

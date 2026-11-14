@@ -28,3 +28,5 @@ trustPolicy: no-downgrade
 # Fail on unmet peers and on a Node version outside `engines`, instead of warning
 strictPeerDependencies: true
 engineStrict: true
+
+autoDedupe: true

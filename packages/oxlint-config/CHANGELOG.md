@@ -1,5 +1,18 @@
 # @marcalexiei/oxlint-config
 
+## 1.10.0
+
+### Minor Changes
+
+- [#146](https://github.com/marcalexiei/void-0-configs/pull/146) [`e787aac`](https://github.com/marcalexiei/void-0-configs/commit/e787aacbbfeef48368029e22308f690f0281dfcf) - feat!: support oxlint >= 1.94 and oxlint-tsgolint >= 7.0.2007
+  
+  The `typescript` config now sets `typescript/no-misused-promises` to
+  `['error', { checksConditionals: { flagUnions: 'strict' } }]`, so `Promise<T> | T` used in a
+  conditional is reported too. 1.94 is the first release that accepts the option and older ones
+  reject the config, so the `oxlint` peer range moves from `>=1.90.0 <2` to `>=1.94.0 <2`.
+  `oxlint-tsgolint` moves from `>=7.0.2005 <8` to `>=7.0.2007 <8`, the minimum oxlint 1.94
+  accepts: bump both together.
+
 ## 1.9.0
 
 ### Minor Changes

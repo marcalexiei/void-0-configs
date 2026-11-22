@@ -1359,6 +1359,32 @@ exports[`config > type-aware 1`] = `
     "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/no-floating-promises.html",
   },
   {
+    "code": "typescript(no-misused-promises)",
+    "filename": "fixtures/type-aware/no-misused-promises.ts",
+    "labels": [
+      {
+        "label": "This expression has type \`boolean | Promise<boolean>\`.",
+        "span": {
+          "column": 10,
+          "length": 5,
+          "line": 3,
+          "offset": 131,
+        },
+      },
+      {
+        "span": {
+          "column": 10,
+          "length": 5,
+          "line": 3,
+          "offset": 131,
+        },
+      },
+    ],
+    "message": "Expected non-Promise value in a boolean conditional.",
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/typescript/no-misused-promises.html",
+  },
+  {
     "code": "eslint(id-length)",
     "filename": "fixtures/type-aware/no-unnecessary-type-parameters.ts",
     "labels": [
@@ -2023,24 +2049,6 @@ exports[`config > typescript 1`] = `
 exports[`config > vitest 1`] = `
 [
   {
-    "code": "vitest(prefer-called-times)",
-    "filename": "fixtures/vitest/index.spec.ts",
-    "help": "Replace with \`toBeCalledTimes(1)\` or \`toHaveBeenCalledTimes(1)\` for clarity and consistency",
-    "labels": [
-      {
-        "span": {
-          "column": 5,
-          "length": 33,
-          "line": 14,
-          "offset": 249,
-        },
-      },
-    ],
-    "message": "Use \`toBeCalledTimes(1)\` or \`toHaveBeenCalledTimes(1)\` instead of \`toBeCalledOnce()\` or \`toHaveBeenCalledOnce()\`",
-    "severity": "error",
-    "url": "https://oxc.rs/docs/guide/usage/linter/rules/vitest/prefer-called-times.html",
-  },
-  {
     "code": "vitest(require-mock-type-parameters)",
     "filename": "fixtures/vitest/index.spec.ts",
     "help": "Add a type parameter to the mock function, e.g. \`vi.fn<() => void>()\`.",
@@ -2057,6 +2065,24 @@ exports[`config > vitest 1`] = `
     "message": "Missing type parameters on mock function call",
     "severity": "error",
     "url": "https://oxc.rs/docs/guide/usage/linter/rules/vitest/require-mock-type-parameters.html",
+  },
+  {
+    "code": "vitest(prefer-called-times)",
+    "filename": "fixtures/vitest/index.spec.ts",
+    "help": "Replace with \`toBeCalledTimes(1)\` or \`toHaveBeenCalledTimes(1)\` for clarity and consistency",
+    "labels": [
+      {
+        "span": {
+          "column": 5,
+          "length": 33,
+          "line": 14,
+          "offset": 249,
+        },
+      },
+    ],
+    "message": "Use \`toBeCalledTimes(1)\` or \`toHaveBeenCalledTimes(1)\` instead of \`toBeCalledOnce()\` or \`toHaveBeenCalledOnce()\`",
+    "severity": "error",
+    "url": "https://oxc.rs/docs/guide/usage/linter/rules/vitest/prefer-called-times.html",
   },
   {
     "code": "vitest(consistent-test-filename)",

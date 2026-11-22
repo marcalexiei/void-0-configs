@@ -161,8 +161,9 @@ const typescriptConfig: OxlintConfig = {
     // https://oxc.rs/docs/guide/usage/linter/rules/typescript/no-misused-new.html
     'typescript/no-misused-new': 'error',
 
+    // `strict` also reports `Promise<T> | T` in conditionals, where the promise is always truthy
     // https://oxc.rs/docs/guide/usage/linter/rules/typescript/no-misused-promises.html
-    'typescript/no-misused-promises': 'error',
+    'typescript/no-misused-promises': ['error', { checksConditionals: { flagUnions: 'strict' } }],
 
     // https://oxc.rs/docs/guide/usage/linter/rules/typescript/no-misused-spread.html
     'typescript/no-misused-spread': 'error',

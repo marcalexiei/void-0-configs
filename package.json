@@ -10,7 +10,7 @@
     "typecheck": "pnpm -r run typecheck",
     "test": "pnpm -r run test",
     "release": "pnpm run build && changeset publish",
-    "check-all": "pnpm run build && pnpm run test --run && pnpm run format:check && pnpm run lint && pnpm run typecheck"
+    "validate": "pnpm run build && pnpm run test --run && pnpm run format:check && pnpm run lint && pnpm run typecheck"
   },
   "devDependencies": {
     "@changesets/changelog-github": "1.0.1",

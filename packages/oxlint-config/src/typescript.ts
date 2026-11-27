@@ -231,6 +231,9 @@ const typescriptConfig: OxlintConfig = {
     // https://oxc.rs/docs/guide/usage/linter/rules/typescript/no-unsafe-call.html
     'typescript/no-unsafe-call': 'error',
 
+    // https://oxc.rs/docs/guide/usage/linter/rules/typescript/no-unsafe-class-instance-assignment.html
+    'typescript/no-unsafe-class-instance-assignment': 'error',
+
     // https://oxc.rs/docs/guide/usage/linter/rules/typescript/no-unsafe-declaration-merging.html
     'typescript/no-unsafe-declaration-merging': 'error',
 
